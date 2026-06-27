@@ -32,6 +32,11 @@ export default defineConfig({
           { text: 'iOS', link: '/platform/ios' },
           { text: 'macOS', link: '/platform/macos' }
         ]
+      },{
+        text: 'Cafe Launcher 使用文档',
+        items: [
+          { text: '欢迎', link: '/cafe-launcher/index' },
+        ]
       }
     ],
 
