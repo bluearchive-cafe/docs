@@ -36,7 +36,11 @@ export default defineConfig({
         text: 'Cafe Launcher 使用文档',
         items: [
           { text: '欢迎', link: '/cafe-launcher/index' },
-          { text: '用户指南', link: '/cafe-launcher/user-guide' }
+          { text: '安装', link: '/cafe-launcher/installation' },
+          { text: '设置', link: '/cafe-launcher/settings' },
+          { text: '游戏操作', link: '/cafe-launcher/operations' },
+          { text: '卸载与数据', link: '/cafe-launcher/uninstall' },
+          { text: '常见问题', link: '/cafe-launcher/faq' }
         ]
       }
     ],

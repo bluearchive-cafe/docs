@@ -10,7 +10,11 @@ Cafe Launcher 是一款基于 .NET 10 + Avalonia 框架开发的**第三方** Bl
 
 ## 快速导航
 
-- **[使用指南](./user-guide)** — 安装、设置、故障排除的完整说明
+- **[安装](./installation)** — 系统要求、下载、安装步骤、首次安装游戏
+- **[设置](./settings)** — 7 个设置分类完整参考
+- **[游戏操作](./operations)** — 安装 / 更新 / 修复 / 卸载游戏、系统托盘
+- **[卸载与数据](./uninstall)** — 卸载启动器、数据文件位置、与官方启动器共存
+- **[常见问题](./faq)** — 故障排除与获取帮助
 - **[GitHub Releases](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/releases)** — 下载最新版本
 
 ## 项目特性
