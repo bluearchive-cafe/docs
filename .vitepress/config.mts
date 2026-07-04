@@ -36,6 +36,7 @@ export default defineConfig({
         text: 'Cafe Launcher 使用文档',
         items: [
           { text: '欢迎', link: '/cafe-launcher/index' },
+          { text: '用户指南', link: '/cafe-launcher/user-guide' }
         ]
       }
     ],
