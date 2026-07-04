@@ -30,6 +30,12 @@
 
 启动器不会自动检查更新（通过设置中的更新通道控制），需手动点击"关于页面"中的检查更新按钮。检测到新版本时会在界面提示，需手动下载安装。
 
+## 项目是否开源？
+
+Cafe Launcher 目前未开放源代码。
+
+如果您有意向贡献代码或参与开发，欢迎通过邮件或官方群组联系开发者。
+
 ## 获取帮助
 
 - **GitHub Issues**：[提交问题反馈](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/issues)
