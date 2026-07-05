@@ -3,7 +3,7 @@
 > [!NOTE] 说明
 > iOS 平台需要安装 iOS 专用客户端来启用汉化，客户端分为自签版和免签版。
 >
-> - **自签版**：安装包需要自行签名后安装，建议使用 **[AltStore](https://altstore.io)**、**[SideStore](https://sidestore.io)** 或 **[Impactor](https://impactor.khcrysalis.dev)** 等工具。
+> - **自签版**：安装包需要自行签名后安装，建议使用 **[AltStore](https://altstore.io)**、**[SideStore](https://sidestore.io)** 或 **[Impactor](https://impactor.claration.dev)** 等工具。
 > - **免签版**：安装后需要在“设置” - “通用” - “VPN 与设备管理”中信任开发者证书。
 
 > [!TIP] 提示
