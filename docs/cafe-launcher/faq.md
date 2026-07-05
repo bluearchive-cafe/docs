@@ -2,7 +2,7 @@
 
 ## 启动器提示"游戏正在运行"
 
-关闭游戏后再操作。如果游戏已关闭但仍提示，打开任务管理器查看 `BlueArchive.exe` 或 `BA_Launcher.exe` 进程是否残留。
+关闭游戏后再操作。如果游戏已关闭但仍提示，打开任务管理器查看 `BlueArchive.exe` 或 `xldr_BlueArchiveOnline_JP_loader_x64.exe` 进程是否残留。
 
 ## 下载速度慢
 
