@@ -17,3 +17,6 @@
 > 启动器下载后解压即可使用。建议覆盖官方启动器文件，或移动到固定目录后创建快捷方式，避免后续误删。
 
 [![Windows 启动器](https://forthebadge.com/api/badges/generate?panels=2&primaryLabel=++启动器&secondaryLabel=下载&primaryBGColor=%230e5cab&primaryTextColor=%23ffffff&secondaryBGColor=%23f9f9fd&secondaryTextColor=%23000000&primaryFontSize=12&primaryFontWeight=600&primaryLetterSpacing=2&primaryFontFamily=Roboto&primaryTextTransform=uppercase&secondaryFontSize=12&secondaryFontWeight=900&secondaryLetterSpacing=2&secondaryFontFamily=Montserrat&secondaryTextTransform=uppercase&primaryIcon=geocaching&primaryIconColor=%23ffffff&primaryIconSize=16&primaryIconPosition=left&borderRadius=10)](https://api.bluearchive.cafe/download/file?platform=launcher&version=latest&file=BlueArchive_JP_Gamelauncher.zip)
+
+> [!TIP] 提示
+> 如果您要查看 Cafe Launcher 相关文档，请点击[这里](/cafe-launcher/index)。
