@@ -49,7 +49,7 @@ Cafe Launcher 目前未开放源代码。
 
 ## 获取帮助
 
-- **GitHub Issues**：[提交问题反馈](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/issues)
+- **GitHub Issues**：[提交问题反馈](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/issues)
 - **邮件反馈**：<feedback@bluearchive.cafe>
 - **官方网站**：[bluearchive.cafe](https://bluearchive.cafe/)
 - **日志提交**：遇到 Bug 时请导出并附带日志文件（设置 → 关于 → 导出日志）
