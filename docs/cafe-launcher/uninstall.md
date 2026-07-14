@@ -24,7 +24,7 @@
 | 下载状态 | `%LOCALAPPDATA%\Cafe Launcher\download_state.json` |
 | 已读通知 | `%LOCALAPPDATA%\Cafe Launcher\shown_notices.json` |
 | 安装来源 | `%LOCALAPPDATA%\Cafe Launcher\clickCode` |
-| 游戏文件 | 设置中指定的游戏路径（默认 `.\YostarGames\BlueArchive_JP`） |
+| 游戏文件 | 设置中指定的游戏路径 |
 
 ## 与官方启动器共存
 
