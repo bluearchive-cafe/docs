@@ -40,7 +40,8 @@ export default defineConfig({
           { text: '设置', link: '/cafe-launcher/settings' },
           { text: '游戏操作', link: '/cafe-launcher/operations' },
           { text: '卸载与数据', link: '/cafe-launcher/uninstall' },
-          { text: '常见问题', link: '/cafe-launcher/faq' }
+          { text: '常见问题', link: '/cafe-launcher/faq' },
+          { text: '反馈指南', link: '/cafe-launcher/feedback' }
         ]
       }
     ],
