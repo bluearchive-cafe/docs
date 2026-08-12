@@ -20,7 +20,9 @@
 | 内容 | 路径 |
 |------|------|
 | 设置 | `%LOCALAPPDATA%\Cafe Launcher\settings.json` |
-| 日志 | `%LOCALAPPDATA%\Cafe Launcher\unified.log` |
+| 会话标记 | `%LOCALAPPDATA%\Cafe Launcher\session.active`（正常退出时删除） |
+| 日志 | `%LOCALAPPDATA%\Cafe Launcher\unified.log` 与 `unified_*.log` |
+| 日志导出 | 默认位于 `%LOCALAPPDATA%\Cafe Launcher\log-exports\`（导出时可另选位置） |
 | 下载状态 | `%LOCALAPPDATA%\Cafe Launcher\download_state.json` |
 | 已读通知 | `%LOCALAPPDATA%\Cafe Launcher\shown_notices.json` |
 | 安装来源 | `%LOCALAPPDATA%\Cafe Launcher\clickCode` |
