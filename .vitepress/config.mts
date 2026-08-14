@@ -13,7 +13,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
-      { text: '安装教程', link: '/platform' }
+      { text: '安装', link: '/platform' }
     ],
 
     sidebar: [
@@ -25,11 +25,11 @@ export default defineConfig({
         ]
       },
       {
-        text: '安装教程',
+        text: '安装',
         items: [
           { text: 'Android', link: '/platform/android' },
-          { text: 'Windows', link: '/platform/windows' },
           { text: 'iOS', link: '/platform/ios' },
+          { text: 'Windows', link: '/platform/windows' },
           { text: 'macOS', link: '/platform/macos' }
         ]
       },{
