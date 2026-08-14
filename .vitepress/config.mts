@@ -13,7 +13,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
-      { text: '平台教程', link: '/platform' }
+      { text: '安装教程', link: '/platform' }
     ],
 
     sidebar: [
@@ -25,7 +25,7 @@ export default defineConfig({
         ]
       },
       {
-        text: '平台教程',
+        text: '安装教程',
         items: [
           { text: 'Android', link: '/platform/android' },
           { text: 'Windows', link: '/platform/windows' },

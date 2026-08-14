@@ -1,22 +1,49 @@
-# Windows 平台使用文档
+# Windows 平台安装文档
 
-> [!NOTE] 说明
-> Windows 平台需要使用 Windows 专用启动器来启用汉化。
->
-> 专用启动器可以覆盖官方启动器使用，也可以独立放置在其他目录；两种方式都可以共用原有游戏资源文件。
+## 一、安装
 
-> [!TIP] 提示
-> 使用完整资源需要预留 5 GB 以上存储空间，请在下载前确认磁盘空间充足。
->
-> [**Kuyo 加速器**](https://kuyo.cc) 已同步本项目的汉化文本。若您只需要文本汉化，也可以通过 Kuyo 加速器使用。
+### 1. Cafe Launcher 安装
 
-> [!WARNING] 注意
-> 如遇汉化无法生效，请先在系统托盘中彻底退出并重启启动器，再进入启动器设置点击 **完整修复**。
+> [!NOTE]
+> 此方案需要安装 [Cafe Launcher](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release)，可用于自动下载、安装和更新客户端，并兼具控制面板功能。
 
-> [!IMPORTANT] 重要
-> 启动器下载后解压即可使用。建议覆盖官方启动器文件，或移动到固定目录后创建快捷方式，避免后续误删。
+> [!WARNING]
+> 首次使用需按照教程指引完成下载源、代理、安装目录等设置，以确保客户端及汉化功能能够正常运行。
 
-[![Windows 启动器](https://forthebadge.com/api/badges/generate?panels=2&primaryLabel=++启动器&secondaryLabel=下载&primaryBGColor=%230e5cab&primaryTextColor=%23ffffff&secondaryBGColor=%23f9f9fd&secondaryTextColor=%23000000&primaryFontSize=12&primaryFontWeight=600&primaryLetterSpacing=2&primaryFontFamily=Roboto&primaryTextTransform=uppercase&secondaryFontSize=12&secondaryFontWeight=900&secondaryLetterSpacing=2&secondaryFontFamily=Montserrat&secondaryTextTransform=uppercase&primaryIcon=geocaching&primaryIconColor=%23ffffff&primaryIconSize=16&primaryIconPosition=left&borderRadius=10)](https://download.bluearchive.cafe/launcher/latest)
+> [!TIP]
+> 如在使用过程中遇到问题，请点击 [这里](/cafe-launcher/index) 查看 Cafe Launcher 相关文档。
 
-> [!TIP] 提示
-> 如果您要查看 Cafe Launcher 相关文档，请点击[这里](/cafe-launcher/index)。
+<div align=center>
+
+[![启动器](https://forthebadge.com/api/badges/generate?panels=2&primaryLabel=++启动器&secondaryLabel=下载&primaryBGColor=%230e5cab&primaryTextColor=%23ffffff&secondaryBGColor=%23f9f9fd&secondaryTextColor=%23000000&primaryFontSize=12&primaryFontWeight=600&primaryLetterSpacing=2&primaryFontFamily=Roboto&primaryTextTransform=uppercase&secondaryFontSize=12&secondaryFontWeight=900&secondaryLetterSpacing=2&secondaryFontFamily=Montserrat&secondaryTextTransform=uppercase&primaryIcon=geocaching&primaryIconColor=%23ffffff&primaryIconSize=16&primaryIconPosition=left&borderRadius=10)](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release)
+
+</div>
+
+### 2. 启动器安装
+
+> [!NOTE]
+> 此方案需要安装 Windows 平台专用启动器，可用于自动下载、安装和更新客户端。
+
+> [!WARNING]
+> 如弹窗提示 `VP9コーデックのインストールが必要です`，请前往 [Microsoft Store](https://apps.microsoft.com/detail/9n4d0msmp0pt) 安装 VP9 视频扩展。
+
+> [!TIP]
+> 启动器下载后解压即可使用。可以覆盖官方原版启动器，或移动到其他目录并创建快捷方式以便使用。
+
+<div align=center>
+
+[![启动器](https://forthebadge.com/api/badges/generate?panels=2&primaryLabel=++启动器&secondaryLabel=下载&primaryBGColor=%230e5cab&primaryTextColor=%23ffffff&secondaryBGColor=%23f9f9fd&secondaryTextColor=%23000000&primaryFontSize=12&primaryFontWeight=600&primaryLetterSpacing=2&primaryFontFamily=Roboto&primaryTextTransform=uppercase&secondaryFontSize=12&secondaryFontWeight=900&secondaryLetterSpacing=2&secondaryFontFamily=Montserrat&secondaryTextTransform=uppercase&primaryIcon=geocaching&primaryIconColor=%23ffffff&primaryIconSize=16&primaryIconPosition=left&borderRadius=10)](https://download.bluearchive.cafe/launcher/latest)
+
+</div>
+
+### 3. 替换资源
+
+## 二、常见问题
+
+### 1. 启动游戏后没有汉化功能及控制面板
+
+请尝试在启动器设置中将下载源设置为 `Cafe 源`（Cafe Launcher），或在启动器设置中点击 `完整修复` 以检查启动器资源完整性。
+
+### 2. 启动游戏后弹窗提示 `セキュリティモジュールの初期化に失敗しました` 或弹窗闪退
+
+反作弊模块启动失败，或检测到作弊行为。请尝试重新启动游戏或关闭其他可疑应用及反作弊系统。
