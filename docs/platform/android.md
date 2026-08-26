@@ -11,7 +11,7 @@
 > 因签名不同，使用此方案安装前需要先卸载原版客户端，否则会出现安装失败的情况。
 
 > [!TIP]
-> 可以使用文件管理器备份 `Android/data/com.YostarJP.BlueArchive/files/` 目录下的 `TableBundles`、`MediaPatch` 和 `AssetBundles` 三个目录，以免卸载重装时需要重新下载游戏资源。
+> 如需卸载重装，可以使用文件管理器备份 `Android/data/com.YostarJP.BlueArchive/files/` 目录下的 `TableBundles`、`MediaPatch` 和 `AssetBundles` 三个目录，以免重新下载游戏资源。
 
 <div align=center>
 
@@ -22,13 +22,13 @@
 ### 2. 手动安装
 
 > [!NOTE]
-> 此方案需要配合支持 APKS 的安装器进行安装，如 **[SAI](https://github.com/Aefyr/SAI)** 或 **[MT 管理器](https://mt2.cn)** 等，且不支持自动更新客户端。
+> 此方案可以直接下载安装包进行安装，版本更新后需要手动下载新版安装包进行覆盖安装。
 
 > [!WARNING]
 > 因签名不同，使用此方案安装前需要先卸载原版客户端，否则会出现安装失败的情况。
 
 > [!TIP]
-> 可以使用文件管理器备份 `Android/data/com.YostarJP.BlueArchive/files/` 目录下的 `TableBundles`、`MediaPatch` 和 `AssetBundles` 三个目录，以免卸载重装时需要重新下载游戏资源。
+> 如需卸载重装，可以使用文件管理器备份 `Android/data/com.YostarJP.BlueArchive/files/` 目录下的 `TableBundles`、`MediaPatch` 和 `AssetBundles` 三个目录，以免重新下载游戏资源。
 
 <div align=center>
 
@@ -59,8 +59,8 @@
 
 ### 1. 无法安装客户端
 
-部分品牌可能对安装 APKS 存在一定限制（如 `小米`、`OPPO` 等），如安装失败，请根据设备品牌自行查找相关教程。
+因签名不同，安装汉化版客户端前需要先卸载原版客户端，否则会导致安装失败。
 
 ### 2. 启动后弹窗提示 Use of unauthorized apps 并闪退
 
-设备存在 Root 环境、启用了模块、安装了可疑应用，或合并/重签了安装包。请尝试卸载应用、恢复环境或启用/禁用客户端获取应用列表权限。
+设备存在 Root 环境、启用了模块、安装了可疑应用，或重签了安装包。请尝试卸载应用、恢复环境或启用/禁用客户端获取应用列表权限。
