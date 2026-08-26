@@ -2,24 +2,7 @@
 
 ## 一、安装说明
 
-### 1. 自动安装
-
-> [!NOTE]
-> 此方案需要安装 Android 平台专用安装器，可用于自动下载、安装和更新客户端，并兼具控制面板功能。
-
-> [!WARNING]
-> 因签名不同，使用此方案安装前需要先卸载原版客户端，否则会出现安装失败的情况。
-
-> [!TIP]
-> 如需卸载重装，可以使用文件管理器备份 `Android/data/com.YostarJP.BlueArchive/files/` 目录下的 `TableBundles`、`MediaPatch` 和 `AssetBundles` 三个目录，以免重新下载游戏资源。
-
-<div align=center>
-
-[![安装器](https://forthebadge.com/api/badges/generate?panels=2&primaryLabel=++安装器&secondaryLabel=下载&primaryBGColor=%23359e4f&primaryTextColor=%23ffffff&secondaryBGColor=%23f9f9fd&secondaryTextColor=%23000000&primaryFontSize=12&primaryFontWeight=600&primaryLetterSpacing=2&primaryFontFamily=Roboto&primaryTextTransform=uppercase&secondaryFontSize=12&secondaryFontWeight=900&secondaryLetterSpacing=2&secondaryFontFamily=Montserrat&secondaryTextTransform=uppercase&primaryIcon=android&primaryIconColor=%23ffffff&primaryIconSize=16&primaryIconPosition=left&borderRadius=10)](https://github.com/bluearchive-cafe/Cafe.Launcher.Android/releases)
-
-</div>
-
-### 2. 手动安装
+### 1. 手动安装
 
 > [!NOTE]
 > 此方案可以直接下载安装包进行安装，版本更新后需要手动下载新版安装包进行覆盖安装。
@@ -36,7 +19,7 @@
 
 </div>
 
-### 3. 替换资源
+### 2. 替换资源
 
 > [!NOTE]
 > 此方案可以配合官方原版客户端使用，无需卸载和安装客户端，但仅支持 `文本汉化` 功能，且游戏内字体显示异常。
