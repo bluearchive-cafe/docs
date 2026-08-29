@@ -5,10 +5,11 @@
 提交反馈前，请确保：
 
 * 您当前使用的程序版本为最新。可在“设置 → 关于 → 检查更新”确认。
-* 您应当先在 [帮助文档](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/blob/main/README.md) 和 [常见问题（FAQ）](https://docs.bluearchive.cafe/cafe-launcher/faq) 中搜索您遇到的问题。许多常见故障可以通过文档方案快速自行解决。
+* 您应当先在 [帮助文档](https://docs.bluearchive.cafe/cafe-launcher/) 和 [常见问题（FAQ）](https://docs.bluearchive.cafe/cafe-launcher/faq) 中搜索您遇到的问题。许多常见故障可以通过文档方案快速自行解决。
 
 如果您查阅文档后问题仍未解决，请在提交反馈时提供以下核心信息，以便开发者快速定位问题：
 
+* GitHub 问题统一提交到 [Cafe.Launcher.Avalonia Issues](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/issues)
 * 请说明问题的具体表现，并尽可能提供完整的复现步骤
 * 适当的截图
 * 程序的运行环境，包括操作系统、硬件信息、网络环境等

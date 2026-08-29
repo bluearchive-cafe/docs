@@ -4,7 +4,7 @@
 
 ## 项目简介
 
-Cafe Launcher 是一款基于 .NET 10 + Avalonia 框架开发的**第三方** Blue Archive 日服 PC 启动器。
+Cafe Launcher 是一款基于 .NET 10 + Avalonia 框架开发的**第三方** Blue Archive 日服桌面启动器。Windows 为正式支持平台；macOS arm64 与 Linux x64 当前提供实验性构建。
 
 项目旨在复刻官方启动器的功能及下载方式，并在此基础上提供比官方启动器更低的资源占用与自定义能力。
 
@@ -16,6 +16,7 @@ Cafe Launcher 是一款基于 .NET 10 + Avalonia 框架开发的**第三方** Bl
 - **[卸载与数据](./uninstall)** — 卸载启动器、数据文件位置、与官方启动器共存
 - **[常见问题](./faq)** — 故障排除与获取帮助
 - **[GitHub Releases](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/releases)** — 下载最新版本
+- **[GitHub 源码](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia)** — 查看源码、开发进度与提交问题
 
 ## 项目特性
 
@@ -28,6 +29,10 @@ Cafe Launcher 是一款基于 .NET 10 + Avalonia 框架开发的**第三方** Bl
 - **与官方共存** — 共享游戏目录，可交替使用官方启动器
 - **启动器更新** — stable / beta 双频道，支持启动时后台检查与手动检查
 
-## 项目开发者
+## 项目与许可
 
-[WIP]
+Cafe Launcher 源代码采用 MIT License。源码、Release 分发和使用文档分别由以下仓库维护：
+
+- [Cafe.Launcher.Avalonia](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia) — 启动器源码与 Issues
+- [Cafe.Launcher.Avalonia_Release](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release) — Release 与可下载文件
+- [docs](https://github.com/bluearchive-cafe/docs) — 本文档站源码

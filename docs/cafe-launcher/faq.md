@@ -32,7 +32,7 @@
 
 ## 启动器自身更新
 
-启动器默认在初始化完成后后台检查所选更新频道，可在“设置 → 常规”关闭。检测到新版本时会显示通知；也可在“设置 → 关于”手动检查。更新对话框会列出安装包和便携包，选择后通过浏览器下载，安装仍需手动完成。
+启动器默认在初始化完成后后台检查所选更新频道，可在“设置 → 常规”关闭。检测到新版本时会显示通知；也可在“设置 → 关于”手动检查。更新对话框会列出该版本的 Release 文件；请选择与当前平台匹配的文件，再通过浏览器下载并手动安装。
 
 更新查询优先使用 Cafe 服务；该路径出现 HTTP 错误时会回退 GitHub Releases API。启动时检查失败只会写入诊断日志，不会阻止启动器继续使用；手动检查失败会通过 Toast 显示具体错误原因。
 
@@ -49,15 +49,13 @@
 
 ## 项目是否开源？
 
-Cafe Launcher 目前未开放源代码。
+是。Cafe Launcher 源代码已在 [bluearchive-cafe/Cafe.Launcher.Avalonia](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia) 公开，并采用 MIT License。
 
-公开的 [GitHub Releases](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/releases) 用于分发安装包，Issues 用于问题反馈。
-
-如果您有意向贡献代码或参与开发，欢迎通过邮件或官方群组联系开发者。
+[Cafe.Launcher.Avalonia_Release](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/releases) 仅用于分发 Release 文件；开发进度和问题反馈统一在源码仓库维护。
 
 ## 获取帮助
 
-- **GitHub Issues**：[提交问题反馈](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/issues)
+- **GitHub Issues**：[提交问题反馈](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/issues)
 - **邮件反馈**：<feedback@bluearchive.cafe>
 - **官方网站**：[bluearchive.cafe](https://bluearchive.cafe/)
 - **日志提交**：遇到 Bug 时请导出并附带日志文件（设置 → 高级 → 导出日志）

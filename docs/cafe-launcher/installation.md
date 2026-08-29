@@ -11,14 +11,20 @@
 | 网络 | 宽带连接 |
 | 运行库 | 无需额外安装（自包含发布） |
 
+以上为正式支持的 Windows 环境。macOS Apple Silicon 与 Linux x64 自 `v1.1.0-beta.1` 起提供实验性构建，尚未完成针对性适配与充分测试；可用性请以具体 Release 说明为准。
+
 ## 下载
 
-从 [GitHub Releases](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/releases) 获取最新版本。每个版本提供两种格式：
+从 [GitHub Releases](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/releases) 获取最新版本，并选择与系统匹配的文件：
 
 | 格式 | 文件名 | 说明 |
 |------|--------|------|
-| 安装版（推荐） | `Cafe.Launcher.Avalonia_v*_setup.exe` | 带安装向导，自动创建快捷方式和卸载入口 |
-| 便携版 | `Cafe.Launcher.Avalonia_v*_standalone.zip` | 解压即用，不写入注册表 |
+| Windows 安装版（推荐） | `Cafe.Launcher.Avalonia_v*_setup.exe` | 带安装向导，自动创建快捷方式和卸载入口 |
+| Windows 自包含 ZIP | `Cafe.Launcher.Avalonia_v*_win-x64.zip` | 解压即用，不写入注册表 |
+| macOS Apple Silicon | `Cafe.Launcher.Avalonia_v*_osx-arm64.zip` | 内含 `Cafe Launcher.app`；实验性构建 |
+| Linux x64 | `Cafe.Launcher.Avalonia_v*_linux-x64.AppImage` 或 `*_linux-x64.tar.gz` | 实验性构建 |
+
+旧版本可能使用 `_standalone.zip` 文件名，具体以所选 Release 的资产列表为准。下文安装、界面和数据路径说明以 Windows 版本为准。
 
 ## 安装版步骤
 
@@ -35,8 +41,8 @@
 
 ## 便携版步骤
 
-1. 下载 `standalone.zip`
-2. 解压到任意目录（建议不含中文路径）
+1. 下载 `win-x64.zip`（旧版本为 `standalone.zip`）
+2. 解压到任意目录
 3. 双击 `Cafe.Launcher.Avalonia.exe` 运行
 
 ## 界面概览
