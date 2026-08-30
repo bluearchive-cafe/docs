@@ -1,43 +1,47 @@
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
-  srcDir: "docs",
+  srcDir: 'docs',
   base: process.env.BASE_PATH ?? '/',
 
   lang: 'zh-CN',
-  title: "蔚蓝咖啡厅 文档站",
-  description: "在这里查看 蔚蓝咖啡厅 汉化包的使用文档。",
+  title: '蔚蓝咖啡厅文档',
+  description: '蔚蓝咖啡厅汉化客户端与 Cafe Launcher 的安装、使用和故障排查文档。',
   lastUpdated: true,
+
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
-      { text: '安装', link: '/platform' }
+      { text: '汉化客户端', link: '/guide/' },
+      { text: 'Cafe Launcher', link: '/cafe-launcher/' },
+      { text: '下载', link: 'https://bluearchive.cafe/download' }
     ],
 
     sidebar: [
       {
-        text: '文档',
+        text: '汉化客户端',
         items: [
-          { text: '使用配置', link: '/guide/index' },
+          { text: '使用与配置', link: '/guide/' },
           { text: '常见问题', link: '/guide/qa' },
+          {
+            text: '按平台安装',
+            collapsed: false,
+            items: [
+              { text: '平台总览', link: '/platform/' },
+              { text: 'Android', link: '/platform/android' },
+              { text: 'iOS', link: '/platform/ios' },
+              { text: 'Windows', link: '/platform/windows' },
+              { text: 'macOS', link: '/platform/macos' }
+            ]
+          }
         ]
       },
       {
-        text: '安装',
+        text: 'Cafe Launcher',
         items: [
-          { text: 'Android', link: '/platform/android' },
-          { text: 'iOS', link: '/platform/ios' },
-          { text: 'Windows', link: '/platform/windows' },
-          { text: 'macOS', link: '/platform/macos' }
-        ]
-      },{
-        text: 'Cafe Launcher 使用文档',
-        items: [
-          { text: '欢迎', link: '/cafe-launcher/index' },
-          { text: '安装', link: '/cafe-launcher/installation' },
-          { text: '设置', link: '/cafe-launcher/settings' },
+          { text: '项目介绍', link: '/cafe-launcher/' },
+          { text: '安装与首次使用', link: '/cafe-launcher/installation' },
+          { text: '设置参考', link: '/cafe-launcher/settings' },
           { text: '游戏操作', link: '/cafe-launcher/operations' },
           { text: '卸载与数据', link: '/cafe-launcher/uninstall' },
           { text: '常见问题', link: '/cafe-launcher/faq' },
@@ -73,7 +77,13 @@ export default defineConfig({
       }
     },
 
+    editLink: {
+      pattern: 'https://github.com/bluearchive-cafe/docs/edit/main/docs/:path',
+      text: '在 GitHub 上编辑此页'
+    },
+
     outline: {
+      level: [2, 3],
       label: '本页目录'
     },
 
@@ -101,18 +111,22 @@ export default defineConfig({
 
     notFound: {
       title: '页面未找到',
-      quote: '您访问的页面不存在，或已经被移动。',
+      quote: '你访问的页面不存在，或已经被移动。',
       linkText: '返回首页',
       linkLabel: '返回首页'
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/bluearchive-cafe', ariaLabel: 'GitHub 组织'}
+      {
+        icon: 'github',
+        link: 'https://github.com/bluearchive-cafe',
+        ariaLabel: '蔚蓝咖啡厅 GitHub'
+      }
     ],
 
     footer: {
-      message: '基于 MIT 许可证发布。',
-      copyright: '版权所有 © 2026 蔚蓝咖啡厅。保留所有权利。'
+      message: '文档源代码基于 MIT License 发布。',
+      copyright: '版权所有 © 2026 蔚蓝咖啡厅。'
     }
   }
 })

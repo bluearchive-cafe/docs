@@ -1,38 +1,57 @@
-# 欢迎
+# Cafe Launcher
 
-这是 Cafe Launcher 的文档页面，你可以在这里查看 Cafe Launcher 的使用方法及其他内容。
+Cafe Launcher 是面向 Blue Archive 日服的第三方桌面启动器，使用 .NET 10 与 Avalonia 构建。它负责安装、更新、修复和启动游戏，并在官方启动器流程之上提供更可靠的下载控制、双 CDN、界面定制和本地诊断。
 
-## 项目简介
+> [!IMPORTANT]
+> Cafe Launcher 是社区维护项目，与 Nexon、Nexon Games、Yostar 及 Blue Archive 官方无隶属或合作关系。启动器不修改游戏进程，也不向游戏注入代码。
 
-Cafe Launcher 是一款基于 .NET 10 + Avalonia 框架开发的**第三方** Blue Archive 日服桌面启动器。Windows 为正式支持平台；macOS arm64 与 Linux x64 当前提供实验性构建。
+## 从这里开始
 
-项目旨在复刻官方启动器的功能及下载方式，并在此基础上提供比官方启动器更低的资源占用与自定义能力。
+- 第一次使用：阅读[安装与首次使用](/cafe-launcher/installation)
+- 已经安装：查看[设置参考](/cafe-launcher/settings)和[游戏操作](/cafe-launcher/operations)
+- 需要迁移或清理：查看[卸载与数据](/cafe-launcher/uninstall)
+- 遇到错误：先查阅[常见问题](/cafe-launcher/faq)，再按[反馈指南](/cafe-launcher/feedback)导出日志
 
-## 快速导航
+## 主要能力
 
-- **[安装](./installation)** — 系统要求、下载、安装步骤、首次安装游戏
-- **[设置](./settings)** — 6 个设置分类完整参考
-- **[游戏操作](./operations)** — 安装 / 更新 / 修复 / 卸载游戏、系统托盘
-- **[卸载与数据](./uninstall)** — 卸载启动器、数据文件位置、与官方启动器共存
-- **[常见问题](./faq)** — 故障排除与获取帮助
-- **[GitHub Releases](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/releases)** — 下载最新版本
-- **[GitHub 源码](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia)** — 查看源码、开发进度与提交问题
+### 游戏管理
 
-## 项目特性
+- 识别已有游戏目录
+- 安装和增量更新游戏文件
+- 校验并修复缺失或损坏的文件
+- 在启动前按本地清单、远程清单或不检查三种模式验证文件
+- 按清单卸载游戏，保留未由启动器管理的文件
 
-- **轻量高效** — 基于 .NET 10 自包含原生桌面运行时，不使用 Electron
-- **深度自定义** — 主题色、壁纸、语言、下载限速等多项可配置项
-- **多语言支持** — 界面支持 English / 简体中文 / 繁體中文 / 日本語
-- **断点续传** — 游戏下载支持暂停、恢复和 CRC64 完整性校验
-- **双 CDN 线路** — 官方与社区 CDN 自由切换
-- **安全可靠** — 全用户安装、显式文件清单、路径遍历防护
-- **与官方共存** — 共享游戏目录，可交替使用官方启动器
-- **启动器更新** — stable / beta 双频道，支持启动时后台检查与手动检查
+### 下载与网络
 
-## 项目与许可
+- 并发下载、断点续传、暂停、继续和停止
+- 1、5、10、25、50 MB/s 速度限制或不限速
+- 下载完成后的 CRC64 完整性校验
+- 官方 CDN 与 Cafe CDN 切换
+- 自动、直连和系统代理三种网络模式
 
-Cafe Launcher 源代码采用 MIT License。源码、Release 分发和使用文档分别由以下仓库维护：
+### 桌面体验
 
-- [Cafe.Launcher.Avalonia](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia) — 启动器源码与 Issues
-- [Cafe.Launcher.Avalonia_Release](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release) — Release 与可下载文件
-- [docs](https://github.com/bluearchive-cafe/docs) — 本文档站源码
+- 系统、浅色和深色主题
+- 默认、系统、壁纸提取和自定义主题色
+- 内置、远程或自定义背景
+- English、简体中文、繁體中文和日本語界面
+- 系统托盘、窗口位置记忆和减少动态效果
+- 本地日志查看、筛选和 ZIP 导出
+
+## 平台状态
+
+| 平台 | 架构 | 状态 |
+| --- | --- | --- |
+| Windows | x64 | 正式支持 |
+| macOS | Apple Silicon | 实验性 |
+| Linux | x64 | 实验性 |
+
+所有发行包都包含所需的 .NET Runtime。macOS 和 Linux 尚未完成与 Windows 同等程度的适配和测试；Linux 下启动 Windows 游戏客户端还依赖兼容层，反作弊兼容性未经验证。
+
+## 项目链接
+
+- [下载 Cafe Launcher](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/releases)
+- [源码与 Issues](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia)
+- [隐私与免责声明](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/blob/main/PRIVACY.md)
+- [第三方许可](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/blob/main/THIRD-PARTY-NOTICES.md)
