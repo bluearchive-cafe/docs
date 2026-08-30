@@ -1,0 +1,60 @@
+name: 文档问题
+description: 报告内容错误、缺失、过期、链接失效或阅读体验问题
+title: "[Docs] "
+body:
+  - type: input
+    id: page
+    attributes:
+      label: 页面地址
+      description: 请填写出现问题的线上文档 URL；若问题涉及多个页面，可列出主要入口。
+      placeholder: https://docs.bluearchive.cafe/...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 问题类型
+      options:
+        - 内容不准确或已经过期
+        - 缺少必要说明
+        - 操作步骤不清晰
+        - 链接或下载入口失效
+        - 截图与当前界面不一致
+        - 排版、错别字或术语问题
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: 当前问题
+      description: 引用必要的短句或指出具体章节，并说明为什么存在问题。
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 建议修改
+      description: 如果知道正确内容，请提供依据、建议文案或期望结构。
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: 补充材料
+      description: 可附上截图、有效链接、对应版本或相关源码位置。
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我已搜索现有 Issue，确认没有相同的文档问题。
+          required: true
+        - label: 我提供的链接和附件不包含账号凭据或其他敏感信息。
+          required: true
+

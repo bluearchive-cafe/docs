@@ -1,0 +1,9 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Cafe Launcher 程序问题
+    url: https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/issues/new/choose
+    about: 启动器 Bug、兼容问题和功能建议请提交到源码仓库
+  - name: 浏览线上文档
+    url: https://docs.bluearchive.cafe/
+    about: 提交前请先搜索现有安装、使用和排障说明
+
