@@ -2,7 +2,7 @@
 
 点击主窗口右上角的齿轮打开设置。大多数修改只有在点击“保存”后才会写入 `settings.json`；取消或直接关闭设置会放弃未保存的修改。
 
-![Cafe Launcher 设置](../assets/screenshots/settings.png)
+![Cafe Launcher 设置](../assets/screenshots/settings.webp)
 
 > [!NOTE]
 > “更改游戏路径”和“检测已安装游戏”属于即时操作，会立即保存路径并刷新主界面状态。

@@ -37,7 +37,7 @@
 3. 确认安装目录和快捷方式选项。
 4. 安装完成后启动 Cafe Launcher。
 
-![Windows 安装向导](../assets/screenshots/installer-welcome.png)
+![Windows 安装向导](../assets/screenshots/installer-welcome.webp)
 
 默认安装目录是 `C:\Program Files\Cafe Launcher`。安装、升级和卸载按所有用户范围执行，需要管理员权限。
 
@@ -77,13 +77,13 @@ Linux 系统需要提供图形、字体和基础运行库。若程序无法启�
 
 ## 5. 识别或安装游戏
 
-![Cafe Launcher 主窗口](../assets/screenshots/main-window.png)
+![Cafe Launcher 主窗口](../assets/screenshots/main-window.webp)
 
 - 如果已有官方启动器下载的游戏，选择其 `BlueArchive_JP` 目录。启动器会读取 `manifest.json` 和 `game-launcher-config.json`，无需重复下载完整游戏。
 - 如果未安装游戏，点击主界面的“安装”。下载期间可以暂停或继续，完成后会自动校验。
 - 如果目录中只有部分文件，启动器会根据清单计算并下载缺失内容。
 
-![游戏下载进度](../assets/screenshots/download-progress.png)
+![游戏下载进度](../assets/screenshots/download-progress.webp)
 
 > [!TIP]
 > 安装前请确认目录可写，并预留足够空间。不要把游戏安装到只读目录；Linux 软件包和 AppImage 默认会改用用户主目录下的 `YostarGames/BlueArchive_JP`。

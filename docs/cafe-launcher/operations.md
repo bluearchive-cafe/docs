@@ -17,7 +17,7 @@
 - **停止**：取消当前操作；确认后会放弃这次下载任务状态。
 - **限速**：在“设置 → 下载与网络”调整速度上限。
 
-![下载进度](../assets/screenshots/download-progress.png)
+![下载进度](../assets/screenshots/download-progress.webp)
 
 只有当游戏版本、清单、目录和下载源与保存的任务一致时，启动器才会在下次启动时恢复进度，避免把旧任务错误应用到另一套文件。
 
@@ -65,4 +65,4 @@ Linux 会根据“设置 → 游戏 → 兼容运行时”选择自动、原生�
 - 从托盘菜单可以重新显示窗口或彻底退出。
 - 再次启动 Cafe Launcher 会唤醒已有实例，不会并行打开第二个实例。
 
-![系统托盘菜单](../assets/screenshots/system-tray.png)
+![系统托盘菜单](../assets/screenshots/system-tray.webp)
