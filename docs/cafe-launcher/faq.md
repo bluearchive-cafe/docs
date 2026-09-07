@@ -6,6 +6,16 @@ Windows 用户优先选择 `setup.exe`；需要便携运行时选择 `win-x64.zi
 
 带有 `beta` 的版本是测试版。完整对照见[安装与首次使用](/cafe-launcher/installation)。
 
+## v1.1.0-beta.5 启动器无法启动（启动即崩溃）
+
+**症状**：双击启动器后窗口一闪而过或完全不出现。查看日志可见 `System.InvalidOperationException: NoServiceRegistered, Cafe.Launcher.Avalonia.Services.WindowFilePickerService`。
+
+**原因**：v1.1.0-beta.5 首批发布构建早于修复提交，DI 容器中缺少 `WindowFilePickerService` 的具体类型注册，导致启动时解析服务即崩溃。这是构建打包问题，与你的系统环境、杀毒软件或游戏目录无关。
+
+**解决**：beta.5 已在问题发现后修复并重新发布。从[发布页](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/releases)重新下载 beta.5（或更新版本）覆盖安装即可。设置与用户数据保存在独立的数据目录中，覆盖安装不会丢失游戏路径等配置。
+
+不确定自己装的是哪个构建时，可打开数据目录查看日志开头的 `CommitSha`：受影响构建为 `b33915d`，修复后的构建为其之后的提交。
+
 ## 可以复用官方启动器下载的游戏吗？
 
 可以。首次向导或“设置 → 游戏”中选择现有 `BlueArchive_JP` 目录。Cafe Launcher 会读取其中的 `manifest.json` 与 `game-launcher-config.json`。
