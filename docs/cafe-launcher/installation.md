@@ -5,13 +5,13 @@
 | 平台 | 可用发行包 | 支持状态 |
 | --- | --- | --- |
 | Windows 10 1809+ / Windows 11 x64 | 安装程序、便携 ZIP | 正式支持 |
-| macOS Apple Silicon | `.app` 压缩包 | 实验性 |
+| macOS Apple Silicon | `.app` 压缩包 | 实验性（暂不支持启动游戏） |
 | Linux x64 | `.deb`、AppImage、`tar.gz` | 实验性 |
 
 发行包为自包含应用，无需另行安装 .NET Runtime。游戏本体仍需要足够的磁盘空间和持续可用的网络连接。
 
 > [!WARNING]
-> macOS 与 Linux 版本仍为实验性构建。Linux 下使用 UMU / Proton 或 Wine 启动 Windows 游戏客户端时，XIGNCODE3 反作弊兼容性未经验证。
+> macOS 与 Linux 版本仍为实验性构建。Linux 下使用 UMU / Proton 或 Wine 启动 Windows 游戏客户端时，XIGNCODE3 反作弊兼容性未经验证。macOS 版本目前只能安装、更新和修复游戏，启动游戏暂无支持计划。
 
 ## 2. 下载正确的文件
 
@@ -52,6 +52,8 @@
 ### macOS
 
 解压 `osx-arm64.zip`，将 `Cafe Launcher.app` 移入“应用程序”后运行。该构建仅适用于 Apple Silicon Mac。
+
+macOS 上只能安装、更新和修复游戏：启动 Windows 游戏客户端需要额外的兼容运行层，当前不提供，也暂无支持计划。
 
 ### Linux
 

@@ -44,10 +44,10 @@ Cafe Launcher 是面向 Blue Archive 日服的第三方桌面启动器，使用 
 | 平台 | 架构 | 状态 |
 | --- | --- | --- |
 | Windows | x64 | 正式支持 |
-| macOS | Apple Silicon | 实验性 |
+| macOS | Apple Silicon | 实验性（暂不支持启动游戏） |
 | Linux | x64 | 实验性 |
 
-所有发行包都包含所需的 .NET Runtime。macOS 和 Linux 尚未完成与 Windows 同等程度的适配和测试；Linux 下启动 Windows 游戏客户端还依赖兼容层，反作弊兼容性未经验证。
+所有发行包都包含所需的 .NET Runtime。macOS 和 Linux 尚未完成与 Windows 同等程度的适配和测试；Linux 下启动 Windows 游戏客户端还依赖兼容层，反作弊兼容性未经验证。macOS 版本目前只能安装、更新和修复游戏，启动游戏所需的兼容运行层当前不提供，也暂无支持计划。
 
 ## 项目链接
 

@@ -77,6 +77,10 @@ Windows 用户优先选择 `setup.exe`；需要便携运行时选择 `win-x64.zi
 
 启动器本身提供 Linux x64 实验性构建，并可选择自动、UMU / Proton 或 Wine 等兼容运行时。但 Blue Archive Windows 客户端及 XIGNCODE3 反作弊的兼容性未经验证，不能保证可以进入游戏。
 
+## macOS 能启动游戏吗？
+
+不能。macOS 版本目前只能安装、更新和修复游戏：启动 Windows 游戏客户端需要额外的兼容运行层，macOS 上当前不提供，也暂无支持计划。需要启动游戏请在 Windows 上使用。
+
 ## 如何查看或导出日志？
 
 打开“设置 → 高级”：
