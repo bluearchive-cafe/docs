@@ -33,13 +33,24 @@
 ### Windows 安装版
 
 1. 运行 `setup.exe`。
-2. 接受系统的管理员权限提示。
-3. 确认安装目录和快捷方式选项。
-4. 安装完成后启动 Cafe Launcher。
+2. 选择安装语言，可选项为 English、简体中文和日本語。该选择只影响安装程序本身，启动器界面语言在下一步的首次设置中单独选择。
 
-![Windows 安装向导](../assets/screenshots/installer-welcome.webp)
+   ![Windows 安装向导：选择安装语言](../assets/screenshots/installer-language.webp)
 
-默认安装目录是 `C:\Program Files\Cafe Launcher`。安装、升级和卸载按所有用户范围执行，需要管理员权限。
+3. 接受系统的管理员权限提示。
+4. 确认安装目录。默认写入 `C:\Program Files\Cafe Launcher`，向导同时显示所选磁盘的可用空间。
+
+   ![Windows 安装向导：选择目标位置](../assets/screenshots/installer-destination.webp)
+
+5. 选择附加任务，可以创建桌面快捷方式。
+
+   ![Windows 安装向导：选择附加任务](../assets/screenshots/installer-tasks.webp)
+
+6. 完成后可以直接勾选“运行 Cafe Launcher”启动程序。
+
+   ![Windows 安装向导：完成](../assets/screenshots/installer-finished.webp)
+
+安装、升级和卸载按所有用户范围执行，需要管理员权限。覆盖安装新版本时，游戏文件和用户设置不会被删除。
 
 ### Windows 便携版
 
@@ -65,24 +76,24 @@ Linux 系统需要提供图形、字体和基础运行库。若程序无法启�
 
 ## 4. 完成首次设置
 
-第一次启动时会显示五步向导：
+第一次启动时会显示五步向导，每一步都可以用“上一步”返回修改。
 
 1. **语言**：选择启动器界面语言。
-2. **下载源**：官方源提供原始日服资源；Cafe 源由蔚蓝咖啡厅（bluearchive.cafe）日服汉化组提供，含社区 CDN 与本地化资源。
-3. **游戏路径**：选择一个基础目录，启动器会规范化为 `YostarGames/BlueArchive_JP`。
+2. **下载源**：官方源提供原始日服资源；Cafe 源由蔚蓝咖啡厅（bluearchive.cafe）日服汉化组提供，内置本地化（汉化）资源。
+3. **游戏安装路径**：选择一个基础目录，游戏会安装在该目录的 `YostarGames\BlueArchive_JP` 子目录中。如果所选目录中已经存在有效安装，向导会直接识别出来。
 4. **代理**：选择自动、直连或系统代理。
-5. **复核**：确认设置，或返回已完成步骤修改。
+5. **确认您的设置**：复核以上四项，每项都可以单独“修改”，确认后点击“完成”应用。
 
 中文系统默认选择 Cafe 源，其他语言环境默认选择官方源。稳定构建默认跟踪稳定频道，预发布构建默认跟踪测试频道；两项设置之后都可以修改。
 
-按 `Esc` 或选择跳过时，启动器会先要求确认，再应用默认设置。
+选择“跳过引导”或按 `Esc` 时，启动器会先确认，再应用默认设置。
 
 ## 5. 识别或安装游戏
 
 ![Cafe Launcher 主窗口](../assets/screenshots/main-window.webp)
 
 - 如果已有官方启动器下载的游戏，选择其 `BlueArchive_JP` 目录。启动器会读取 `manifest.json` 和 `game-launcher-config.json`，无需重复下载完整游戏。
-- 如果未安装游戏，点击主界面的“安装”。下载期间可以暂停或继续，完成后会自动校验。
+- 如果未安装游戏，点击主界面的“安装游戏”。下载期间可以暂停或继续，完成后会自动校验。
 - 如果目录中只有部分文件，启动器会根据清单计算并下载缺失内容。
 
 ![游戏下载进度](../assets/screenshots/download-progress.webp)

@@ -1,14 +1,17 @@
 # Cafe Launcher
 
-Cafe Launcher 是面向 Blue Archive 日服的第三方桌面启动器，使用 .NET 10 与 Avalonia 构建。它负责安装、更新、修复和启动游戏，并在官方启动器流程之上提供更可靠的下载控制、双 CDN、界面定制和本地诊断。
+Cafe Launcher 是面向 Blue Archive 日服的第三方桌面启动器，使用 .NET 10 与 Avalonia 构建。它负责安装、更新、修复和启动游戏，并在官方启动器流程之上提供更可靠的下载控制、双 CDN、界面定制、本地化资源管理和本地诊断。
 
 > [!IMPORTANT]
 > Cafe Launcher 是社区维护项目，与 Nexon、Nexon Games、Yostar 及 Blue Archive 官方无隶属或合作关系。启动器不修改游戏进程，也不向游戏注入代码。
+
+![Cafe Launcher 主界面](../assets/screenshots/main-window.webp)
 
 ## 从这里开始
 
 - 第一次使用：阅读[安装与首次使用](/cafe-launcher/installation)
 - 已经安装：查看[设置参考](/cafe-launcher/settings)和[游戏操作](/cafe-launcher/operations)
+- 需要切换汉化资源：查看[资源面板](/cafe-launcher/resource-panel)
 - 需要迁移或清理：查看[卸载与数据](/cafe-launcher/uninstall)
 - 遇到错误：先查阅[常见问题](/cafe-launcher/faq)，再按[反馈指南](/cafe-launcher/feedback)导出日志
 
@@ -38,6 +41,14 @@ Cafe Launcher 是面向 Blue Archive 日服的第三方桌面启动器，使用 
 - English、简体中文、繁體中文和日本語界面
 - 系统托盘、窗口位置记忆和减少动态效果
 - 本地日志查看、筛选和 ZIP 导出
+
+### 汉化资源
+
+- 按 UID 管理游戏文本、主线中配和图像视频三类本地化资源
+- 自动从游戏目录读取 UID，也可以手动填写
+- 每类资源单独开关，并显示官方与本地化资源的版本对照
+
+详见[资源面板](/cafe-launcher/resource-panel)。
 
 ## 平台状态
 

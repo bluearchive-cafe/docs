@@ -96,6 +96,7 @@ export default defineConfig({
           { text: '安装与首次使用', link: '/cafe-launcher/installation' },
           { text: '设置参考', link: '/cafe-launcher/settings' },
           { text: '游戏操作', link: '/cafe-launcher/operations' },
+          { text: '资源面板', link: '/cafe-launcher/resource-panel' },
           { text: '卸载与数据', link: '/cafe-launcher/uninstall' },
           { text: '常见问题', link: '/cafe-launcher/faq' },
           { text: '反馈指南', link: '/cafe-launcher/feedback' }
