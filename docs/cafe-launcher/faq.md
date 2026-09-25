@@ -81,7 +81,7 @@ macOS 与 Linux 不支持应用内更新，对话框的主按钮是“前往发�
 
 ## Linux 能直接运行游戏吗？
 
-启动器本身提供 Linux x64 实验性构建，并可选择自动、UMU / Proton 或 Wine 等兼容运行时。但 Blue Archive Windows 客户端及 XIGNCODE3 反作弊的兼容性未经验证，不能保证可以进入游戏。
+启动器本身提供 Linux x64 实验性构建，并可选择自动、UMU / Proton 或 Wine 等兼容运行时。整条启动链路（含 XIGNCODE3 反作弊）已在 Arch Linux + UMU 1.4.4 + UMU-Proton 10.0-4 + NTFS3 游戏目录这一组合上实机验证可进入游戏；其他发行版、Proton 构建与显卡驱动组合尚未验证，反作弊兼容性受这些因素影响，不能保证可以进入游戏。
 
 ## macOS 能启动游戏吗？
 

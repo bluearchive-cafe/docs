@@ -67,7 +67,7 @@ Toast 通知始终启用，没有单独开关；提示条按类型停留固定�
 
 | 设置 | 说明 |
 | --- | --- |
-| 运行环境 | 选择启动 Windows 游戏客户端的方式，可选自动、Windows（原生）、UMU / Proton（实验性）、Wine（实验性）；Linux 选项均为实验性，XIGNCODE3 反作弊兼容性未经验证 |
+| 运行环境 | 选择启动 Windows 游戏客户端的方式，可选自动、Windows（原生）、UMU / Proton（实验性）、Wine（实验性）；Linux 选项均为实验性，XIGNCODE3 反作弊已在特定组合（Arch + UMU 1.4.4 + UMU-Proton 10.0-4 + NTFS3）上实机验证，其他组合尚未验证 |
 | 运行器路径 | 自定义 `umu-run` 或 `wine` 可执行文件，留空自动检测 |
 | Prefix 路径 | 留空由 Cafe Launcher 按运行器管理相互隔离的 Prefix |
 | Proton 路径 | 自定义 UMU 使用的 Proton 版本，留空由 UMU 自动选择 |

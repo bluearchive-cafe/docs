@@ -6,12 +6,12 @@
 | --- | --- | --- |
 | Windows 10 1809+ / Windows 11 x64 | 安装程序、便携 ZIP | 正式支持 |
 | macOS Apple Silicon | `.app` 压缩包 | 实验性（暂不支持启动游戏） |
-| Linux x64 | `.deb`、AppImage、`tar.gz` | 实验性 |
+| Linux x64 | `.deb`、`.rpm`、AppImage、`.tar.gz` | 实验性 |
 
 发行包为自包含应用，无需另行安装 .NET Runtime。游戏本体仍需要足够的磁盘空间和持续可用的网络连接。
 
 > [!WARNING]
-> macOS 与 Linux 版本仍为实验性构建。Linux 下使用 UMU / Proton 或 Wine 启动 Windows 游戏客户端时，XIGNCODE3 反作弊兼容性未经验证。macOS 版本目前只能安装、更新和修复游戏，启动游戏暂无支持计划。
+> macOS 与 Linux 版本仍为实验性构建。Linux 可通过 UMU / Proton 或 Wine 启动 Windows 游戏客户端：整条链路（含 XIGNCODE3 反作弊）已在 Arch Linux + UMU 1.4.4 + UMU-Proton 10.0-4 + NTFS3 游戏目录这一组合上实机验证可正常进入游戏，其他发行版、Proton 构建与显卡驱动组合尚未验证，不保证可玩。macOS 版本目前只能安装、更新和修复游戏，启动游戏暂无支持计划。
 
 ## 2. 下载正确的文件
 
@@ -23,6 +23,7 @@
 | `Cafe.Launcher.Avalonia_v*_win-x64.zip` | Windows 便携版 |
 | `Cafe.Launcher.Avalonia_v*_osx-arm64.zip` | Apple Silicon Mac |
 | `Cafe.Launcher.Avalonia_v*_linux-x64.deb` | Debian、Ubuntu 等发行版 |
+| `Cafe.Launcher.Avalonia_v*_linux-x64.rpm` | Fedora、openSUSE 等 RPM 系发行版 |
 | `Cafe.Launcher.Avalonia_v*_linux-x64.AppImage` | Linux 免安装运行 |
 | `Cafe.Launcher.Avalonia_v*_linux-x64.tar.gz` | Linux 手动解压部署 |
 
@@ -69,6 +70,7 @@ macOS 上只能安装、更新和修复游戏：启动 Windows 游戏客户端�
 ### Linux
 
 - `.deb`：通过发行版的软件包管理工具安装。
+- `.rpm`：通过 RPM 系发行版的软件包管理工具安装。
 - AppImage：赋予执行权限后直接运行。
 - `tar.gz`：解压后运行 `Cafe.Launcher.Avalonia`。
 
