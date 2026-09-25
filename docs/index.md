@@ -43,7 +43,7 @@ features:
 
 ### 在电脑上管理日服游戏
 
-[Cafe Launcher](/cafe-launcher/) 是基于 .NET 与 Avalonia 的第三方桌面启动器，可以安装、更新、修复和启动游戏，并提供官方与 Cafe 两条下载线路。
+[Cafe Launcher](/cafe-launcher/) 是基于 .NET 与 Avalonia 的第三方桌面启动器，可以安装、更新、修复和启动游戏，并提供官方下载源与 Cafe 下载源。
 
 Windows x64 为正式支持平台；macOS Apple Silicon 与 Linux x64 当前提供实验性构建。前往[安装与首次使用](/cafe-launcher/installation)查看下载文件和平台说明。
 
