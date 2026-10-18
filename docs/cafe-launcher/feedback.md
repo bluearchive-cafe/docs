@@ -1,8 +1,8 @@
-# 反馈指南
+# 反馈指南 <span id="feedback-guide"></span> {#反馈指南}
 
 清晰的版本、复现步骤和日志通常比一句“无法使用”更快定位问题。Cafe Launcher 的开发问题统一在[源码仓库 Issues](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/issues)跟踪。
 
-## 提交前
+## 提交前 <span id="before-reporting"></span> {#提交前}
 
 1. 在“设置 → 关于”确认当前版本，并检查是否有更新。
 2. 搜索[常见问题](/cafe-launcher/faq)和已有 Issues。
@@ -10,7 +10,7 @@
 4. 如果问题与下载或修复有关，记录所选下载源、代理模式和游戏目录所在磁盘。
 5. 如果使用 macOS 或 Linux，请明确说明；这些平台当前为实验性支持（macOS 暂不支持启动游戏）。
 
-## 一份有效的反馈应包含
+## 一份有效的反馈应包含 <span id="what-to-include"></span> {#一份有效的反馈应包含}
 
 - **标题**：用一句话说明动作与结果，例如“Cafe 下载源恢复下载后重复校验同一文件”。
 - **版本**：从“设置 → 关于”复制版本、构建配置和提交信息。
@@ -22,7 +22,7 @@
 
 请尽量复制完整错误文本，不要只提供模糊描述。对于偶发问题，请说明大致发生频率和最后一次发生时间。
 
-## 导出日志
+## 导出日志 <span id="export-logs"></span> {#导出日志}
 
 1. 打开 Cafe Launcher。
 2. 进入“设置 → 高级”。
@@ -41,14 +41,14 @@
 > [!WARNING]
 > “用户数据”包含设置、下载进度与公告已读状态，其中可能含有本地路径和玩家 UID。除非维护人员明确要求，否则不要勾选。
 
-## 截图与隐私
+## 截图与隐私 <span id="screenshots-and-privacy"></span> {#截图与隐私}
 
 - 截图前遮盖账号、UID、文件路径或通知中的个人信息。
 - 不要公开上传不确定是否包含敏感信息的完整用户数据目录。
 - 游戏崩溃日志和 Cafe Launcher 日志不是同一种文件，请优先使用启动器内置的导出功能。
 - 如果问题不适合公开，可以通过 <feedback@bluearchive.cafe> 联系项目组，并在邮件中引用相关 Issue（如有）。
 
-## 提交位置
+## 提交位置 <span id="where-to-report"></span> {#提交位置}
 
 - 功能缺陷、兼容问题、功能建议：[GitHub Issues](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/issues)
 - 使用方法：先查看[文档首页](/cafe-launcher/)和[常见问题](/cafe-launcher/faq)

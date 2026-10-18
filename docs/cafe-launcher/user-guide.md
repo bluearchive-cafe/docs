@@ -1,4 +1,4 @@
-# Cafe Launcher 使用指南
+# Cafe Launcher 使用指南 <span id="cafe-launcher-user-guide"></span> {#cafe-launcher-使用指南}
 
 Cafe Launcher 文档已经按任务拆分。请从最符合当前问题的页面开始：
 

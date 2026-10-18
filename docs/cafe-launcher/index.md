@@ -7,7 +7,7 @@ Cafe Launcher 是面向 Blue Archive 日服的第三方桌面启动器，使用 
 
 ![Cafe Launcher 主界面](../assets/screenshots/main-window.webp)
 
-## 从这里开始
+## 从这里开始 <span id="start-here"></span> {#从这里开始}
 
 - 第一次使用：阅读[安装与首次使用](/cafe-launcher/installation)
 - 已经安装：查看[设置参考](/cafe-launcher/settings)和[游戏操作](/cafe-launcher/operations)
@@ -15,17 +15,17 @@ Cafe Launcher 是面向 Blue Archive 日服的第三方桌面启动器，使用 
 - 需要迁移或清理：查看[卸载与数据](/cafe-launcher/uninstall)
 - 遇到错误：先查阅[常见问题](/cafe-launcher/faq)，再按[反馈指南](/cafe-launcher/feedback)导出日志
 
-## 主要能力
+## 主要能力 <span id="features"></span> {#主要能力}
 
-### 游戏管理
+### 游戏管理 <span id="game-management"></span> {#游戏管理}
 
 - 识别已有游戏目录
 - 安装和增量更新游戏文件
 - 校验并修复缺失或损坏的文件
 - 在启动前按本地清单、远程清单或不检查三种模式验证文件
-- 按清单卸载游戏，保留未由启动器管理的文件；需要时也可彻底清除整个安装目录
+- 卸载整个游戏目录（含游戏自行下载的资源和用户放入的文件），可选清理启动器管理的兼容环境
 
-### 下载与网络
+### 下载与网络 <span id="downloads-and-networking"></span> {#下载与网络}
 
 - 并发下载、断点续传、暂停、继续和停止
 - 1、5、10、25、50 MB/s 速度限制或不限速
@@ -33,7 +33,7 @@ Cafe Launcher 是面向 Blue Archive 日服的第三方桌面启动器，使用 
 - 官方下载源与 Cafe 下载源切换
 - 自动、直连和系统代理三种网络模式
 
-### 桌面体验
+### 桌面体验 <span id="desktop-experience"></span> {#桌面体验}
 
 - 系统、浅色和深色主题
 - 默认、系统、壁纸提取和自定义主题色
@@ -42,7 +42,7 @@ Cafe Launcher 是面向 Blue Archive 日服的第三方桌面启动器，使用 
 - 系统托盘、窗口位置记忆和减少动态效果
 - 本地日志查看、筛选和 ZIP 导出
 
-### 汉化资源
+### 汉化资源 <span id="chinese-localization-resources"></span> {#汉化资源}
 
 - 按 UID 管理游戏文本、主线中配和图像视频三类汉化资源
 - 自动从游戏目录读取 UID，也可以手动填写
@@ -50,7 +50,7 @@ Cafe Launcher 是面向 Blue Archive 日服的第三方桌面启动器，使用 
 
 详见[资源面板](/cafe-launcher/resource-panel)。
 
-## 平台状态
+## 平台状态 <span id="platform-status"></span> {#平台状态}
 
 | 平台 | 架构 | 状态 |
 | --- | --- | --- |
@@ -60,7 +60,7 @@ Cafe Launcher 是面向 Blue Archive 日服的第三方桌面启动器，使用 
 
 所有发行包都包含所需的 .NET Runtime。macOS 和 Linux 尚未完成与 Windows 同等程度的适配和测试。Linux 可通过 Wine、UMU 或 Proton 启动 Windows 游戏客户端：整条链路（含 XIGNCODE3 反作弊）已在 Arch Linux + UMU 1.4.4 + UMU-Proton 10.0-4 + NTFS3 游戏目录这一组合上实机验证，其他组合尚未验证，不保证可玩。macOS 版本目前只能安装、更新和修复游戏，启动游戏所需的兼容运行层当前不提供，也暂无支持计划。
 
-## 项目链接
+## 项目链接 <span id="project-links"></span> {#项目链接}
 
 - [下载 Cafe Launcher](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/releases)
 - [源码与 Issues](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia)

@@ -32,28 +32,28 @@ features:
     linkText: 开始排障
 ---
 
-## 选择你要做的事
+## 选择你要做的事 <span id="choose-a-task"></span> {#选择你要做的事}
 
-### 安装或配置汉化客户端
+### 安装或配置汉化客户端 <span id="install-or-configure-the-chinese-localization-client"></span> {#安装或配置汉化客户端}
 
 从[平台安装总览](/platform/)选择当前设备，再按照[使用与配置](/guide/)启用文本、主线中配或图像视频资源。
 
 > [!IMPORTANT]
 > 首次进入汉化客户端时，汉化功能默认可能尚未启用。请先打开公告内控制面板，或使用浏览器控制面板完成配置。
 
-### 在电脑上管理日服游戏
+### 在电脑上管理日服游戏 <span id="manage-the-jp-game-on-your-computer"></span> {#在电脑上管理日服游戏}
 
 [Cafe Launcher](/cafe-launcher/) 是基于 .NET 与 Avalonia 的第三方桌面启动器，可以安装、更新、修复和启动游戏，并提供官方下载源与 Cafe 下载源。
 
 Windows x64 为正式支持平台；macOS Apple Silicon 与 Linux x64 当前提供实验性构建。前往[安装与首次使用](/cafe-launcher/installation)查看下载文件和平台说明。
 
-## 获取帮助
+## 获取帮助 <span id="get-help"></span> {#获取帮助}
 
 - 汉化未生效、资源异常或客户端要求更新：查看[汉化客户端常见问题](/guide/qa)。
 - 启动器下载、校验、设置或更新失败：查看[Cafe Launcher 常见问题](/cafe-launcher/faq)。
 - 仍无法解决：按照[反馈指南](/cafe-launcher/feedback)准备版本、复现步骤和日志。
 
-## 项目入口
+## 项目入口 <span id="project-links"></span> {#项目入口}
 
 - [蔚蓝咖啡厅官网](https://bluearchive.cafe/)
 - [Cafe Launcher 源码](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia)

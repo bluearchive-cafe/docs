@@ -1,8 +1,8 @@
-# macOS 平台安装文档
+# macOS 平台安装文档 <span id="macos-installation"></span> {#macos-平台安装文档}
 
-## 一、安装
+## 一、安装 <span id="installation"></span> {#一、安装}
 
-### 1. PlayCover 安装
+### 1. PlayCover 安装 <span id="playcover"></span> {#_1-playcover-安装}
 
 > [!NOTE]
 > 此方案需要安装 **[PlayCover](https://playcover.io)**，然后添加应用源至 PlayCover，支持自动下载、安装和更新客户端。
@@ -19,7 +19,7 @@
 
 </div>
 
-### 2. 手动安装
+### 2. 手动安装 <span id="manual-installation"></span> {#_2-手动安装}
 
 > [!NOTE]
 > 此方案需要配合 **[PlayCover](https://playcover.io)** 或 **[Impactor](https://impactor.claration.dev)** 等工具进行安装，且不支持自动更新客户端。
@@ -36,7 +36,7 @@
 
 </div>
 
-### 3. 备用方案
+### 3. 备用方案 <span id="fallback-method"></span> {#_3-备用方案}
 
 > [!NOTE]
 > 此方案可以配合官方原版客户端使用，但仅支持 `文本汉化` 功能，且游戏内字体显示异常。
@@ -53,12 +53,12 @@
 
 </div>
 
-## 二、常见问题
+## 二、常见问题 <span id="faq"></span> {#二、常见问题}
 
-### 1. 无法启动 PlayCover
+### 1. 无法启动 PlayCover <span id="playcover-does-not-start"></span> {#_1-无法启动-playcover}
 
 PlayCover 仅支持 **[Apple Silicon (ARM)](https://support.apple.com/116943)** 机型，不支持 **[Intel Chip (x86)](https://support.apple.com/116943)** 机型。后者建议使用 BootCamp 运行 Windows 系统并参考对应文档进行安装。
 
-### 2. 启动后弹窗提示 Use of unauthorized apps 并闪退
+### 2. 启动后弹窗提示 Use of unauthorized apps 并闪退 <span id="use-of-unauthorized-apps-appears-and-the-game-closes"></span> {#_2-启动后弹窗提示-use-of-unauthorized-apps-并闪退}
 
 使用了 PlayCover Nightly，或修改了应用包。请尝试使用 PlayCover 正式版 或 修改版，并确保安装时应用包没有被修改。

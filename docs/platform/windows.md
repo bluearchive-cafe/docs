@@ -1,8 +1,8 @@
-# Windows 平台安装文档
+# Windows 平台安装文档 <span id="windows-installation"></span> {#windows-平台安装文档}
 
-## 一、安装
+## 一、安装 <span id="installation"></span> {#一、安装}
 
-### 1. Cafe Launcher 安装
+### 1. Cafe Launcher 安装 <span id="cafe-launcher"></span> {#_1-cafe-launcher-安装}
 
 > [!NOTE]
 > 此方案需要安装 [Cafe Launcher](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release)，可用于自动下载、安装和更新客户端，并兼具控制面板功能。
@@ -19,7 +19,7 @@
 
 </div>
 
-### 2. 启动器安装
+### 2. 启动器安装 <span id="alternative-windows-launcher"></span> {#_2-启动器安装}
 
 > [!NOTE]
 > 此方案需要安装 Windows 平台专用启动器，可用于自动下载、安装和更新客户端。
@@ -36,7 +36,7 @@
 
 </div>
 
-### 3. 备用方案
+### 3. 备用方案 <span id="fallback-method"></span> {#_3-备用方案}
 
 > [!NOTE]
 > 此方案可以配合官方原版客户端使用，但仅支持 `文本汉化` 功能，且游戏内字体显示异常。
@@ -53,12 +53,12 @@
 
 </div>
 
-## 二、常见问题
+## 二、常见问题 <span id="faq"></span> {#二、常见问题}
 
-### 1. 启动游戏后没有汉化功能及控制面板
+### 1. 启动游戏后没有汉化功能及控制面板 <span id="localization-and-the-control-panel-are-missing"></span> {#_1-启动游戏后没有汉化功能及控制面板}
 
 请尝试在启动器设置中将下载源设置为 `Cafe 下载源`（Cafe Launcher），或在启动器设置中点击 `修复` 以检查游戏资源完整性。
 
-### 2. 启动游戏后弹窗提示 `セキュリティモジュールの初期化に失敗しました` 或弹窗闪退
+### 2. 启动游戏后弹窗提示 `セキュリティモジュールの初期化に失敗しました` 或弹窗闪退 <span id="セキュリティモジュールの初期化に失敗しました-appears-or-the-game-closes"></span> {#_2-启动游戏后弹窗提示-セキュリティモジュールの初期化に失敗しました-或弹窗闪退}
 
 反作弊模块启动失败，或检测到作弊行为。请尝试重新启动游戏或关闭其他可疑应用及反作弊系统。

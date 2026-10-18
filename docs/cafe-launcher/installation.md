@@ -1,6 +1,6 @@
-# 安装与首次使用
+# 安装与首次使用 <span id="installation-and-first-run"></span> {#安装与首次使用}
 
-## 1. 确认平台
+## 1. 确认平台 <span id="_1-check-your-platform"></span> {#_1-确认平台}
 
 | 平台 | 可用发行包 | 支持状态 |
 | --- | --- | --- |
@@ -13,25 +13,25 @@
 > [!WARNING]
 > macOS 与 Linux 版本仍为实验性构建。Linux 可通过 UMU / Proton 或 Wine 启动 Windows 游戏客户端：整条链路（含 XIGNCODE3 反作弊）已在 Arch Linux + UMU 1.4.4 + UMU-Proton 10.0-4 + NTFS3 游戏目录这一组合上实机验证可正常进入游戏，其他发行版、Proton 构建与显卡驱动组合尚未验证，不保证可玩。macOS 版本目前只能安装、更新和修复游戏，启动游戏暂无支持计划。
 
-## 2. 下载正确的文件
+## 2. 下载正确的文件 <span id="_2-download-the-right-package"></span> {#_2-下载正确的文件}
 
 前往 [Cafe Launcher Releases](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/releases)，进入最新版本并选择：
 
 | 文件名 | 用途 |
 | --- | --- |
-| `Cafe.Launcher.Avalonia_v*_setup.exe` | Windows 标准安装，推荐大多数用户使用 |
-| `Cafe.Launcher.Avalonia_v*_win-x64.zip` | Windows 便携版 |
-| `Cafe.Launcher.Avalonia_v*_osx-arm64.zip` | Apple Silicon Mac |
-| `Cafe.Launcher.Avalonia_v*_linux-x64.deb` | Debian、Ubuntu 等发行版 |
-| `Cafe.Launcher.Avalonia_v*_linux-x64.rpm` | Fedora、openSUSE 等 RPM 系发行版 |
-| `Cafe.Launcher.Avalonia_v*_linux-x64.AppImage` | Linux 免安装运行 |
-| `Cafe.Launcher.Avalonia_v*_linux-x64.tar.gz` | Linux 手动解压部署 |
+| `Cafe.Launcher_v*_setup.exe` | Windows 标准安装，推荐大多数用户使用 |
+| `Cafe.Launcher_v*_win-x64.zip` | Windows 便携版 |
+| `Cafe.Launcher_v*_osx-arm64.zip` | Apple Silicon Mac |
+| `Cafe.Launcher_v*_linux-x64.deb` | Debian、Ubuntu 等发行版 |
+| `Cafe.Launcher_v*_linux-x64.rpm` | Fedora、openSUSE 等 RPM 系发行版 |
+| `Cafe.Launcher_v*_linux-x64.AppImage` | Linux 免安装运行 |
+| `Cafe.Launcher_v*_linux-x64.tar.gz` | Linux 手动解压部署 |
 
-带有 `beta` 的版本属于测试通道。希望获得更稳定体验时，请选择不带预发布标签的最新版本。
+较早版本的发行文件可能使用 `Cafe.Launcher.Avalonia` 前缀。带有 `beta` 的版本属于测试通道。希望获得更稳定体验时，请选择不带预发布标签的最新版本。
 
-## 3. 安装启动器
+## 3. 安装启动器 <span id="_3-install-the-launcher"></span> {#_3-安装启动器}
 
-### Windows 安装版
+### Windows 安装版 <span id="windows-installer"></span> {#windows-安装版}
 
 1. 运行 `setup.exe`。
 2. 选择安装语言，可选项为 English、简体中文和日本語。该选择只影响安装程序本身，启动器界面语言在下一步的首次设置中单独选择。
@@ -53,10 +53,10 @@
 
 安装、升级和卸载按所有用户范围执行，需要管理员权限。覆盖安装新版本时，游戏文件和用户设置不会被删除。
 
-### Windows 便携版
+### Windows 便携版 <span id="windows-portable-build"></span> {#windows-便携版}
 
 1. 完整解压 `win-x64.zip`。
-2. 运行 `Cafe.Launcher.Avalonia.exe`。
+2. 运行 `Cafe.Launcher.exe`。
 3. 便携版同样支持应用内更新：在“发现新版本”对话框中点“下载”，完成后点“重启以更新”，启动器会自行替换便携目录并重新打开。只有需要手动更换解压位置时，才要退出程序后自行替换目录。
 
 不要直接在压缩包预览窗口中运行程序。便携版不会创建标准卸载入口，但设置和日志仍保存在用户数据目录中。
@@ -72,11 +72,11 @@ macOS 上只能安装、更新和修复游戏：启动 Windows 游戏客户端�
 - `.deb`：通过发行版的软件包管理工具安装。
 - `.rpm`：通过 RPM 系发行版的软件包管理工具安装。
 - AppImage：赋予执行权限后直接运行。
-- `tar.gz`：解压后运行 `Cafe.Launcher.Avalonia`。
+- `tar.gz`：解压后运行 `Cafe.Launcher`。
 
 Linux 系统需要提供图形、字体和基础运行库。若程序无法启动，请从终端运行并根据缺失库提示安装依赖。
 
-## 4. 完成首次设置
+## 4. 完成首次设置 <span id="_4-complete-first-time-setup"></span> {#_4-完成首次设置}
 
 第一次启动时会显示五步向导，每一步都可以用“上一步”返回修改。
 
@@ -90,7 +90,7 @@ Linux 系统需要提供图形、字体和基础运行库。若程序无法启�
 
 选择“跳过引导”或按 `Esc` 时，启动器会先确认，再应用默认设置。
 
-## 5. 识别或安装游戏
+## 5. 识别或安装游戏 <span id="_5-detect-or-install-the-game"></span> {#_5-识别或安装游戏}
 
 ![Cafe Launcher 主窗口](../assets/screenshots/main-window.webp)
 

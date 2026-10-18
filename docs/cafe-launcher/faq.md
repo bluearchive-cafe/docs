@@ -1,12 +1,12 @@
-# 常见问题
+# 常见问题 <span id="frequently-asked-questions"></span> {#常见问题}
 
-## 应该下载哪个文件？
+## 应该下载哪个文件？ <span id="which-package-should-i-download"></span> {#应该下载哪个文件}
 
-Windows 用户优先选择 `setup.exe`；需要便携运行时选择 `win-x64.zip`。Apple Silicon Mac 选择 `osx-arm64.zip`。Linux 根据发行版选择 `.deb`、AppImage 或 `tar.gz`。
+Windows 用户优先选择 `setup.exe`；需要便携运行时选择 `win-x64.zip`。Apple Silicon Mac 选择 `osx-arm64.zip`。Linux 根据发行版选择 `.deb`、`.rpm`、AppImage 或 `tar.gz`。
 
 带有 `beta` 的版本是测试版。完整对照见[安装与首次使用](/cafe-launcher/installation)。
 
-## v1.1.0-beta.5 启动器无法启动（启动即崩溃）
+## v1.1.0-beta.5 启动器无法启动（启动即崩溃） <span id="v1-1-0-beta-5-crashes-at-startup"></span> {#v1-1-0-beta-5-启动器无法启动-启动即崩溃}
 
 **症状**：双击启动器后窗口一闪而过或完全不出现。查看日志可见 `System.InvalidOperationException: NoServiceRegistered, Cafe.Launcher.Avalonia.Services.WindowFilePickerService`。
 
@@ -16,13 +16,13 @@ Windows 用户优先选择 `setup.exe`；需要便携运行时选择 `win-x64.zi
 
 不确定自己装的是哪个构建时，可打开数据目录查看日志开头的 `CommitSha`：受影响构建为 `b33915d`，修复后的构建为其之后的提交。
 
-## 可以复用官方启动器下载的游戏吗？
+## 可以复用官方启动器下载的游戏吗？ <span id="can-i-reuse-files-downloaded-by-the-official-launcher"></span> {#可以复用官方启动器下载的游戏吗}
 
 可以。首次向导或“设置 → 游戏”中选择现有 `BlueArchive_JP` 目录。Cafe Launcher 会读取其中的 `manifest.json` 与 `game-launcher-config.json`。
 
 不要同时运行两个启动器，也不要在其中一个正在下载、更新或修复时让另一个修改相同目录。
 
-## 下载速度很慢
+## 下载速度很慢 <span id="downloads-are-slow"></span> {#下载速度很慢}
 
 依次检查：
 
@@ -34,7 +34,7 @@ Windows 用户优先选择 `setup.exe`；需要便携运行时选择 `win-x64.zi
 
 切换下载源后，已安装游戏可能需要执行一次修复，以匹配新下载源的资源。
 
-## 下载失败、校验失败或反复重试
+## 下载失败、校验失败或反复重试 <span id="downloads-fail-verification-fails-or-retries-keep-repeating"></span> {#下载失败、校验失败或反复重试}
 
 - 确认游戏已经退出。
 - 确认目录存在、可写且磁盘空间充足。
@@ -44,17 +44,17 @@ Windows 用户优先选择 `setup.exe`；需要便携运行时选择 `win-x64.zi
 
 不要只删除单个未知的临时文件；先停止当前操作并让启动器处理任务状态。
 
-## 启动器提示“游戏正在运行”
+## 启动器提示“游戏正在运行” <span id="the-launcher-says-the-game-is-running"></span> {#启动器提示-游戏正在运行}
 
 关闭游戏后再操作。如果游戏窗口已经消失，打开任务管理器，确认 `BlueArchive.exe` 或 `xldr_BlueArchiveOnline_JP_loader_x64.exe` 没有残留。
 
 Linux 上启动器也会识别由本启动器启动的游戏，并额外检查映射到安装目录的外部启动进程。如果进程扫描超时、无法确认游戏状态，启动器会提示“无法确认游戏是否正在运行。请关闭游戏后重试。”，此时请先关闭游戏再重试。
 
-## 启动时提示文件缺失或大小不一致
+## 启动时提示文件缺失或大小不一致 <span id="launch-verification-reports-missing-files-or-size-mismatches"></span> {#启动时提示文件缺失或大小不一致}
 
 先打开“设置 → 游戏”执行修复。把启动校验改为“远程文件清单”只会更换检查依据，不会自动修复文件；“无”只适合临时排除校验流程问题。
 
-## 官方下载源与 Cafe 下载源有什么区别？
+## 官方下载源与 Cafe 下载源有什么区别？ <span id="how-do-official-and-cafe-sources-differ"></span> {#官方下载源与-cafe-下载源有什么区别}
 
 | 下载源 | 内容 | 适用情况 |
 | --- | --- | --- |
@@ -63,13 +63,13 @@ Linux 上启动器也会识别由本启动器启动的游戏，并额外检查�
 
 中文系统首次默认选择 Cafe 下载源，其他语言环境默认选择官方下载源。两个下载源都可以随时在设置中切换。
 
-## 修改设置后没有生效
+## 修改设置后没有生效 <span id="settings-changes-did-not-take-effect"></span> {#修改设置后没有生效}
 
 大多数设置采用“编辑后保存”的方式。点击“取消”或关闭设置页面会丢弃未保存修改。
 
 游戏路径选择和已安装游戏检测是即时操作，会立即保存并刷新状态。
 
-## 启动器如何更新？
+## 启动器如何更新？ <span id="how-does-the-launcher-update-itself"></span> {#启动器如何更新}
 
 启动器默认在初始化完成后检查所选更新通道，也可以在“设置 → 关于”手动检查。
 
@@ -79,15 +79,15 @@ macOS 与 Linux 不支持应用内更新，对话框的主按钮是“前往发�
 
 启动时检查失败不会阻止使用启动器。测试通道会包含预发布版本，稳定通道只跟踪稳定版本。
 
-## Linux 能直接运行游戏吗？
+## Linux 能直接运行游戏吗？ <span id="can-linux-launch-the-game"></span> {#linux-能直接运行游戏吗}
 
 启动器本身提供 Linux x64 实验性构建，并可选择自动、UMU / Proton 或 Wine 等兼容运行时。整条启动链路（含 XIGNCODE3 反作弊）已在 Arch Linux + UMU 1.4.4 + UMU-Proton 10.0-4 + NTFS3 游戏目录这一组合上实机验证可进入游戏；其他发行版、Proton 构建与显卡驱动组合尚未验证，反作弊兼容性受这些因素影响，不能保证可以进入游戏。
 
-## macOS 能启动游戏吗？
+## macOS 能启动游戏吗？ <span id="can-the-macos-launcher-launch-the-game"></span> {#macos-能启动游戏吗}
 
 不能。macOS 版本目前只能安装、更新和修复游戏：启动 Windows 游戏客户端需要额外的兼容运行层，macOS 上当前不提供，也暂无支持计划。需要启动游戏请在 Windows 上使用。
 
-## 如何查看或导出日志？
+## 如何查看或导出日志？ <span id="how-do-i-view-or-export-logs"></span> {#如何查看或导出日志}
 
 打开“设置 → 高级”：
 
@@ -103,10 +103,10 @@ macOS 与 Linux 不支持应用内更新，对话框的主按钮是“前往发�
 
 提交问题时，建议附上版本、复现步骤、截图和日志 ZIP。日志可能包含本地路径等环境信息，发送前可以自行检查。详见[反馈指南](/cafe-launcher/feedback#导出日志)。
 
-## 如何彻底卸载？
+## 如何彻底卸载？ <span id="how-do-i-remove-everything"></span> {#如何彻底卸载}
 
 启动器程序、用户数据和游戏目录彼此独立。请按[卸载与数据](/cafe-launcher/uninstall)依次清理，避免误删其他文件。
 
-## 仍然无法解决
+## 仍然无法解决 <span id="i-still-need-help"></span> {#仍然无法解决}
 
 按照[反馈指南](/cafe-launcher/feedback)收集信息，并前往 [Cafe.Launcher.Avalonia Issues](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/issues)提交问题。

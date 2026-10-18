@@ -1,8 +1,8 @@
-# Android 平台安装文档
+# Android 平台安装文档 <span id="android-installation"></span> {#android-平台安装文档}
 
-## 一、安装说明
+## 一、安装说明 <span id="installation"></span> {#一、安装说明}
 
-### 1. 手动安装
+### 1. 手动安装 <span id="manual-installation"></span> {#_1-手动安装}
 
 > [!NOTE]
 > 此方案可以直接下载安装包进行安装，版本更新后需要手动下载新版安装包进行覆盖安装。
@@ -19,7 +19,7 @@
 
 </div>
 
-### 2. 备用方案
+### 2. 备用方案 <span id="fallback-method"></span> {#_2-备用方案}
 
 > [!NOTE]
 > 此方案可以配合官方原版客户端使用，无需卸载和安装客户端，但仅支持 `文本汉化` 功能，且游戏内字体显示异常。
@@ -38,12 +38,12 @@
 
 </div>
 
-## 二、常见问题
+## 二、常见问题 <span id="faq"></span> {#二、常见问题}
 
-### 1. 无法安装客户端
+### 1. 无法安装客户端 <span id="the-client-cannot-be-installed"></span> {#_1-无法安装客户端}
 
 因签名不同，安装汉化版客户端前需要先卸载原版客户端，否则会导致安装失败。
 
-### 2. 启动后弹窗提示 Use of unauthorized apps 并闪退
+### 2. 启动后弹窗提示 Use of unauthorized apps 并闪退 <span id="use-of-unauthorized-apps-appears-and-the-game-closes"></span> {#_2-启动后弹窗提示-use-of-unauthorized-apps-并闪退}
 
 设备存在 Root 环境、启用了模块、安装了可疑应用，或重签了安装包。请尝试卸载应用、恢复环境或启用/禁用客户端获取应用列表权限。

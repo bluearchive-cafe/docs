@@ -1,8 +1,8 @@
-# iOS 平台安装文档
+# iOS 平台安装文档 <span id="ios-installation"></span> {#ios-平台安装文档}
 
-## 一、安装
+## 一、安装 <span id="installation"></span> {#一、安装}
 
-### 1. AltStore 安装
+### 1. AltStore 安装 <span id="altstore"></span> {#_1-altstore-安装}
 
 > [!NOTE]
 > 此方案需要先将设备连接至电脑，安装 **[AltStore](https://altstore.io)**，然后添加应用源至 AltStore，支持自动下载、安装和更新客户端。
@@ -19,7 +19,7 @@
 
 </div>
 
-### 2. SideStore 安装
+### 2. SideStore 安装 <span id="sidestore"></span> {#_2-sidestore-安装}
 
 > [!NOTE]
 > 此方案需要先将设备连接至电脑，安装 **[SideStore](https://sidestore.io)**，然后添加应用源至 SideStore，支持自动下载、安装和更新客户端。
@@ -36,7 +36,7 @@
 
 </div>
 
-### 3. 自签安装
+### 3. 自签安装 <span id="manual-self-signing"></span> {#_3-自签安装}
 
 > [!NOTE]
 > 此方案需要配合 **[Impactor](https://impactor.claration.dev)** 或 **[爱思助手](https://www.i4.cn)** 等工具进行自签安装，无需安装额外应用，但不支持自动更新客户端。
@@ -53,12 +53,12 @@
 
 </div>
 
-# 二、常见问题
+# 二、常见问题 <span id="faq"></span> {#二、常见问题}
 
-### 1. 如何避免续签应用
+### 1. 如何避免续签应用 <span id="how-can-i-avoid-refreshing-every-seven-days"></span> {#_1-如何避免续签应用}
 
 免费开发者账号有七天的自签限制，使用付费开发者账号或自行购买签名证书进行自签可避免此限制。
 
-### 2. 启动后弹窗提示 Use of unauthorized apps 并闪退
+### 2. 启动后弹窗提示 Use of unauthorized apps 并闪退 <span id="use-of-unauthorized-apps-appears-and-the-game-closes"></span> {#_2-启动后弹窗提示-use-of-unauthorized-apps-并闪退}
 
 设备存在越狱环境，或修改了应用包。请尝试恢复环境或更换自签工具，并确保自签时应用包不会被修改。
