@@ -39,7 +39,7 @@ features:
 从[平台安装总览](/platform/)选择当前设备，再按照[使用与配置](/guide/)启用文本、主线中配或图像视频资源。
 
 > [!IMPORTANT]
-> 首次进入汉化客户端时，汉化功能默认可能尚未启用。请先打开公告内控制面板，或使用浏览器控制面板完成配置。
+> 首次进入汉化客户端时，汉化功能默认未启用。请先打开公告内控制面板，或使用浏览器控制面板完成配置。
 
 ### 在电脑上管理日服游戏 <span id="manage-the-jp-game-on-your-computer"></span> {#在电脑上管理日服游戏}
 
@@ -57,5 +57,5 @@ Windows x64 为正式支持平台；macOS Apple Silicon 与 Linux x64 当前提�
 
 - [蔚蓝咖啡厅官网](https://bluearchive.cafe/)
 - [Cafe Launcher 源码](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia)
-- [Cafe Launcher Releases](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/releases)
+- [Cafe Launcher Releases](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/releases)
 - [文档站源码](https://github.com/bluearchive-cafe/docs)

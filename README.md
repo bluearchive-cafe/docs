@@ -1,69 +1,71 @@
 # 蔚蓝咖啡厅文档站
 
-这是 [docs.bluearchive.cafe](https://docs.bluearchive.cafe/) 的源代码仓库，使用 VitePress 构建，集中维护：
+[docs.bluearchive.cafe](https://docs.bluearchive.cafe/) 的源码，使用 VitePress 构建。面向使用者维护汉化客户端与 Cafe Launcher 的安装、设置、操作和排障；启动器工程规则与实现依据由[启动器源码仓库](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia)维护。
 
-- 蔚蓝咖啡厅汉化客户端的安装、配置与常见问题
-- Cafe Launcher 的安装、设置、游戏操作、数据管理与反馈指南
+## 本地运行
 
-## 本地预览
+需要 Node.js 22.12 或更新版本，部署工作流使用 Node.js 22。
 
-需要 Node.js 22 或更高版本。
-
-```bash
+~~~powershell
 npm ci
 npm run docs:dev
-```
+~~~
 
-VitePress 会在终端中显示本地预览地址。提交前请至少运行一次生产构建：
+按终端地址预览。提交前运行生产构建，检查中英文页面、内部链接和手机端菜单：
 
-```bash
+~~~powershell
 npm run docs:build
-```
-
-如需预览生产构建：
-
-```bash
 npm run docs:preview
-```
+~~~
 
-## 目录结构
+## 内容与目录
 
-```text
-docs/
-├── index.md          # 文档站首页
-├── guide/            # 汉化功能配置与通用排障
-├── platform/         # Android、iOS、Windows、macOS 安装说明
-├── cafe-launcher/    # Cafe Launcher 用户文档
-├── en/               # 英文文档，与中文页面保持相同的相对路径
-└── assets/           # 文档截图等静态资源
+| 位置 | 内容 |
+| --- | --- |
+| docs/index.md、docs/en/index.md | 中英文站点首页 |
+| docs/guide/、docs/en/guide/ | 汉化配置与通用排障 |
+| docs/platform/、docs/en/platform/ | 按平台安装汉化客户端 |
+| docs/cafe-launcher/、docs/en/cafe-launcher/ | Cafe Launcher 用户指南 |
+| docs/assets/ | 两种语言共用的截图和其他素材 |
+| .vitepress/config.mts | 站点语言、构建与搜索配置 |
+| .vitepress/locales/ | 中英文导航、侧边栏和主题文案 |
 
-.vitepress/config.mts # 导航、侧边栏、搜索与主题配置
-.vitepress/locales/   # 中文与英文主题文案、导航和侧边栏
-```
+Cafe Launcher 文档按任务拆分：首页 → 安装 → 设置 → 游戏操作 → 资源面板 → 卸载与数据 → 常见问题 → 反馈。旧 user-guide.md 继续作为索引，保留既有入口。
 
-## 编写约定
+## 编写与翻译
 
-- 面向用户说明“要做什么、在哪里操作、预期看到什么”，避免复制内部实现细节。
-- 涉及版本、文件名、默认值或平台支持时，以当前代码和 Release 流程为准。
-- 中文保留根路径，英文使用 `/en/` 前缀；导航栏语言菜单会切换到同一页面的另一语言版本。
-- 新增或修改用户文档时，同步维护 `docs/` 和 `docs/en/` 下对应的中英文页面，包括旧入口 `user-guide.md`。
-- 使用对应语言的站内绝对路径链接，例如 `/cafe-launcher/installation` 和 `/en/cafe-launcher/installation`；英文页中的锚点必须对应英文标题。
-- 标题使用显式锚点，并在内联 `<span id="…"></span>` 中保留另一语言的对应锚点。重命名标题或新增章节时同步维护这两个 ID，使带章节位置的语言切换和既有链接继续可用。
-- 危险操作使用 VitePress 的 `WARNING` 或 `IMPORTANT` 提示块。
-- 截图放入 `docs/assets/`，文件名使用小写英文和连字符。
-- 截图由两种语言共用；英文页面使用 `../../assets/` 引用现有截图，并说明截图显示的是中文界面。
-- 修改导航或新增页面时，同步更新 `.vitepress/locales/zh.ts` 与 `.vitepress/locales/en.ts`；站点语言和搜索配置位于 `.vitepress/config.mts`。
-- 提交前执行 `npm run docs:build`，检查中英文页面、同页语言切换、本语言搜索结果和手机端菜单。
-- 不在多个页面维护同一份易变数据；下载文件以 Releases 为准，开发细节以源码仓库为准。
+先写清“在哪里操作、输入什么、会看到什么结果、失败后怎么办”。设置参考维护完整选项，操作页维护流程，FAQ 通过链接引用；开发内部结构和研究细节留在源码仓库。
 
-## 发布
+中英文采用相同相对路径，英文增加 /en/ 前缀。修改时同步对应页面和旧入口，保持相同信息范围。使用本语言站内绝对路径，例如 /cafe-launcher/settings 与 /en/cafe-launcher/settings。
 
-推送到 `main` 或 `master` 后，GitHub Actions 会安装依赖、执行 `npm run docs:build`，并部署到 GitHub Pages。
+标题保留显式锚点，并用内联 span ID 保留另一语言对应锚点；改标题时同步维护两类 ID，使语言切换和旧入链继续可用。新增页面或调整导航时同步 .vitepress/locales/zh.ts 与 en.ts。
+
+截图使用 docs/assets/ 中的小写英文连字符文件名。中文页通过 ../assets/、英文页通过 ../../assets/ 引用。英文页说明截图显示中文；旧图与当前界面不同则注明，以正文中的入口和分组为准。删除与不可逆操作使用 WARNING 或 IMPORTANT 提示块。
+
+## 核对启动器行为
+
+修改文字前对照代码和发布配置，区分当前行为、实验性能力与历史验证。
+
+| 要确认的内容 | 依据 |
+| --- | --- |
+| 分组、按钮与条件显示 | [Views](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/tree/main/src/Cafe.Launcher.UI/Views)、[Settings 功能](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/tree/main/src/Cafe.Launcher.UI/Features/Settings) |
+| 默认值、音量与运行环境 | [LauncherSettings](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/blob/main/src/Cafe.Launcher.Core/Models/LauncherSettings.cs)、[GameRuntimeSettings](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/blob/main/src/Cafe.Launcher.Core/Models/GameRuntimeSettings.cs) |
+| 安装、停止、卸载与退出 | [领域契约](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/blob/main/CONTEXT.md)、[GameOperations](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/tree/main/src/Cafe.Launcher.UI/Features/GameOperations) |
+| 数据根与旧目录迁移 | [LauncherDataRoot](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/blob/main/src/Cafe.Launcher.Core/Services/LauncherDataRoot.cs)、[迁移实现](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/blob/main/src/Cafe.Launcher.Core/Services/LauncherDataRootMigration.cs) |
+| 发行包与平台 | [发布工作流](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/blob/main/.github/workflows/release.yml) |
+| 术语与译名 | [统一术语表](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/blob/main/UBIQUITOUS_LANGUAGE.md) |
+| 信息处理与诊断内容 | [隐私政策](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/blob/main/PRIVACY.md) |
+
+下载入口与应用内更新检查使用源码仓库 Releases；发行工作流也向发行仓库镜像安装包。历史实机测试只说明当时组合，不作为其他环境或后续版本的兼容保证。
+
+## 验证与发布
+
+运行 npm ci 和 npm run docs:build，修复构建发现的链接错误；另外检查章节锚点、同页语言切换、本语言搜索结果和移动端菜单。生产构建不代表所有锚点都已核验，重命名标题时须检查入链。
+
+推送到 main 或 master 后，GitHub Actions 执行构建并部署 GitHub Pages。具体 Node 版本、分支和权限以 .github/workflows/ 中的部署配置为准；本地修改不会自动发布。
 
 - [线上文档](https://docs.bluearchive.cafe/)
 - [Cafe Launcher 源码](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia)
-- [Cafe Launcher 下载](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/releases)
+- [Cafe Launcher 下载](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/releases)
 
-## 许可
-
-本仓库基于 [MIT License](./LICENSE) 发布。
+本仓库源码基于 [MIT License](LICENSE) 发布。

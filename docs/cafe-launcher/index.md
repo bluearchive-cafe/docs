@@ -1,68 +1,62 @@
 # Cafe Launcher
 
-Cafe Launcher 是面向 Blue Archive 日服的第三方桌面启动器，使用 .NET 10 与 Avalonia 构建。它负责安装、更新、修复和启动游戏，并在官方启动器流程之上提供更可靠的下载控制、双下载源、界面定制、汉化资源管理和本地诊断。
+Cafe Launcher 帮助你安装和维护 Blue Archive 日服游戏。已有官方安装时，可以直接复用同一游戏目录；没有安装时，可以从这里下载、更新、修复并启动。
+
+[下载发行包](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/releases) · [安装与首次使用](/cafe-launcher/installation) · [遇到问题](/cafe-launcher/faq)
 
 > [!IMPORTANT]
-> Cafe Launcher 是社区维护项目，与 Nexon、Nexon Games、Yostar 及 Blue Archive 官方无隶属或合作关系。启动器不修改游戏进程，也不向游戏注入代码。
+> 本项目由社区维护，与 Nexon、Nexon Games、Yostar 及 Blue Archive 官方无隶属或合作关系。启动器不修改游戏进程，不向游戏注入代码。
 
 ![Cafe Launcher 主界面](../assets/screenshots/main-window.webp)
 
+截图用于操作示意，部分来自较早版本；当前入口和设置分组以正文为准。
+
 ## 从这里开始 <span id="start-here"></span> {#从这里开始}
 
-- 第一次使用：阅读[安装与首次使用](/cafe-launcher/installation)
-- 已经安装：查看[设置参考](/cafe-launcher/settings)和[游戏操作](/cafe-launcher/operations)
-- 需要切换汉化资源：查看[资源面板](/cafe-launcher/resource-panel)
-- 需要迁移或清理：查看[卸载与数据](/cafe-launcher/uninstall)
-- 遇到错误：先查阅[常见问题](/cafe-launcher/faq)，再按[反馈指南](/cafe-launcher/feedback)导出日志
+| 你的目标 | 阅读页面 |
+| --- | --- |
+| 下载启动器、识别已有游戏或首次安装 | [安装与首次使用](/cafe-launcher/installation) |
+| 修改路径、网络、背景、配色与动态效果 | [设置参考](/cafe-launcher/settings) |
+| 下载、修复、启动游戏或使用托盘 | [游戏操作](/cafe-launcher/operations) |
+| 选择汉化资源、填写 UID | [资源面板](/cafe-launcher/resource-panel) |
+| 删除游戏、启动器或本地数据 | [卸载与数据](/cafe-launcher/uninstall) |
+| 排查故障、导出日志与提交反馈 | [常见问题](/cafe-launcher/faq)、[反馈指南](/cafe-launcher/feedback) |
 
 ## 主要能力 <span id="features"></span> {#主要能力}
 
+以下能力取决于平台。Windows 为正式支持平台，macOS 和 Linux 的限制见下方平台状态。
+
 ### 游戏管理 <span id="game-management"></span> {#游戏管理}
 
-- 识别已有游戏目录
-- 安装和增量更新游戏文件
-- 校验并修复缺失或损坏的文件
-- 在启动前按本地清单、远程清单或不检查三种模式验证文件
-- 卸载整个游戏目录（含游戏自行下载的资源和用户放入的文件），可选清理启动器管理的兼容环境
+安装、增量更新、修复、启动和卸载集中在主窗口。启动校验检查文件存在性与大小，修复使用 CRC64 检查文件内容。卸载游戏默认删除整个游戏目录，确认前会说明范围和路径。
 
 ### 下载与网络 <span id="downloads-and-networking"></span> {#下载与网络}
 
-- 并发下载、断点续传、暂停、继续和停止
-- 1、5、10、25、50 MB/s 速度限制或不限速
-- 下载完成后的 CRC64 完整性校验
-- 官方下载源与 Cafe 下载源切换
-- 自动、直连和系统代理三种网络模式
+提供官方下载源与 Cafe 下载源、最多 10 个并发传输、限速、暂停与继续。正常退出会保留可恢复的下载任务；主动停止会放弃任务记录。代理与速度选项见[下载与网络设置](/cafe-launcher/settings#下载与网络)。
 
 ### 桌面体验 <span id="desktop-experience"></span> {#桌面体验}
 
-- 系统、浅色和深色主题
-- 默认、系统、壁纸提取和自定义主题色
-- 内置、远程或自定义背景
-- English、简体中文、繁體中文和日本語界面
-- 系统托盘、窗口位置记忆和减少动态效果
-- 本地日志查看、筛选和 ZIP 导出
+支持 English、简体中文、繁體中文和日本語，系统/浅色/深色主题、背景取色、自定义图片，以及 Windows x64 本地视频背景。外观修改即时预览，可以保存或放弃。
+
+提供系统托盘、本地日志查看与 ZIP 导出。Windows 可在应用内下载并校验启动器更新；macOS 和 Linux 从发布页手动安装。
 
 ### 汉化资源 <span id="chinese-localization-resources"></span> {#汉化资源}
 
-- 按 UID 管理游戏文本、主线中配和图像视频三类汉化资源
-- 自动从游戏目录读取 UID，也可以手动填写
-- 每类资源单独开关，并显示官方与汉化资源的版本对照
-
-详见[资源面板](/cafe-launcher/resource-panel)。
+Cafe 下载源提供游戏文本、主线中配、图像视频三类汉化资源。使用八位大写字母组成的汉化 UID 在[资源面板](/cafe-launcher/resource-panel)单独开关；它与游戏内的数字 UID 不同。
 
 ## 平台状态 <span id="platform-status"></span> {#平台状态}
 
-| 平台 | 架构 | 状态 |
+| 平台 | 架构 | 支持范围 |
 | --- | --- | --- |
-| Windows | x64 | 正式支持 |
-| macOS | Apple Silicon | 实验性（暂不支持启动游戏） |
-| Linux | x64 | 实验性 |
+| Windows 10 1809+ / Windows 11 | x64 | 正式支持，含游戏启动、视频背景与应用内更新 |
+| macOS | Apple Silicon | 实验性，可安装、更新和修复，暂不支持启动游戏 |
+| Linux | x64 | 实验性，通过自行安装的 UMU / Proton 或 Wine 启动游戏 |
 
-所有发行包都包含所需的 .NET Runtime。macOS 和 Linux 尚未完成与 Windows 同等程度的适配和测试。Linux 可通过 Wine、UMU 或 Proton 启动 Windows 游戏客户端：整条链路（含 XIGNCODE3 反作弊）已在 Arch Linux + UMU 1.4.4 + UMU-Proton 10.0-4 + NTFS3 游戏目录这一组合上实机验证，其他组合尚未验证，不保证可玩。macOS 版本目前只能安装、更新和修复游戏，启动游戏所需的兼容运行层当前不提供，也暂无支持计划。
+发行包包含 .NET Runtime，无需另行安装。Linux 反作弊兼容性取决于运行器、Proton、驱动和游戏版本；历史实机验证不代表所有组合均可运行。准备方法见[兼容运行环境](/cafe-launcher/settings#兼容运行环境-仅-linux)。
 
 ## 项目链接 <span id="project-links"></span> {#项目链接}
 
-- [下载 Cafe Launcher](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/releases)
 - [源码与 Issues](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia)
-- [隐私与免责声明](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/blob/main/PRIVACY.md)
+- [发行包与版本说明](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/releases)
+- [隐私政策](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/blob/main/PRIVACY.md)
 - [第三方许可](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/blob/main/THIRD-PARTY-NOTICES.md)

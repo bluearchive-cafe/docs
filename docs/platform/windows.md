@@ -5,7 +5,7 @@
 ### 1. Cafe Launcher 安装 <span id="cafe-launcher"></span> {#_1-cafe-launcher-安装}
 
 > [!NOTE]
-> 此方案需要安装 [Cafe Launcher](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release)，可用于自动下载、安装和更新客户端，并兼具控制面板功能。
+> 此方案需要安装 [Cafe Launcher](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/releases)，可用于自动下载、安装和更新客户端，并提供资源面板功能。
 
 > [!WARNING]
 > 首次使用需按照教程指引完成下载源、代理、安装目录等设置，以确保客户端及汉化功能能够正常运行。
@@ -15,7 +15,7 @@
 
 <div align=center>
 
-[![启动器](https://forthebadge.com/api/badges/generate?panels=2&primaryLabel=++启动器&secondaryLabel=下载&primaryBGColor=%230e5cab&primaryTextColor=%23ffffff&secondaryBGColor=%23f9f9fd&secondaryTextColor=%23000000&primaryFontSize=12&primaryFontWeight=600&primaryLetterSpacing=2&primaryFontFamily=Roboto&primaryTextTransform=uppercase&secondaryFontSize=12&secondaryFontWeight=900&secondaryLetterSpacing=2&secondaryFontFamily=Montserrat&secondaryTextTransform=uppercase&primaryIcon=geocaching&primaryIconColor=%23ffffff&primaryIconSize=16&primaryIconPosition=left&borderRadius=10)](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release)
+[![启动器](https://forthebadge.com/api/badges/generate?panels=2&primaryLabel=++启动器&secondaryLabel=下载&primaryBGColor=%230e5cab&primaryTextColor=%23ffffff&secondaryBGColor=%23f9f9fd&secondaryTextColor=%23000000&primaryFontSize=12&primaryFontWeight=600&primaryLetterSpacing=2&primaryFontFamily=Roboto&primaryTextTransform=uppercase&secondaryFontSize=12&secondaryFontWeight=900&secondaryLetterSpacing=2&secondaryFontFamily=Montserrat&secondaryTextTransform=uppercase&primaryIcon=geocaching&primaryIconColor=%23ffffff&primaryIconSize=16&primaryIconPosition=left&borderRadius=10)](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/releases)
 
 </div>
 
@@ -57,7 +57,7 @@
 
 ### 1. 启动游戏后没有汉化功能及控制面板 <span id="localization-and-the-control-panel-are-missing"></span> {#_1-启动游戏后没有汉化功能及控制面板}
 
-请尝试在启动器设置中将下载源设置为 `Cafe 下载源`（Cafe Launcher），或在启动器设置中点击 `修复` 以检查游戏资源完整性。
+请在启动器设置中将下载源设置为 `Cafe 下载源`（Cafe Launcher），或点击 `修复` 以检查游戏资源完整性。
 
 ### 2. 启动游戏后弹窗提示 `セキュリティモジュールの初期化に失敗しました` 或弹窗闪退 <span id="セキュリティモジュールの初期化に失敗しました-appears-or-the-game-closes"></span> {#_2-启动游戏后弹窗提示-セキュリティモジュールの初期化に失敗しました-或弹窗闪退}
 

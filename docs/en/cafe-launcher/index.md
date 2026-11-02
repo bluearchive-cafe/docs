@@ -1,74 +1,62 @@
 # Cafe Launcher
 
-Cafe Launcher is a third-party desktop launcher for Blue Archive JP, built with .NET 10 and Avalonia. It installs, updates, repairs, and launches the game, adding resumable downloads, two download sources, appearance customization, Chinese localization resource management, and local diagnostics.
+Cafe Launcher installs and maintains Blue Archive JP. Reuse a directory created by the official launcher, or download, update, repair, and launch a new installation.
+
+[Download](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/releases) · [Installation and first run](/en/cafe-launcher/installation) · [Troubleshooting](/en/cafe-launcher/faq)
 
 > [!IMPORTANT]
-> Cafe Launcher is maintained by the community and is not affiliated with Nexon, Nexon Games, Yostar, or the official Blue Archive team. It does not modify the game process or inject code into it.
+> This community project is not affiliated with Nexon, Nexon Games, Yostar, or the official Blue Archive team. It does not modify or inject code into the game process.
 
 ![Cafe Launcher main window](../../assets/screenshots/main-window.webp)
 
-The screenshots in this guide show the Chinese interface. You can select English in the launcher.
+Shared screenshots show the Chinese interface and may come from earlier versions. Follow the text for current controls and settings groups.
 
 ## Start here <span id="从这里开始"></span> {#start-here}
 
-- First time: [Installation and First Run](/en/cafe-launcher/installation)
-- Already installed: [Settings Reference](/en/cafe-launcher/settings) and [Game Operations](/en/cafe-launcher/operations)
-- Change Chinese localization resources: [Resource Panel](/en/cafe-launcher/resource-panel)
-- Move or remove files: [Uninstall and Data](/en/cafe-launcher/uninstall)
-- Troubleshoot: check the [FAQ](/en/cafe-launcher/faq), then export logs using the [Feedback Guide](/en/cafe-launcher/feedback)
+| Your goal | Guide |
+| --- | --- |
+| Download, reuse existing files, or install for the first time | [Installation and first run](/en/cafe-launcher/installation) |
+| Change paths, networking, backgrounds, colors, or motion | [Settings](/en/cafe-launcher/settings) |
+| Download, repair, launch, or use the tray | [Game operations](/en/cafe-launcher/operations) |
+| Choose Chinese-localized resources and enter a UID | [Resource Panel](/en/cafe-launcher/resource-panel) |
+| Remove game files, the launcher, or local data | [Uninstall and data](/en/cafe-launcher/uninstall) |
+| Troubleshoot, export logs, and report a problem | [FAQ](/en/cafe-launcher/faq), [feedback](/en/cafe-launcher/feedback) |
 
 ## Features <span id="主要能力"></span> {#features}
 
+Availability depends on the platform. Windows is supported; macOS and Linux limitations are listed below.
+
 ### Game management <span id="游戏管理"></span> {#game-management}
 
-- Detect existing game installations, including files downloaded by the official launcher.
-- Install and incrementally update game files.
-- Verify and repair missing or corrupt files.
-- Choose local-manifest verification, remote-manifest verification, or no verification before launch.
-- Uninstall the entire game directory, with an optional cleanup of launcher-managed compatibility environments.
+Install, incrementally update, repair, launch, and uninstall from the main window. Launch verification checks file existence and size; repair checks file contents using CRC64. Game uninstall removes the whole game directory, with its scope and path shown before confirmation.
 
 ### Downloads and networking <span id="下载与网络"></span> {#downloads-and-networking}
 
-- Concurrent transfers, resume, pause, continue, and stop.
-- Unlimited speed or limits of 1, 5, 10, 25, or 50 MB/s.
-- CRC64 verification after downloads.
-- Official and Cafe download sources.
-- Automatic, direct, and system proxy modes.
+Choose Official or Cafe download sources, use up to 10 concurrent transfers, limit speed, pause, and resume. Normal exit preserves a recoverable download task; actively stopping discards the task record. See [network settings](/en/cafe-launcher/settings#download-and-network).
 
 ### Desktop experience <span id="桌面体验"></span> {#desktop-experience}
 
-- System, light, and dark themes.
-- Default, system, wallpaper-derived, or custom accent colors.
-- Bundled, remote, or custom backgrounds.
-- English, Simplified Chinese, Traditional Chinese, and Japanese interfaces.
-- System tray, remembered window position, and reduced motion.
-- Local log viewing, filtering, and ZIP export.
+Use English, Simplified Chinese, Traditional Chinese, or Japanese; system/light/dark themes; wallpaper-derived colors; custom images; and local video backgrounds on Windows x64. Preview appearance changes, then save or discard them.
+
+A system tray, local log viewer, and ZIP diagnostics export are included. Windows can download and verify launcher updates in-app; macOS and Linux use manual installation from the release page.
 
 ### Chinese localization resources <span id="汉化资源"></span> {#chinese-localization-resources}
 
-- Manage translated game text, Chinese main story voices, and localized images and videos by UID.
-- Read the UID automatically from local game data or enter it manually.
-- Toggle each category separately and compare its official and localized resource versions.
-
-See [Resource Panel](/en/cafe-launcher/resource-panel). These resources localize the game into Chinese, independently of the launcher's interface language.
+The Cafe download source provides game text, main-story Chinese voice, and image/video resources. Toggle each in the [Resource Panel](/en/cafe-launcher/resource-panel) using an eight-uppercase-letter localization UID, distinct from the numeric UID shown in the game.
 
 ## Platform status <span id="平台状态"></span> {#platform-status}
 
-| Platform | Architecture | Status |
+| Platform | Architecture | Scope |
 | --- | --- | --- |
-| Windows | x64 | Officially supported |
-| macOS | Apple Silicon | Experimental; cannot launch the game |
-| Linux | x64 | Experimental |
+| Windows 10 1809+ / Windows 11 | x64 | Supported, including game launch, video backgrounds, and in-app updates |
+| macOS | Apple Silicon | Experimental; install, update, and repair; no game launch |
+| Linux | x64 | Experimental; game launch through separately installed UMU / Proton or Wine |
 
-All packages include the .NET Runtime. macOS and Linux have not received the same level of adaptation and testing as Windows.
-
-Linux can launch the Windows game through Wine, UMU, or Proton. The complete chain, including XIGNCODE3, was verified on Arch Linux + UMU 1.4.4 + UMU-Proton 10.0-4 with the game on NTFS3. Other combinations have not been verified and are not guaranteed to work.
-
-The macOS launcher currently only installs, updates, and repairs game files. It does not provide the compatibility layer needed to launch the Windows game, and game launch support is not currently planned.
+Packages include the .NET Runtime. Linux anti-cheat compatibility depends on the runner, Proton build, drivers, and game version; historical hardware testing does not establish support for every combination. See [Compatibility runtime](/en/cafe-launcher/settings#compatibility-runtime-linux-only).
 
 ## Project links <span id="项目链接"></span> {#project-links}
 
-- [Download Cafe Launcher](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/releases)
-- [Source code and Issues](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia)
+- [Source and Issues](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia)
+- [Downloads and release notes](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/releases)
 - [Privacy policy (Chinese)](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/blob/main/PRIVACY.md)
 - [Third-party licenses](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/blob/main/THIRD-PARTY-NOTICES.md)

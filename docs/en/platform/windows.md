@@ -4,7 +4,7 @@
 
 ### Cafe Launcher <span id="_1-cafe-launcher-安装"></span> {#cafe-launcher}
 
-[Cafe Launcher](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release) downloads, installs, and updates the game, and includes a resource control panel.
+[Cafe Launcher](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/releases) downloads, installs, and updates the game, and includes the Resource Panel.
 
 > [!IMPORTANT]
 > Complete the download source, proxy, and installation directory setup before using the game and its localization features. Choose the Cafe source for Chinese localization resources.

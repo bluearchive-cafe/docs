@@ -36,10 +36,10 @@ features:
 
 ### Install or configure the Chinese localization client <span id="安装或配置汉化客户端"></span> {#install-or-configure-the-chinese-localization-client}
 
-Choose your device in the [platform overview](/en/platform/), then follow [Usage and Configuration](/en/guide/) to enable translated text, Chinese main story voices, or localized images and videos.
+Choose your device in the [platform overview](/en/platform/). Then follow [Usage and Configuration](/en/guide/) to enable translated text, Chinese main story voices, or localized images and videos.
 
 > [!IMPORTANT]
-> Localization features may be disabled on first launch. Configure them through the control panel in the in-game notices or in your browser. These features provide Chinese localization; the English documentation does not add English game resources.
+> Localization features are disabled on first launch. Configure them through the control panel in the in-game notices or in your browser. These features provide Chinese localization; the English documentation does not add English game resources.
 
 ### Manage the JP game on your computer <span id="在电脑上管理日服游戏"></span> {#manage-the-jp-game-on-your-computer}
 
@@ -57,5 +57,5 @@ Windows x64 is officially supported. Experimental builds are available for macOS
 
 - [BlueArchive.Cafe website](https://bluearchive.cafe/)
 - [Cafe Launcher source](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia)
-- [Cafe Launcher releases](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/releases)
+- [Cafe Launcher releases](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/releases)
 - [Documentation source](https://github.com/bluearchive-cafe/docs)
