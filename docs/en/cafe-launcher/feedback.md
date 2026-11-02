@@ -1,54 +1,60 @@
 # Feedback Guide <span id="反馈指南"></span> {#feedback-guide}
 
-A version number, clear reproduction steps, and logs help diagnose issues faster than a general report that the launcher does not work. Development issues are tracked in the [source repository's Issues](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/issues).
+Describe the action, actual result, and occurrence time, with reproducible steps. Launcher bugs and suggestions are tracked in the [source repository Issues](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/issues).
 
 ## Before reporting <span id="提交前"></span> {#before-reporting}
 
-1. Check your version and available updates in Settings → About.
+1. Check version, commit, and available updates under Settings → About.
 2. Search the [FAQ](/en/cafe-launcher/faq) and existing Issues.
-3. Restart the launcher and check whether you can reproduce the problem.
-4. For download or repair problems, record the source, proxy mode, and disk containing the game directory.
-5. State explicitly if you use macOS or Linux. These are experimental, and macOS does not support game launch.
+3. Record the time and exact error. Retry when safe and state how often it happens.
+4. For downloads, record source, proxy, and disk. For Linux, include distribution, runner, Proton, and MangoHud state.
+5. For video backgrounds, include format, volume, mute, motion, and window visibility.
 
 ## What to include <span id="一份有效的反馈应包含"></span> {#what-to-include}
 
-- **Title**: describe the action and result, such as “Cafe source repeatedly verifies the same file after resuming.”
-- **Version**: version, build configuration, and commit from Settings → About.
-- **Environment**: operating system version, architecture, proxy, and compatibility runtime if used.
-- **Steps**: a sequence starting from a clear initial state.
-- **Expected result**: what should happen.
-- **Actual result**: the message, state, or error you see.
-- **Attachments**: relevant screenshots and a log ZIP.
+Fill in the following, starting from a clear initial state:
 
-Copy complete error messages where possible. For intermittent issues, include how often they occur and when they last happened.
+~~~text
+Title: action and observed result
+Launcher version / commit / build configuration:
+Operating system / architecture:
+Relevant download source / proxy / runner:
+Reproduction steps:
+1.
+2.
+Expected result:
+Actual result and complete error:
+Occurrence time / frequency:
+Attachments: screenshots and reviewed log ZIP
+~~~
+
+macOS and Linux are experimental; identify your environment. macOS game launch is unavailable.
 
 ## Export logs <span id="导出日志"></span> {#export-logs}
 
-1. Open Cafe Launcher and go to Settings → Advanced.
-2. For network or download problems, temporarily set the log level to Debug or Verbose and save.
-3. Reproduce the issue.
-4. Return to Advanced and choose **Export Logs** to open the diagnostics export dialog.
+1. Open Settings → Advanced. For more detail, temporarily select Debug or Verbose, save, and reproduce.
+2. Choose Export Logs and a range: all, last hour, 24 hours, 7 days, or 30 days.
+3. Logs and system information are always included. Crash reports and user data are optional and unchecked by default.
+4. Export to a local destination, creating `CafeLauncher_Logs_<timestamp>.zip`.
+5. Review it before attaching it yourself. Restore the old log level afterward.
 
-   ![Export diagnostics](../../assets/screenshots/log-export.webp)
+![Diagnostics export example, Chinese interface](../../assets/screenshots/log-export.webp)
 
-5. Choose a time range: all records by default, or the last hour, 24 hours, 7 days, or 30 days.
-6. Optionally include crash reports or user data. Log files and system information are always included.
-7. Choose **Export** and a destination to save `CafeLauncher_Logs_<timestamp>.zip`.
-
-The ZIP contains current and rotated logs plus `system-info.json`. It can contain local paths, system versions, and network error addresses. Review it before sharing; do not include passwords, Cookie files, access tokens, or other sensitive information.
+The ZIP contains current/rotated logs and system-info.json, plus recent runner output, prefix precheck, and metadata when present. Linux also samples related processes; system information may include desktop session, graphics capabilities, and Proton builds. Nothing is uploaded automatically. Screenshots may be from older versions.
 
 > [!WARNING]
-> User data includes settings, download progress, and notice-read state, potentially including local paths and a UID. Leave it unchecked unless a maintainer specifically requests it.
+> Logs may contain paths or UIDs. User data additionally includes settings, download recovery records, and notice state; select it only as needed and review it. Never publicly share Cookies, passwords, or access tokens.
 
 ## Screenshots and privacy <span id="截图与隐私"></span> {#screenshots-and-privacy}
 
-- Hide account details, UIDs, personal paths, and private notifications in screenshots.
-- Do not publicly upload an entire user data directory without reviewing its contents.
-- Game crash logs and Cafe Launcher logs are different. Prefer the launcher's built-in export.
-- For information unsuitable for public posting, contact <feedback@bluearchive.cafe> and reference a related Issue if available.
+Hide account details, UIDs, personal paths, and notifications. Review ZIPs before sharing and avoid uploading an entire user data directory. Game crash logs and launcher logs serve different investigations.
+
+Send private material to <feedback@bluearchive.cafe>, referencing an Issue when available. See the [privacy policy (Chinese)](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/blob/main/PRIVACY.md).
 
 ## Where to report <span id="提交位置"></span> {#where-to-report}
 
-- Bugs, compatibility issues, and feature suggestions: [GitHub Issues](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/issues).
-- Usage questions: start with the [overview](/en/cafe-launcher/) and [FAQ](/en/cafe-launcher/faq).
-- Localization client problems: see the [localization FAQ](/en/guide/qa).
+| Problem | Destination |
+| --- | --- |
+| Launcher bugs, compatibility, suggestions | [GitHub Issues](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/issues) |
+| Usage | [Documentation](/en/cafe-launcher/), [FAQ](/en/cafe-launcher/faq) |
+| Localization client itself | [Localization FAQ](/en/guide/qa) |

@@ -1,106 +1,101 @@
 # 安装与首次使用 <span id="installation-and-first-run"></span> {#安装与首次使用}
 
+按下面五步准备启动器并识别或安装游戏。只想复用已有游戏时，无需先卸载官方启动器。
+
 ## 1. 确认平台 <span id="_1-check-your-platform"></span> {#_1-确认平台}
 
-| 平台 | 可用发行包 | 支持状态 |
-| --- | --- | --- |
-| Windows 10 1809+ / Windows 11 x64 | 安装程序、便携 ZIP | 正式支持 |
-| macOS Apple Silicon | `.app` 压缩包 | 实验性（暂不支持启动游戏） |
-| Linux x64 | `.deb`、`.rpm`、AppImage、`.tar.gz` | 实验性 |
+| 平台 | 可用发行包 |
+| --- | --- |
+| Windows 10 1809+ / Windows 11 x64 | 安装程序、便携 ZIP |
+| macOS Apple Silicon | .app ZIP |
+| Linux x64 | DEB、RPM、Arch 包、AppImage、tar.gz |
 
-发行包为自包含应用，无需另行安装 .NET Runtime。游戏本体仍需要足够的磁盘空间和持续可用的网络连接。
+发行包自带 .NET Runtime。安装前确认游戏目标目录可写、磁盘空间充足，且网络可持续访问所选下载源。
 
 > [!WARNING]
-> macOS 与 Linux 版本仍为实验性构建。Linux 可通过 UMU / Proton 或 Wine 启动 Windows 游戏客户端：整条链路（含 XIGNCODE3 反作弊）已在 Arch Linux + UMU 1.4.4 + UMU-Proton 10.0-4 + NTFS3 游戏目录这一组合上实机验证可正常进入游戏，其他发行版、Proton 构建与显卡驱动组合尚未验证，不保证可玩。macOS 版本目前只能安装、更新和修复游戏，启动游戏暂无支持计划。
+> macOS 与 Linux 为实验性构建。macOS 暂不支持启动游戏；Linux 需要另装 UMU / Proton 或 Wine，且不能保证反作弊在你的组合中可用。
 
 ## 2. 下载正确的文件 <span id="_2-download-the-right-package"></span> {#_2-下载正确的文件}
 
-前往 [Cafe Launcher Releases](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia_Release/releases)，进入最新版本并选择：
+打开 [Releases](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/releases)，按平台选择完整发行包：
 
-| 文件名 | 用途 |
+| 文件名 | 适用场景 |
 | --- | --- |
-| `Cafe.Launcher_v*_setup.exe` | Windows 标准安装，推荐大多数用户使用 |
-| `Cafe.Launcher_v*_win-x64.zip` | Windows 便携版 |
+| `Cafe.Launcher_v*_setup.exe` | Windows 标准安装 |
+| `Cafe.Launcher_v*_win-x64.zip` | Windows 便携运行 |
 | `Cafe.Launcher_v*_osx-arm64.zip` | Apple Silicon Mac |
-| `Cafe.Launcher_v*_linux-x64.deb` | Debian、Ubuntu 等发行版 |
-| `Cafe.Launcher_v*_linux-x64.rpm` | Fedora、openSUSE 等 RPM 系发行版 |
+| `Cafe.Launcher_v*_linux-x64.deb` | Debian、Ubuntu 等 |
+| `Cafe.Launcher_v*_linux-x64.rpm` | Fedora、openSUSE 等 |
+| `Cafe.Launcher_v*_linux-x64.pkg.tar.zst` | Arch Linux |
 | `Cafe.Launcher_v*_linux-x64.AppImage` | Linux 免安装运行 |
-| `Cafe.Launcher_v*_linux-x64.tar.gz` | Linux 手动解压部署 |
+| `Cafe.Launcher_v*_linux-x64.tar.gz` | Linux 手动解压 |
 
-较早版本的发行文件可能使用 `Cafe.Launcher.Avalonia` 前缀。带有 `beta` 的版本属于测试通道。希望获得更稳定体验时，请选择不带预发布标签的最新版本。
+较早的发行包可能使用 `Cafe.Launcher.Avalonia` 前缀。日常使用选择最新稳定版；带 `beta` 等预发布标签的版本用于测试。
 
 ## 3. 安装启动器 <span id="_3-install-the-launcher"></span> {#_3-安装启动器}
 
+选择与你下载的文件对应的方式。升级时先退出旧版本；程序文件、游戏目录和用户数据的位置彼此独立。
+
 ### Windows 安装版 <span id="windows-installer"></span> {#windows-安装版}
 
-1. 运行 `setup.exe`。
-2. 选择安装语言，可选项为 English、简体中文和日本語。该选择只影响安装程序本身，启动器界面语言在下一步的首次设置中单独选择。
+1. 运行下载的安装程序并选择安装语言：English、简体中文或日本語。它只影响安装器，启动器语言在首次向导中设置。
+2. 接受管理员权限提示，核对安装目录，默认是 `C:\Program Files\Cafe Launcher`。
+3. 按需创建桌面快捷方式，完成后运行 Cafe Launcher。
 
-   ![Windows 安装向导：选择安装语言](../assets/screenshots/installer-language.webp)
+安装、升级和卸载面向所有用户，需要管理员权限。覆盖安装保留独立的用户数据和游戏文件。
 
-3. 接受系统的管理员权限提示。
-4. 确认安装目录。默认写入 `C:\Program Files\Cafe Launcher`，向导同时显示所选磁盘的可用空间。
-
-   ![Windows 安装向导：选择目标位置](../assets/screenshots/installer-destination.webp)
-
-5. 选择附加任务，可以创建桌面快捷方式。
-
-   ![Windows 安装向导：选择附加任务](../assets/screenshots/installer-tasks.webp)
-
-6. 完成后可以直接勾选“运行 Cafe Launcher”启动程序。
-
-   ![Windows 安装向导：完成](../assets/screenshots/installer-finished.webp)
-
-安装、升级和卸载按所有用户范围执行，需要管理员权限。覆盖安装新版本时，游戏文件和用户设置不会被删除。
+::: details 安装向导截图
+![安装语言](../assets/screenshots/installer-language.webp)
+![目标位置](../assets/screenshots/installer-destination.webp)
+![附加任务](../assets/screenshots/installer-tasks.webp)
+![安装完成](../assets/screenshots/installer-finished.webp)
+:::
 
 ### Windows 便携版 <span id="windows-portable-build"></span> {#windows-便携版}
 
-1. 完整解压 `win-x64.zip`。
-2. 运行 `Cafe.Launcher.exe`。
-3. 便携版同样支持应用内更新：在“发现新版本”对话框中点“下载”，完成后点“重启以更新”，启动器会自行替换便携目录并重新打开。只有需要手动更换解压位置时，才要退出程序后自行替换目录。
+完整解压 ZIP，再运行 `Cafe.Launcher.exe`；不要在压缩包预览窗口中启动。保留整个目录中的依赖和视频运行库。
 
-不要直接在压缩包预览窗口中运行程序。便携版不会创建标准卸载入口，但设置和日志仍保存在用户数据目录中。
+便携版不创建标准卸载入口，设置和日志仍写入系统用户数据目录。它与安装版一样支持经校验的应用内更新；若需要手动替换，先退出，再替换完整程序目录。
 
 ### macOS
 
-解压 `osx-arm64.zip`，将 `Cafe Launcher.app` 移入“应用程序”后运行。该构建仅适用于 Apple Silicon Mac。
+解压 `osx-arm64.zip`，将 Cafe Launcher.app 移到“应用程序”后运行，仅适用于 Apple Silicon。
 
-macOS 上只能安装、更新和修复游戏：启动 Windows 游戏客户端需要额外的兼容运行层，当前不提供，也暂无支持计划。
+当前可安装、更新和修复游戏文件，暂不支持启动 Windows 游戏客户端。
 
 ### Linux
 
-- `.deb`：通过发行版的软件包管理工具安装。
-- `.rpm`：通过 RPM 系发行版的软件包管理工具安装。
-- AppImage：赋予执行权限后直接运行。
-- `tar.gz`：解压后运行 `Cafe.Launcher`。
+| 包类型 | 安装或运行方式 |
+| --- | --- |
+| DEB / RPM | 使用发行版对应的包管理器 |
+| Arch 包 | `sudo pacman -U ./Cafe.Launcher_v<版本>_linux-x64.pkg.tar.zst`，替换为实际文件名 |
+| AppImage | 赋予执行权限后运行 |
+| tar.gz | 解压后运行 `Cafe.Launcher` |
 
-Linux 系统需要提供图形、字体和基础运行库。若程序无法启动，请从终端运行并根据缺失库提示安装依赖。
+通过系统包安装后可运行 `cafe-launcher`。如窗口未出现，从终端启动并根据缺失库提示补齐系统图形、字体等依赖。
+
+发行包不自动安装 Wine、UMU 或 Proton。启动游戏前请准备[兼容运行环境](/cafe-launcher/settings#兼容运行环境-仅-linux)。Linux 软件包和 AppImage 默认使用主目录下的 `YostarGames/BlueArchive_JP` 作为游戏目录。
 
 ## 4. 完成首次设置 <span id="_4-complete-first-time-setup"></span> {#_4-完成首次设置}
 
-第一次启动时会显示五步向导，每一步都可以用“上一步”返回修改。
+| 步骤 | 要确认的内容 |
+| --- | --- |
+| 语言 | 启动器界面语言 |
+| 下载源 | 官方下载源提供原始日服资源；Cafe 下载源由蔚蓝咖啡厅日服汉化组提供汉化资源 |
+| 游戏安装路径 | 选择基础目录或已有游戏，核对最终 `YostarGames/BlueArchive_JP` 路径 |
+| 代理 | 自动检测、直连或系统代理 |
+| 确认您的设置 | 复核并完成，也可返回修改任一步 |
 
-1. **语言**：选择启动器界面语言。
-2. **下载源**：官方下载源提供原始日服资源；Cafe 下载源由蔚蓝咖啡厅（bluearchive.cafe）日服汉化组提供，内置汉化资源。
-3. **游戏安装路径**：选择一个基础目录，游戏会安装在该目录的 `YostarGames\BlueArchive_JP` 子目录中。如果所选目录中已经存在有效安装，向导会直接识别出来。
-4. **代理**：选择自动、直连或系统代理。
-5. **确认您的设置**：复核以上四项，每项都可以单独“修改”，确认后点击“完成”应用。
+中文系统默认选择 Cafe 下载源，其他语言环境默认选择官方下载源。稳定构建默认稳定更新通道，预发布构建默认测试通道。
 
-中文系统默认选择 Cafe 下载源，其他语言环境默认选择官方下载源。稳定构建默认跟踪稳定通道，预发布构建默认跟踪测试通道；两项设置之后都可以修改。
-
-选择“跳过引导”或按 `Esc` 时，启动器会先确认，再应用默认设置。
+选择“跳过引导”或按 Esc 会先要求确认，再应用默认设置。以后可以在设置中修改。
 
 ## 5. 识别或安装游戏 <span id="_5-detect-or-install-the-game"></span> {#_5-识别或安装游戏}
 
-![Cafe Launcher 主窗口](../assets/screenshots/main-window.webp)
+已有游戏时选择现有 `BlueArchive_JP` 目录。启动器读取其中的 `manifest.json` 与 `game-launcher-config.json`；有效时直接识别，无需重下完整游戏。文件不全时按当前清单补齐。
 
-- 如果已有官方启动器下载的游戏，选择其 `BlueArchive_JP` 目录。启动器会读取 `manifest.json` 和 `game-launcher-config.json`，无需重复下载完整游戏。
-- 如果未安装游戏，点击主界面的“安装游戏”。下载期间可以暂停或继续，完成后会自动校验。
-- 如果目录中只有部分文件，启动器会根据清单计算并下载缺失内容。
+尚未安装时点击“安装游戏”，等待下载与校验完成。期间可以暂停和继续。
 
 ![游戏下载进度](../assets/screenshots/download-progress.webp)
 
-> [!TIP]
-> 安装前请确认目录可写，并预留足够空间。不要把游戏安装到只读目录；Linux 软件包和 AppImage 默认会改用用户主目录下的 `YostarGames/BlueArchive_JP`。
-
-下一步可阅读[设置参考](/cafe-launcher/settings)或[游戏操作](/cafe-launcher/operations)。
+截图可能来自较早版本。后续操作见[游戏操作](/cafe-launcher/operations)，全部选项见[设置参考](/cafe-launcher/settings)。

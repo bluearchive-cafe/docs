@@ -5,7 +5,7 @@
 ### 1. AltStore 安装 <span id="altstore"></span> {#_1-altstore-安装}
 
 > [!NOTE]
-> 此方案需要先将设备连接至电脑，安装 **[AltStore](https://altstore.io)**，然后添加应用源至 AltStore，支持自动下载、安装和更新客户端。
+> 此方案需要先将设备连接至电脑，安装 **[AltStore](https://altstore.io)**，然后添加应用源至 AltStore。支持自动下载、安装和更新客户端。
 
 > [!WARNING]
 > 因自签限制，使用此方案需要每七天进行续签。续签时需要确保设备和电脑处于同一局域网内且电脑已启动 AltServer。
@@ -22,7 +22,7 @@
 ### 2. SideStore 安装 <span id="sidestore"></span> {#_2-sidestore-安装}
 
 > [!NOTE]
-> 此方案需要先将设备连接至电脑，安装 **[SideStore](https://sidestore.io)**，然后添加应用源至 SideStore，支持自动下载、安装和更新客户端。
+> 此方案需要先将设备连接至电脑，安装 **[SideStore](https://sidestore.io)**，然后添加应用源至 SideStore。支持自动下载、安装和更新客户端。
 
 > [!WARNING]
 > 因自签限制，使用此方案需要每七天进行续签。续签时无需使用电脑，但需要确保设备已启动 LocalDevVPN。
@@ -57,7 +57,7 @@
 
 ### 1. 如何避免续签应用 <span id="how-can-i-avoid-refreshing-every-seven-days"></span> {#_1-如何避免续签应用}
 
-免费开发者账号有七天的自签限制，使用付费开发者账号或自行购买签名证书进行自签可避免此限制。
+免费开发者账号有七天的自签限制。使用付费开发者账号或自行购买签名证书进行自签，可避免此限制。
 
 ### 2. 启动后弹窗提示 Use of unauthorized apps 并闪退 <span id="use-of-unauthorized-apps-appears-and-the-game-closes"></span> {#_2-启动后弹窗提示-use-of-unauthorized-apps-并闪退}
 

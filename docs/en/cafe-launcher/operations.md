@@ -1,102 +1,100 @@
 # Game Operations <span id="游戏操作"></span> {#game-operations}
 
-The main button shows **Install Game**, **Update Game**, or **Start Game** based on local files and the remote version. During an operation, the bottom area shows progress and controls.
+The main action changes between Install Game, Update Game, and Start Game based on installation and version status. The same bottom area shows operation progress and controls. Failure notifications offer View Log for troubleshooting.
 
 ## Install and update <span id="安装与更新"></span> {#install-and-update}
 
-1. Choose **Install Game** or **Update Game**.
-2. The launcher reads the remote manifest and calculates required downloads.
-3. Files are staged as `.tmp` files and resumed when the server supports it.
-4. Completed downloads undergo CRC64 verification.
-5. Once all files pass verification, the launcher updates the local manifest and game configuration.
+1. Select **Install Game** or **Update Game** to fetch the manifest and plan transfers.
+2. Wait for downloads. Files are written to .tmp files first and resumed when supported.
+3. After CRC64 verification, the launcher updates the local manifest and game configuration.
 
 ![Download progress](../../assets/screenshots/download-progress.webp)
 
-Progress shows the completion percentage, speed, downloaded and total size, and estimated time remaining. The status area also identifies the active source, Cafe or Official.
+The progress area shows percentage, speed, sizes, and remaining time; the status area identifies the source.
 
-- **Pause** preserves progress for later.
-- **Continue** resumes from the saved temporary files.
-- **Stop** cancels the operation; confirming it discards the current download task state.
-- **Speed limit** can be changed under Settings → Download & Network.
+| Action | Result |
+| --- | --- |
+| Pause | Suspend transfers and retain current progress |
+| Resume | Continue using available temporary files |
+| Stop | Confirm cancellation and discard this task's recovery record |
+| Normal exit | Wait for cleanup and preserve a recovery record for next launch |
+| Speed limit | Adjust in [network settings](/en/cafe-launcher/settings#download-and-network) |
 
-On the next launch, a saved task is resumed only if its game version, manifest, directory, and download source still match.
+**Close and Stop** counts as an explicit stop. Recovery requires matching game version, manifest, directory, and download source; old tasks are not applied to a different installation.
+
+Disk checks credit resumable .tmp bytes in the current plan; final verification is still required. Waiting for a response or receiving no data for 60 seconds triggers network retry. A large file that keeps receiving data has no fixed total transfer deadline.
 
 ## Repair <span id="修复"></span> {#repair}
 
-For missing files, resource problems, or repeated launch failures:
-
 1. Close the game.
-2. Open Settings → Game, or use **Repair** in the [game menu](#game-menu).
-3. Choose **Repair** and confirm.
+2. Choose **Repair** under Settings → Game or the [game menu](#game-menu).
+3. Confirm and wait for CRC64 checks against the remote manifest; missing or mismatched files are downloaded again.
+4. Review the result. On failure, use View Log or [export diagnostics](/en/cafe-launcher/feedback).
 
-   ![Repair confirmation](../../assets/screenshots/dialog-repair.webp)
+![Repair confirmation](../../assets/screenshots/dialog-repair.webp)
 
-4. Wait while files are checked against the remote manifest.
-5. Missing files and checksum mismatches are downloaded again.
-
-Repair checks CRC64, which is more thorough than the size checks performed before launch. The installation state is refreshed afterward. If repair still fails, try the other download source or [export logs](/en/cafe-launcher/feedback). Failure notifications for installation, repair, and updates provide a **View Log** action.
-
-Changing sources prompts a repair because Official and Cafe use different manifests. Repair against the current source before relying on launch verification.
+Launch verification checks only existence and size. Use repair for content integrity and after changing download sources so files match the new manifest.
 
 ## Launch the game <span id="启动游戏"></span> {#launch-the-game}
 
-Choose **Start Game** to verify files using the selected mode and launch the configured game entry point. By default, a successful launch minimizes the launcher to the system tray.
+Select **Start Game** to run the configured verification and launch the entry in the local installation state. Successful launch minimizes to tray by default; change this under Settings → General.
 
-The control panel and tray show the session progressing from starting to running, then exited with its exit code. No session means no status line. A normal exit updates that line without an extra notification.
+| Session status | Meaning |
+| --- | --- |
+| Game starting | Waiting for the runner and game process |
+| Game running | Game process confirmed |
+| Game exited | Session ended; an attributable exit code is shown when available |
+| Launch failure | No successful running state; the main window is restored with an error |
 
-If a Wine or Proton runner exits before game processes appear, the launcher restores its main window and reports that the game failed to start, including the exit code.
+The status row is hidden without a session. Normal exit updates the text without another notification. Wine / Proton may not provide an attributable exit code; an early runner exit or damaged environment can cause launch failure.
 
-If verification finds missing or mismatched files, the launcher offers repair and shows their counts in the status panel.
+Missing or mismatched files lead to a repair prompt:
 
-![Repair offered after launch verification](../../assets/screenshots/dialog-repair-launch-check.webp)
+![Launch verification failure](../../assets/screenshots/dialog-repair-launch-check.webp)
 
-On Linux, choose the runtime in Settings → Game: Auto, Windows (Native), UMU / Proton, or Wine. This is experimental and anti-cheat compatibility depends on the environment.
-
-The macOS launcher cannot launch the game and has no current plan to provide a compatibility layer. It still supports installation, updates, and repair.
+Linux requires a [compatibility runtime](/en/cafe-launcher/settings#compatibility-runtime-linux-only). Game launch is unavailable on macOS.
 
 ## Game menu <span id="游戏操作菜单"></span> {#game-menu}
 
-Open the dropdown beside the game card:
+When ready, use the menu control beside **Start Game**. The main part still launches directly. Both compact and hidden status-panel layouts provide this control.
 
-![Game menu](../../assets/screenshots/game-menu.webp)
+| Action | Purpose |
+| --- | --- |
+| Check for Updates | Refresh the remote game version and main action |
+| Add Desktop Shortcut | Create a shortcut to the current target; Windows only |
+| Open Game Directory | Open the current folder |
+| Repair | Check CRC64 integrity and restore files |
+| Uninstall | Remove the whole game directory after confirmation |
 
-- **Check for Updates** refreshes the remote version and main button.
-- **Add Desktop Shortcut** creates a game shortcut on Windows.
-- **Open Game Directory** opens the current installation in the file manager.
-- **Repair** performs the integrity check described above.
-- **Uninstall** opens the uninstall flow described below.
+![Earlier game menu](../../assets/screenshots/game-menu.webp)
+
+This screenshot shows an older menu. The current control is beside Start Game.
 
 ## Uninstall the game <span id="卸载游戏"></span> {#uninstall-the-game}
 
-1. Close the game.
-2. Choose **Uninstall** in Settings → Game or the game menu.
-3. Check the installation path and estimated directory size.
-4. Optionally select removal of launcher-managed Wine / Proton compatibility environments.
-5. Confirm and wait for scanning, deletion, and cleanup to finish. The result reports files and bytes actually removed, plus any remaining items.
+Close the game, choose **Uninstall** from Settings or the game menu, and review the full path, estimated size, and optional managed compatibility-environment cleanup before confirming.
 
 > [!WARNING]
-> Game uninstall deletes the **entire game directory** by default, including resources downloaded by the game and files you added. It also cleans up installation state, the resume record, and the desktop shortcut. Back up anything you want to keep before confirming. Custom Prefixes outside the game directory and launcher-managed compatibility directory are preserved.
+> The whole game directory is deleted, including game-downloaded resources and files you added. Installation state, recovery records, and desktop shortcuts are also removed. Back up anything needed first.
 
-Keep the launcher running until uninstall finishes; you can minimize it. If files remain, check the paths and reasons in the result before removing them manually.
+The panel shows scanning, deletion progress, and results, including paths that could not be removed. Keep the launcher open; minimizing is allowed. A custom Prefix outside the game directory and selected managed subtree is preserved.
 
-Game uninstall and launcher uninstall are separate operations. Uninstalling the launcher itself preserves the game directory. See [Uninstall and Data](/en/cafe-launcher/uninstall).
+Launcher removal is separate. See [Uninstall and data](/en/cafe-launcher/uninstall).
 
 ## Log viewer <span id="日志查看器"></span> {#log-viewer}
 
-Settings → Advanced → **View Log** opens current and rotated logs with keyword search and level filters.
+Open Settings → Advanced → **View Log** to browse, search, and filter current and rotated logs.
 
 ![Log viewer](../../assets/screenshots/log-viewer.webp)
 
-Records load in batches. Search and filters apply only to loaded records. For intermittent problems, increase the log level temporarily, reproduce the issue, and export logs immediately.
+Records load in batches. Filters and search apply only to loaded records. For a complete issue time range, [export logs](/en/cafe-launcher/feedback#export-logs).
 
 ## System tray <span id="系统托盘"></span> {#system-tray}
 
-With close behavior set to minimize to tray:
+With minimize-to-tray close behavior, the close button hides the window and keeps the process running. The tray can show the main window, start the game, open Settings, or exit completely.
 
-- The window close button hides the window while the process continues running.
-- Right-click the tray icon to start the game or open settings. The launch item shows the session state while the game is starting or running. These actions restore the main window when a prompt is needed.
-- The tray menu also restores the window or exits the launcher.
+![Tray menu](../../assets/screenshots/system-tray.webp)
 
-  ![System tray menu](../../assets/screenshots/system-tray.webp)
+The launch item shows starting/running session status. Actions needing confirmation or Settings restore the main window. Running the launcher again activates the existing instance. One instance owns each data directory, including across Linux login sessions.
 
-- Opening Cafe Launcher again activates the existing instance instead of opening a second one.
+Screenshots show Chinese and may be from earlier versions; follow the text for current controls.

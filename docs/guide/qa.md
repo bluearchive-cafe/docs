@@ -1,12 +1,12 @@
 # 常见问题 <span id="localization-faq"></span> {#常见问题}
 
-此处汇总了一些常见问题及其解答，如遇问题可在此处查找解决方案。
+此处汇总常见问题及其解答。遇到问题时，可在此处查找解决方案。
 
 ## 风险问题 <span id="risk"></span> {#风险问题}
 
 ### 使用汉化会导致封号吗 <span id="can-using-the-localization-result-in-an-account-ban"></span> {#使用汉化会导致封号吗}
 
-> 目前没有发生过因使用汉化而导致账号封禁的先例，若担心账号被封请老师自行斟酌是否使用汉化，**[本站不对因使用或无法使用本项目所产生的损失承担任何责任](https://github.com/bluearchive-cafe/bluearchive-cafe?tab=AGPL-3.0-1-ov-file)**。
+> 目前没有发生过因使用汉化而导致账号封禁的先例。若担心账号被封，请老师自行斟酌是否使用汉化，**[本站不对因使用或无法使用本项目所产生的损失承担任何责任](https://github.com/bluearchive-cafe/bluearchive-cafe?tab=AGPL-3.0-1-ov-file)**。
 
 ## 使用问题 <span id="usage"></span> {#使用问题}
 
@@ -22,18 +22,18 @@
 
 ### 下载游戏资源反复损坏 <span id="downloaded-game-resources-are-repeatedly-reported-as-corrupt"></span> {#下载游戏资源反复损坏}
 
-> 请先确保网络连接正常，并尝试重启几次游戏。若问题仍然存在，请尝试删除游戏资源目录下的 `catalog_Remote.hash` 以及 `TableBundles`、`AssetBundles` 和 `MediaPatch` 三个目录下的 `Catalog` 目录后重启游戏。
+> 请先确保网络连接正常，并尝试重启几次游戏。若问题仍然存在，请删除游戏资源目录下的 `catalog_Remote.hash` 以及 `TableBundles`、`AssetBundles` 和 `MediaPatch` 三个目录下的 `Catalog` 目录，然后重启游戏。
 
 ### 替换资源之后卡在加载 <span id="loading-gets-stuck-after-replacing-resources"></span> {#替换资源之后卡在加载}
 
-> 请尝试删除游戏资源目录下的 `catalog_Remote.hash` 以及 `TableBundles`、`AssetBundles` 和 `MediaPatch` 三个目录下的 `Catalog` 目录后重启游戏。
+> 请删除游戏资源目录下的 `catalog_Remote.hash` 以及 `TableBundles`、`AssetBundles` 和 `MediaPatch` 三个目录下的 `Catalog` 目录，然后重启游戏。
 
 ## 异常问题 <span id="other-errors"></span> {#异常问题}
 
 ### 图像显示为颠倒的公告 <span id="images-appear-as-upside-down-notices"></span> {#图像显示为颠倒的公告}
 
-> 请尝试在标题界面左下角点击 `菜单`-`检查游戏资源完整性` 进行修复，或者尝试关闭图像汉化功能后重启游戏。
+> 请在标题界面左下角点击 `菜单`-`检查游戏资源完整性` 进行修复，或关闭图像汉化功能后重启游戏。
 
 ### 切换场景时卡住或闪退 <span id="the-game-freezes-or-crashes-when-changing-scenes"></span> {#切换场景时卡住或闪退}
 
-> 请尝试在标题界面左下角点击 `菜单`-`检查游戏资源完整性` 进行修复。或者尝试关闭图像汉化功能后重启游戏。
+> 请在标题界面左下角点击 `菜单`-`检查游戏资源完整性` 进行修复，或关闭图像汉化功能后重启游戏。

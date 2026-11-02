@@ -1,112 +1,91 @@
 # 常见问题 <span id="frequently-asked-questions"></span> {#常见问题}
 
+先按现象查找下面的处理方法。仍未解决时，保留错误原文和发生时间，再按[反馈指南](/cafe-launcher/feedback)导出日志。
+
 ## 应该下载哪个文件？ <span id="which-package-should-i-download"></span> {#应该下载哪个文件}
 
-Windows 用户优先选择 `setup.exe`；需要便携运行时选择 `win-x64.zip`。Apple Silicon Mac 选择 `osx-arm64.zip`。Linux 根据发行版选择 `.deb`、`.rpm`、AppImage 或 `tar.gz`。
-
-带有 `beta` 的版本是测试版。完整对照见[安装与首次使用](/cafe-launcher/installation)。
-
-## v1.1.0-beta.5 启动器无法启动（启动即崩溃） <span id="v1-1-0-beta-5-crashes-at-startup"></span> {#v1-1-0-beta-5-启动器无法启动-启动即崩溃}
-
-**症状**：双击启动器后窗口一闪而过或完全不出现。查看日志可见 `System.InvalidOperationException: NoServiceRegistered, Cafe.Launcher.Avalonia.Services.WindowFilePickerService`。
-
-**原因**：v1.1.0-beta.5 首批发布构建早于修复提交，DI 容器中缺少 `WindowFilePickerService` 的具体类型注册，导致启动时解析服务即崩溃。这是构建打包问题，与你的系统环境、杀毒软件或游戏目录无关。
-
-**解决**：beta.5 已在问题发现后修复并重新发布。从[发布页](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/releases)重新下载 beta.5（或更新版本）覆盖安装即可。设置与用户数据保存在独立的数据目录中，覆盖安装不会丢失游戏路径等配置。
-
-不确定自己装的是哪个构建时，可打开数据目录查看日志开头的 `CommitSha`：受影响构建为 `b33915d`，修复后的构建为其之后的提交。
+Windows 通常选安装程序，需要便携运行时选 win-x64.zip。Apple Silicon 选 osx-arm64.zip，Linux 按发行版选包。完整文件名与平台限制见[安装指南](/cafe-launcher/installation#_2-下载正确的文件)。
 
 ## 可以复用官方启动器下载的游戏吗？ <span id="can-i-reuse-files-downloaded-by-the-official-launcher"></span> {#可以复用官方启动器下载的游戏吗}
 
-可以。首次向导或“设置 → 游戏”中选择现有 `BlueArchive_JP` 目录。Cafe Launcher 会读取其中的 `manifest.json` 与 `game-launcher-config.json`。
-
-不要同时运行两个启动器，也不要在其中一个正在下载、更新或修复时让另一个修改相同目录。
+可以。在首次向导或“设置 → 游戏”选择现有 BlueArchive_JP 目录。启动器读取 manifest.json 和 game-launcher-config.json。避免两个启动器同时下载、修复或修改同一目录。
 
 ## 下载速度很慢 <span id="downloads-are-slow"></span> {#下载速度很慢}
 
-依次检查：
+按顺序检查：限速是否为无限制 → 代理是否适合当前网络 → 所在磁盘空间和写入速度 → 暂停后继续。还可切换下载源重试；已有游戏切源后应修复以匹配新资源。
 
-1. “设置 → 下载与网络”中的下载速度限制是否为“无限制”。
-2. 在官方下载源与 Cafe 下载源之间切换。
-3. 代理模式是否与当前网络环境匹配。
-4. 游戏目录所在磁盘是否空间不足或写入速度过慢。
-5. 暂停后继续，或重启启动器恢复断点任务。
-
-切换下载源后，已安装游戏可能需要执行一次修复，以匹配新下载源的资源。
+重启可以恢复符合条件的断点任务，主动点“停止”会放弃恢复记录。
 
 ## 下载失败、校验失败或反复重试 <span id="downloads-fail-verification-fails-or-retries-keep-repeating"></span> {#下载失败、校验失败或反复重试}
 
-- 确认游戏已经退出。
-- 确认目录存在、可写且磁盘空间充足。
-- 检查安全软件是否拦截 `.tmp` 文件或游戏目录写入。
-- 切换下载源后再次修复。
-- 仍然失败时提高日志级别、复现问题并导出日志。
+先关闭游戏，确认目标目录可写、空间充足，检查安全软件是否阻止 .tmp 或游戏文件写入。必要时切换下载源再修复。
 
-不要只删除单个未知的临时文件；先停止当前操作并让启动器处理任务状态。
+仍失败时记录文件名和错误原文，提高日志级别、保存、复现并导出。操作进行时不要手动删除未知临时文件；先让启动器停止并完成收尾。
 
 ## 启动器提示“游戏正在运行” <span id="the-launcher-says-the-game-is-running"></span> {#启动器提示-游戏正在运行}
 
-关闭游戏后再操作。如果游戏窗口已经消失，打开任务管理器，确认 `BlueArchive.exe` 或 `xldr_BlueArchiveOnline_JP_loader_x64.exe` 没有残留。
+关闭游戏后重试。窗口消失但进程残留时，在任务管理器核对 BlueArchive.exe 或 xldr_BlueArchiveOnline_JP_loader_x64.exe。
 
-Linux 上启动器也会识别由本启动器启动的游戏，并额外检查映射到安装目录的外部启动进程。如果进程扫描超时、无法确认游戏状态，启动器会提示“无法确认游戏是否正在运行。请关闭游戏后重试。”，此时请先关闭游戏再重试。
+Linux 会识别启动器拥有的游戏及映射到安装目录的外部进程。扫描超时或无法确认时也会拒绝写入，请先确认游戏结束；持续误报时导出日志。
 
 ## 启动时提示文件缺失或大小不一致 <span id="launch-verification-reports-missing-files-or-size-mismatches"></span> {#启动时提示文件缺失或大小不一致}
 
-先打开“设置 → 游戏”执行修复。把启动校验改为“远程文件清单”只会更换检查依据，不会自动修复文件；“无”只适合临时排除校验流程问题。
+在“设置 → 游戏”执行修复。改为远程文件清单只更换校验依据，不修复文件；“无”可临时排查校验流程，不能证明内容完整。
 
 ## 官方下载源与 Cafe 下载源有什么区别？ <span id="how-do-official-and-cafe-sources-differ"></span> {#官方下载源与-cafe-下载源有什么区别}
 
-| 下载源 | 内容 | 适用情况 |
-| --- | --- | --- |
-| 官方 | Yostar 原始游戏资源 | 希望保持原始日服资源 |
-| Cafe | 蔚蓝咖啡厅（bluearchive.cafe）日服汉化组提供的汉化资源 | 需要汉化资源或官方下载源较慢 |
+官方下载源提供 Yostar 原始日服资源；Cafe 下载源由蔚蓝咖啡厅日服汉化组提供汉化资源，并支持资源面板。中文系统默认 Cafe，其他语言默认官方，之后可在设置中切换。
 
-中文系统首次默认选择 Cafe 下载源，其他语言环境默认选择官方下载源。两个下载源都可以随时在设置中切换。
+切换后按新清单修复。资源面板的开关另按汉化 UID 保存，见[资源面板](/cafe-launcher/resource-panel)。
 
 ## 修改设置后没有生效 <span id="settings-changes-did-not-take-effect"></span> {#修改设置后没有生效}
 
-大多数设置采用“编辑后保存”的方式。点击“取消”或关闭设置页面会丢弃未保存修改。
+先确认已点击“保存”。外观的即时预览不等于持久化，放弃会恢复。主窗口路径操作立即保存，设置页路径则需保存；网络请求与手动更新检查使用已保存偏好。
 
-游戏路径选择和已安装游戏检测是即时操作，会立即保存并刷新状态。
+## 找不到动态效果或取色算法？ <span id="where-are-motion-and-color-extraction-settings"></span> {#找不到动态效果或取色算法}
+
+动态效果在“设置 → 外观 → 主题与动效”。取色算法、配色变体和中性色在默认折叠的“高级配色”；取色算法仅在主题色选择“从壁纸获取”时出现。见[外观设置](/cafe-launcher/settings#外观)。
+
+## 视频背景不播放或没有声音 <span id="video-background-does-not-play-or-has-no-sound"></span> {#视频背景不播放或没有声音}
+
+1. 确认使用 Windows x64；其他平台使用静态回退。
+2. 选择“外观 → 背景 → 自定义”，使用本地 .mp4、.mkv 或 .webm。
+3. 恢复可见窗口，检查减少动态效果或系统动画偏好是否暂停了播放。
+4. 音量默认 0，调高音量并取消静音；静音期间调整只改变保留音量。
+5. 播放失败时核对提示与日志，重新选择可播放文件，并确保完整发行包的视频运行库仍在。
+
+取色来自封面或首帧，不逐帧变化。失败和平台不支持都会回退内置静态背景。
 
 ## 启动器如何更新？ <span id="how-does-the-launcher-update-itself"></span> {#启动器如何更新}
 
-启动器默认在初始化完成后检查所选更新通道，也可以在“设置 → 关于”手动检查。
+默认启动时检查，也可从“设置 → 关于”手动检查，使用已保存的更新通道。
 
-Windows 上可以直接在启动器内更新：发现新版本后会先预览该版本的发布说明，点“下载”即在应用内下载并显示进度，更新包先按发布页的 SHA-256 摘要清单校验，通过后点“重启以更新”退出、自动安装并重新打开，安装版与便携版都支持。发布会缺少摘要清单或本机所需的安装包时，启动器改为打开浏览器显示发布页，绝不会执行未经校验的文件。
+Windows 安装版和便携版可阅读发布说明后下载，按同一版本 SHA256SUMS 校验，再“重启以更新”。缺少摘要、匹配包或更新助手时会说明原因并提供“前往发布页”。macOS 和 Linux 从发布页手动下载、安装。
 
-macOS 与 Linux 不支持应用内更新，对话框的主按钮是“前往发布页”，点击后用浏览器打开发布页，下载与安装由你手动完成。
-
-启动时检查失败不会阻止使用启动器。测试通道会包含预发布版本，稳定通道只跟踪稳定版本。
+检查失败不阻止继续使用；测试通道包含预发布，稳定通道只提供稳定版。
 
 ## Linux 能直接运行游戏吗？ <span id="can-linux-launch-the-game"></span> {#linux-能直接运行游戏吗}
 
-启动器本身提供 Linux x64 实验性构建，并可选择自动、UMU / Proton 或 Wine 等兼容运行时。整条启动链路（含 XIGNCODE3 反作弊）已在 Arch Linux + UMU 1.4.4 + UMU-Proton 10.0-4 + NTFS3 游戏目录这一组合上实机验证可进入游戏；其他发行版、Proton 构建与显卡驱动组合尚未验证，反作弊兼容性受这些因素影响，不能保证可以进入游戏。
+启动器提供 Linux x64 实验性构建，游戏仍通过另装的 UMU / Proton 或 Wine 运行。历史验证包含 Arch + UMU 1.4.4 + UMU-Proton 10.0-4 + NTFS3 组合；反作弊随环境与游戏版本变化，不能保证其他组合。见[运行环境设置](/cafe-launcher/settings#兼容运行环境-仅-linux)。
 
 ## macOS 能启动游戏吗？ <span id="can-the-macos-launcher-launch-the-game"></span> {#macos-能启动游戏吗}
 
-不能。macOS 版本目前只能安装、更新和修复游戏：启动 Windows 游戏客户端需要额外的兼容运行层，macOS 上当前不提供，也暂无支持计划。需要启动游戏请在 Windows 上使用。
+当前不能。Apple Silicon 构建可以安装、更新和修复游戏文件，尚未提供启动 Windows 游戏所需的兼容运行层。
 
 ## 如何查看或导出日志？ <span id="how-do-i-view-or-export-logs"></span> {#如何查看或导出日志}
 
-打开“设置 → 高级”：
-
-- “查看日志”打开日志查看器，用于浏览、搜索和按级别筛选已经加载的记录。
-
-  ![日志查看器](../assets/screenshots/log-viewer.webp)
-
-- “导出日志”打开“导出诊断信息”对话框，可以选择时间范围和包含内容，生成 ZIP。
-
-  ![导出诊断信息](../assets/screenshots/log-export.webp)
-
-- “打开数据目录”直接显示日志所在位置。
-
-提交问题时，建议附上版本、复现步骤、截图和日志 ZIP。日志可能包含本地路径等环境信息，发送前可以自行检查。详见[反馈指南](/cafe-launcher/feedback#导出日志)。
+进入“设置 → 高级”。“查看日志”浏览已加载记录，“导出日志”按时间范围创建 ZIP，“打开数据目录”定位原文件。导出包仍在本机，分享前核对路径、UID 等信息。步骤见[导出日志](/cafe-launcher/feedback#导出日志)。
 
 ## 如何彻底卸载？ <span id="how-do-i-remove-everything"></span> {#如何彻底卸载}
 
-启动器程序、用户数据和游戏目录彼此独立。请按[卸载与数据](/cafe-launcher/uninstall)依次清理，避免误删其他文件。
+程序、用户数据和游戏目录分别清理。先核对范围并备份，再按[卸载与数据](/cafe-launcher/uninstall)执行；删除用户数据还会移除其中的受管兼容环境。
+
+## v1.1.0-beta.5 启动器无法启动（启动即崩溃） <span id="v1-1-0-beta-5-crashes-at-startup"></span> {#v1-1-0-beta-5-启动器无法启动-启动即崩溃}
+
+这是历史版本问题：首批 beta.5 缺少 WindowFilePickerService 的具体注册，日志包含 `NoServiceRegistered, Cafe.Launcher.Avalonia.Services.WindowFilePickerService`；受影响构建的 CommitSha 为 `b33915d`。
+
+该问题后来已修复。仍使用该构建时，从 [Releases](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/releases) 下载较新完整发行包覆盖安装。独立的游戏目录与用户设置会保留。其他版本启动失败时，应按当前错误日志排查。
 
 ## 仍然无法解决 <span id="i-still-need-help"></span> {#仍然无法解决}
 
-按照[反馈指南](/cafe-launcher/feedback)收集信息，并前往 [Cafe.Launcher.Avalonia Issues](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/issues)提交问题。
+按[反馈指南](/cafe-launcher/feedback)提供版本、环境、复现步骤、预期与实际结果，以及检查过的日志 ZIP，再提交 [Issue](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/issues)。

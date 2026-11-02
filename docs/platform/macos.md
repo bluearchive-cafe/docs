@@ -8,7 +8,7 @@
 > 此方案需要安装 **[PlayCover](https://playcover.io)**，然后添加应用源至 PlayCover，支持自动下载、安装和更新客户端。
 
 > [!WARNING]
-> 应用包支持 PlayCover 正式版 和 修改版，不支持 PlayCover 测试版。修改版在测试版的基础上修复了闪退问题，如需使用测试版功能请使用修改版代替。
+> 应用包支持 PlayCover 正式版和修改版，不支持 PlayCover 测试版。修改版在测试版的基础上修复了闪退问题。如需使用测试版功能，请使用修改版代替。
 
 > [!TIP]
 > 可以在修改版 PlayCover 的磁盘映像中添加应用源并查看使用说明，或点击 [这里](https://bluearchive.cafe/playcover) 添加应用源。
@@ -25,10 +25,10 @@
 > 此方案需要配合 **[PlayCover](https://playcover.io)** 或 **[Impactor](https://impactor.claration.dev)** 等工具进行安装，且不支持自动更新客户端。
 
 > [!WARNING]
-> 因自签限制，如果使用基于自签的工具（如 Impactor）进行安装，需要每七天进行续签。
+> 因自签限制，使用基于自签的工具（如 Impactor）安装时，需要每七天进行续签。
 
 > [!TIP]
-> 建议优先尝试使用 PlayCover 安装以避免续签。
+> 建议优先使用 PlayCover 安装，以避免续签。
 
 <div align=center>
 
@@ -42,7 +42,7 @@
 > 此方案可以配合官方原版客户端使用，但仅支持 `文本汉化` 功能，且游戏内字体显示异常。
 
 > [!WARNING]
-> 此方案不支持 `公告汉化`、`主线中配`、`图像视频`、`控制面板`、`登录加速` 等功能，且不会自动更新文本，建议仅在应急情况下使用。
+> 此方案不支持 `公告汉化`、`主线中配`、`图像视频`、`控制面板`、`登录加速` 等功能，且不会自动更新文本。建议仅在应急情况下使用。
 
 > [!TIP]
 > 下载最新版 `TableBundles.zip` 并解压至 `~/Library/Containers/ブルアカ/Data/Documents/TableBundles/` 目录下即可。

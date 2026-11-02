@@ -1,44 +1,42 @@
 # Resource Panel <span id="资源面板"></span> {#resource-panel}
 
-The Resource Panel manages BlueArchive.Cafe Chinese localization resources using a UID. Open it from the clipboard icon to the left of the settings gear in the title bar.
+Read and save server-side resource preferences for a localization UID. Open the panel with the clipboard icon left of the title-bar settings gear.
 
 ![Resource Panel](../../assets/screenshots/resource-panel.webp)
 
 > [!IMPORTANT]
-> The panel requires the Cafe download source. If you use Official, opening it prompts you to switch. After changing sources, [repair the installed game](/en/cafe-launcher/operations#repair) against the new manifest.
+> This requires the Cafe download source. On Official, the panel offers a source switch. [Repair the game](/en/cafe-launcher/operations#repair) afterward when prompted so files match the new manifest.
 
 ## UID
 
-The panel needs the eight-letter localization UID, **not** the numeric UID shown in your game account information.
+Use the **eight-uppercase-letter localization UID**, distinct from the numeric in-game UID. `ABCDEFGH` illustrates the format.
 
-| Source | Behavior |
+| Source | Use |
 | --- | --- |
-| Automatic | Default; reads the UID from local game Cookie data. On Linux, reads from the configured UMU or Wine prefix |
-| Custom | Enter a UID manually, for example when that client has not been used on this computer |
+| Automatic (default) | Read the local Cookie Library; on Windows, `AppData/LocalLow/YostarJP/BlueArchive/Cookies/Library` under the user profile; Linux reads the selected compatibility prefix |
+| Custom | Enter a UID manually, then use Change UID to edit it |
 
-Selecting Custom reveals **Edit UID**. Enter eight uppercase letters A–Z, such as `ABCDEFGH`. If automatic reading fails, an input field appears so you can enter and save a UID.
+If reading fails, enter the UID in the displayed field and select **Save UID**. If not yet generated, launch with the Cafe download source first, then refresh. The panel explains this generation requirement.
 
-If no UID has been generated, the panel explains that you must first launch the game using the Cafe source.
+The source and manual UID are stored locally. Cookie reading locates the relevant UID; the Cookie file is not uploaded.
 
 ## Resource categories <span id="资源类别"></span> {#resource-categories}
 
-| Category | Contents |
+| Category | Content |
 | --- | --- |
-| Game text | Chinese text for stories, interface, items, and other content |
-| Chinese main story voices | Chinese voice resources for the main story |
-| Images and videos | Localized visual resources |
+| Game text | Chinese story, interface, item, and other text |
+| Main-story Chinese voice | Chinese dubbing for the main story |
+| Images and video | Chinese-localized image and video resources |
 
-Each category shows a toggle, status, and the official and localized resource version identifiers.
-
-| Status | Meaning |
-| --- | --- |
-| Available | Localized resources match the official version and can be enabled |
-| Maintenance pending | Versions differ, usually because localization has not caught up with a game update; the toggle remains available |
-| Loading / Failed | Data is being fetched or could not be fetched; use Refresh to retry |
+Each has a separate switch and official/localized versions. Matching versions show Available; mismatches show Pending maintenance. Mismatched resources remain selectable but may not match the current game. Wait during loading or Refresh after failure.
 
 ## Save and apply <span id="保存与生效"></span> {#save-and-apply}
 
-- **Refresh** fetches the latest status and versions from the server.
-- **Save Settings** saves the resource choices. Restart the game for them to take effect.
+1. Confirm the displayed localization UID is the intended one.
+2. Change resource switches.
+3. Select **Save Settings** and wait for success in the status strip.
+4. Restart the game to apply server preferences.
 
-The status bar shows the active UID and the result of the latest operation. To use original JP resources, disable the relevant categories and save.
+Refresh reads current server state and versions. Saving requires networking and writes the switches for that UID; it does not directly modify local game files. Disable a category and save to use its original resources.
+
+Changing the local UID does not delete the old server configuration. See the [privacy policy (Chinese)](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/blob/main/PRIVACY.md) for data requests. Screenshots show Chinese and may come from earlier versions.
