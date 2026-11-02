@@ -3,8 +3,8 @@ import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
 import type { Plugin } from 'vite'
-import { zhTheme } from './locales/zh'
-import { enTheme } from './locales/en'
+import { zhTheme } from './locales/zh.ts'
+import { enTheme } from './locales/en.ts'
 
 const configDir = dirname(fileURLToPath(import.meta.url))
 
