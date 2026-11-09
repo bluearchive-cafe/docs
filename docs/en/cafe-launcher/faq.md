@@ -56,7 +56,7 @@ Motion is under Launcher Settings → Theme & Color → Theme and motion. Extrac
 
 1. Windows x64 and Linux and macOS portable builds include the player. Linux system packages install the player dependency through the package manager. A missing or incompatible player falls back to the static background.
 2. Choose Settings → Appearance → Background → Custom and a local .mp4, .mkv, or .webm.
-3. Restore a visible window and check whether reduced motion or system animation preferences paused playback.
+3. Restore a visible window and check whether reduced motion or system animation preferences paused playback; reduced motion shows only the first frame as a still.
 4. Volume defaults to 0. Raise it and unmute; adjustments while muted change retained volume only.
 5. On failure, review the notice and logs, select a playable file, and ensure the complete package's video runtime is present. Linux audio also requires a working system audio service and ALSA configuration.
 

@@ -136,9 +136,9 @@ Opening Default Background previews the default rules; selecting another categor
 | Setting | Choices | Purpose |
 | --- | --- | --- |
 | Theme | System, Light, Dark | Follow the system or select a fixed appearance |
-| Motion | Follow system, Full motion, Reduced motion | Animations, automatic banner rotation, and video background playback; moved here from General |
+| Motion | Follow system, Full motion, Reduced motion | Animations, automatic banner rotation, and video background playback; reduced motion shows the video's first frame as a still; moved here from General |
 
-Theme and motion follow system preferences by default. Full motion honors your explicit in-app selection. Reduced motion stops spatial transitions, automatic banner rotation, and video playback.
+Theme and motion follow system preferences by default. Full motion honors your explicit in-app selection. Reduced motion stops spatial transitions, automatic banner rotation, and video playback; the video background pauses on its first frame as a still.
 
 ### Background <span id="背景"></span> {#background}
 
@@ -157,7 +157,7 @@ Loading failures show the current game’s bundled image first, then the common 
 
 The bundled background is the default. Image formats: .png, .jpg, .jpeg, .bmp, .webp. Video formats: .mp4, .mkv, .webm. Folder selection randomly chooses a supported file at that level only. Volume, mute, fit, and window-size changes do not choose another file.
 
-Video backgrounds are supported on Windows x64, Linux x64, and macOS Apple Silicon. Portable packages include the runtime; Linux system packages install it through the package manager. Playback failures show the bundled static fallback and a notice. If playback is paused when a video is selected, the static background remains until playback resumes and the first frame is presented. Playback pauses while minimized, hidden to tray, or using reduced motion and resumes when visible and motion is allowed. Volume defaults to 0; mute defaults to off. You can adjust retained volume while muted.
+Video backgrounds are supported on Windows x64, Linux x64, and macOS Apple Silicon. Portable packages include the runtime; Linux system packages install it through the package manager. Playback failures show the bundled static fallback and a notice. The static background remains until the first frame is ready. Playback pauses while minimized or hidden to tray and resumes when visible; reduced motion pauses playback and shows the first frame as a still. Volume defaults to 0; mute defaults to off. You can adjust retained volume while muted.
 
 Thumbnails prefer embedded MP4 cover art, otherwise the first frame, with a video marker. Colors use the original cover or frame and do not change during playback. Media stays local and is not uploaded. See About for bundled artwork attribution.
 
