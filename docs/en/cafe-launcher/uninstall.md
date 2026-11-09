@@ -34,23 +34,29 @@ Linux upgrades attempt to migrate the old Cafe Launcher directory in the same da
 
 | File or directory | Purpose | Can it be deleted? |
 | --- | --- | --- |
-| `settings.json` | Language, theme, networking, paths, and other settings | Yes; defaults are restored on next launch |
-| `download_state.json` | Resumable download task state | Yes; saved resume progress is lost |
+| `settings.json` | One versioned root with global preferences, last-viewed entry, and separate settings for both games | Yes; settings for both games are reset |
+| `settings.pre-multigame.json` | Original bytes backed up before the old single-game settings are replaced | Keep until the upgraded configuration is confirmed |
+| `games/blue-archive-jp/`, `games/stella-sora-cn/` | That game's `download_state.json`, `shown_notices.json`, and runtime diagnostics | Deletes that game's recovery, notice, and diagnostic state |
+| Legacy root `download_state.json` | Old BA recovery record retained as backup, never Stella Sora state | Remove only after deciding old resume progress is no longer needed |
 | `unified.log`, `unified_*.log` | Current and rotated diagnostic logs | Yes; diagnostic history is lost |
-| `shown_notices.json` | Notices already displayed | Yes; some notices may appear again |
+| Legacy root `shown_notices.json` | Compatibility record for old BA notices; new writes use the game subdirectory | Yes; some older notices may appear again |
 | `image-cache/` | Remote backgrounds, banners, release-note images, and other cached images | Yes; downloaded again when needed |
 | `CrashReports/` | Local crash snapshots | Yes; crash diagnostics are lost |
 | `update/` | Staged launcher update packages and checksums | When no update is in progress; downloads will be needed again |
 | `compatibility/` | Launcher-managed Wine / Proton Prefixes | Deletes their login state and compatibility data; prefer the optional cleanup in game uninstall |
-| `runner_output.log`, `compatibility_environment.json`, `prefix_metadata.json` | Latest runner output, environment precheck, and Prefix metadata | Yes; these diagnostics are lost |
+| `runner_output.log`, `compatibility_environment.json`, `prefix_metadata.json` inside each game subdirectory | That game's latest runner output, environment precheck, and Prefix metadata; old root files may remain | Yes; these diagnostics are lost |
 | `log-exports/` | Exported log ZIP files | Yes |
+
+Game fields from old settings are always imported into Blue Archive, regardless of the last-viewed entry. Before writing the new format, the launcher retains `settings.pre-multigame.json`; if a different backup already exists, it preserves it and saves the new backup with a numeric suffix such as `.1`. It does not keep writing both formats. Old BA checkpoints are imported only when identity, version, manifest, directory, and source match. Unverifiable records remain untouched and are never assigned to Stella Sora. The game subdirectory's `download_state.migrated-v1.json` marker prevents an old record from being imported again after an explicit Stop; retain or back it up with the old record.
+
+Both games still share one global data root. Existing managed Prefixes stay under `compatibility/<gameId>/`, including `compatibility/blue-archive-jp/`; they are not moved into `games/`.
 
 > [!WARNING]
 > Exit Cafe Launcher before deleting its data. Keep or export logs first if you still need help with a problem.
 
 ## Game directory <span id="游戏目录"></span> {#game-directory}
 
-Normally YostarGames/BlueArchive_JP under the selected base directory. manifest.json records the manifest; game-launcher-config.json records version and launch target. Other files belong to the game and its resources. Avoid simultaneous operations with the official launcher and do not move the directory during download, repair, or removal.
+Under the selected base directory, Blue Archive uses `YostarGames/BlueArchive_JP` and Stella Sora uses `YostarGames/StellaSora_CN`. manifest.json records the manifest; game-launcher-config.json records version and launch target. Other files belong to the game and its resources. Avoid simultaneous operations with the official launcher and do not move the directory during download, repair, or removal.
 
 ## Uninstall the game <span id="卸载游戏"></span> {#uninstall-the-game}
 

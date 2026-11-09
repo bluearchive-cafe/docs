@@ -1,12 +1,18 @@
 # Settings Reference <span id="设置参考"></span> {#settings-reference}
 
-Open Settings with the gear in the upper-right corner. Six categories cover General, Game, Download and Network, Appearance, Advanced, and About. Select a category, edit, then choose Save.
+The gear at the bottom of the floating game rail opens Launcher Settings: General, Theme & Color, Default Background, Download and Network, Advanced, and About. Game Settings opens separately from the game action card or Start Game menu, with Installation and Maintenance, Launch and Runtime, Downloads and Resources, and Game Background. Its title identifies the fixed target game.
 
 Edits form a draft. Appearance previews immediately but persists only on save; discarding restores it. Closing or pressing Esc with changes asks whether to discard. Reset, immediate main-window path actions, and Resource Panel saves are separate operations described below.
 
-![Settings example](../../assets/screenshots/settings.webp)
+Game Settings stays bound to the selected entry. Paths, source, verification, runtime, after-launch behavior, applicable localization UID, and background overrides are saved per game. Language, theme colors, motion, proxy, HTTP/2, limits, and launcher updates are shared. Save submits changes only within the current dialog scope. Save or discard before switching games.
 
-Shared screenshots show Chinese and may come from earlier versions; follow the text for current groups and controls.
+A file task locks its game settings, including the directory, download source, and runtime. Background overrides, other games, and global preferences remain editable. Pausing does not release this lock.
+
+![Launcher appearance settings](../../assets/screenshots/settings-appearance-2026-11.png)
+
+![Per-game background settings](../../assets/screenshots/settings-game-background-2026-11.png)
+
+The settings screenshots show Chinese and English. Some other screenshots come from earlier versions; follow the text for current controls.
 
 ![Unsaved changes](../../assets/screenshots/dialog-unsaved-changes.webp)
 
@@ -20,7 +26,6 @@ Configure application preferences, main-window information, and launcher updates
 | --- | --- | --- |
 | Language | Automatic, English, Simplified Chinese, Traditional Chinese, Japanese | Interface language; Automatic follows the system |
 | Close behavior | Minimize to tray, Exit | What the window close button does |
-| After game launch | Keep window open, Minimize to tray, Exit launcher | Action after the game is successfully started |
 | Remember window position and size | On, Off | Restore window layout at startup |
 
 Closing the window and behavior after game launch are independent. Both default to minimizing to tray. Window position and size memory is off by default.
@@ -32,7 +37,7 @@ Closing the window and behavior after game launch are independent. Both default 
 | Status panel | Hidden, Compact | Visibility and detail of the bottom status area |
 | Remote content cards | On, Off | Notices and banners; failed cards provide a Retry action |
 
-Compact status and remote content are enabled by default. Failed remote content can be retried on its card.
+Compact status and remote content are enabled by default. The card preference applies to every game, including previously viewed entries when you switch back after saving. Failed remote content can be retried on its card.
 
 ### Updates <span id="更新"></span> {#updates}
 
@@ -47,13 +52,26 @@ Toasts are always enabled, use fixed durations by type, and pause their timer on
 
 ## Game <span id="游戏"></span> {#game}
 
+These options belong to the separate Game Settings dialog. Installation and Maintenance contains paths and maintenance; Launch and Runtime contains verification, runtime, and after-launch behavior; Downloads and Resources contains the game source and applicable resources. Maintenance actions require resolving an unsaved draft first.
+
 | Setting | Choices | Purpose |
 | --- | --- | --- |
-| Game installation path | Local directory | Normalized to an absolute path ending in `YostarGames/BlueArchive_JP`; use Open Game Directory to view it |
+| Game installation path | Local directory | Normalized to `YostarGames/BlueArchive_JP` for Blue Archive or `YostarGames/StellaSora_CN` for Stella Sora; Open Game Directory opens this target |
 | Launch verification | Local manifest, Remote manifest, None | How files are checked before launch |
-| Game management | Repair, Uninstall | Repair missing or corrupt files, or uninstall the entire game directory |
+| After game launch | Keep window open, Minimize to tray, Exit launcher | Action after the Settings target game starts; saved per game |
+| Game management | Check for Updates, Add Desktop Shortcut, Repair, Uninstall | Act on the fixed target game; uninstall removes the entire game directory, with optional managed compatibility-environment cleanup |
 
-Path selection here edits the draft and requires Save. Change Path and Select Installed Game in the main window save immediately and refresh status.
+Choose beside the path edits the draft and requires Save. Select Installed Game recognizes an existing installation, then saves and refreshes immediately after validation; its Settings and main-window entries behave the same way. The main-window Change Path action also saves immediately.
+
+Select Installed Game, Open Game Directory, and game management actions first end Settings editing. With a draft, keep editing to cancel the action, or discard changes to continue the original target's workflow. Without changes, Settings closes and the action continues. Repair confirmations and uninstall dialogs identify the target game.
+
+![Installation and Maintenance, Stella Sora example in Chinese](../../assets/screenshots/settings-maintenance-2026-11.png)
+
+This is the production view rendered at a small window size with an example directory.
+
+Change Path accepts a base directory and appends the current game's folders before validating the destination. An unrelated manifest in the base directory does not mean the game is corrupted. A destination that is not installed or holds an incomplete state is still accepted: installing rebuilds the state and repairing rewrites it. If the state cannot be read because of an I/O or permission failure, the launcher reports that read failure; another game's installation or overlapping installation directories are still rejected.
+
+Select Installed Game imports an existing installation. If no installation is found, it reports that the game is not installed and keeps the previous path. For a new installation, use Change Path: selecting `G:\YostarGames` for StellaSora sets the destination to `G:\YostarGames\StellaSora_CN`.
 
 See [Game operations](/en/cafe-launcher/operations) for repair and removal. Uninstall includes files outside the manifest; review the full path first.
 
@@ -82,6 +100,8 @@ Runtime selection defaults to Auto. Install the compatibility layer separately. 
 
 Historical hardware testing includes Arch Linux + UMU 1.4.4 + UMU-Proton 10.0-4 with game files on NTFS3. This is one tested combination, not a guarantee for other setups or later anti-cheat versions.
 
+That historical record concerns Blue Archive and does not establish Stella Sora anti-cheat compatibility in the same environment. Runner, Prefix, Proton, and MangoHud choices are saved separately for each game.
+
 MangoHud is off by default and requires a separately installed Vulkan layer. It affects Linux Wine / UMU game child processes for Vulkan / DXVK; no automatic installation or OpenGL injection is provided.
 
 ## Download and Network <span id="下载与网络"></span> {#download-and-network}
@@ -90,10 +110,10 @@ MangoHud is off by default and requires a separately installed Vulkan layer. It 
 | --- | --- | --- |
 | Proxy | Auto-detect, Direct, System proxy | Proxy for game downloads, update checks, remote images, and other launcher requests |
 | Enable HTTP/2 | On, Off | Prefer HTTP/2 for new requests, falling back to HTTP/1.1 |
-| Download source | Official, Cafe | Server used for game patch files |
+| Download source | Blue Archive: Official or Cafe; Stella Sora: Official | Changes only the target game's patch server |
 | Download speed limit | Unlimited, 1, 5, 10, 25, 50 MB/s | Limit download bandwidth |
 
-Defaults are automatic proxy detection, HTTP/2 enabled, and unlimited speed. Chinese system languages initially choose Cafe; other languages choose Official.
+Defaults are automatic proxy detection, HTTP/2 enabled, and unlimited speed. Blue Archive initially chooses Cafe on Chinese systems and Official elsewhere. Stella Sora offers Official only. Cafe localization resources and the Resource Panel are available only for Blue Archive.
 
 | Proxy mode | Behavior |
 | --- | --- |
@@ -101,13 +121,15 @@ Defaults are automatic proxy detection, HTTP/2 enabled, and unlimited speed. Chi
 | Direct connection | Explicitly bypass every proxy |
 | System proxy (configured first) | Prefer an explicit system proxy, otherwise automatic detection; Linux reads GNOME settings |
 
-Saved proxy and HTTP/2 preferences apply when later network clients are acquired. Manual update checks also use saved values. Repair when prompted after switching sources to match the new manifest.
+Saved proxy and HTTP/2 preferences apply when later network clients are acquired. Manual update checks also use saved values. Repair when prompted after switching sources to match the new manifest. If a download fails, save a different source and use the original task’s Retry action to retry with that game’s latest state and matching source.
 
 With Clash / mihomo Fake-IP, direct DNS results in IPv4 `198.18.0.0/15` or IPv6 `fc00::/7` are not rejected solely for being in those ranges. If connection still fails, try automatic proxy detection or review the proxy's TUN / Fake-IP settings.
 
 ## Appearance <span id="外观"></span> {#appearance}
 
-Groups follow Theme and motion → Background → Theme colors. Changes preview immediately, persist on Save, and restore previous backgrounds, colors, volume, and mute state on discard.
+Theme & Color contains theme, motion, and color choices; background defaults have a separate Default Background page. Theme thumbnails compare light and dark, and fit cards show the current background in three layouts. The fixed footer shows whether the current scope has unsaved changes; actions can wrap with larger text. Changes preview immediately, persist on Save, and restore previous backgrounds, colors, volume, and mute state on discard.
+
+Opening Default Background previews the default rules; selecting another category restores the game’s effective background without saving. Saving ends that temporary preview; Preview Main Window can show the defaults again. Choose theme and source cards directly; advanced colors remain collapsed initially. Preview Main Window temporarily hides the editor while retaining its draft and modal ownership. Tasks continue; game actions and switching stay blocked. Return to Settings or Esc restores the original category and focus. Discard restores motion and appearance. A global-default background preview is labeled and restores the game’s effective background when finished, including when you restore all fields to their original values and close the editor.
 
 ### Theme and motion <span id="主题与动效"></span> {#theme-and-motion}
 
@@ -120,9 +142,13 @@ Theme and motion follow system preferences by default. Full motion honors your e
 
 ### Background <span id="背景"></span> {#background}
 
+Global settings define the default source and fit. Each game uses its own bundled or remote artwork. Enable the complete background override in Game Settings → Game Background to choose that game’s source, fit, and media options. Custom images, videos, and folders are available only in game overrides. Disabling an override preserves its choices for later use. Other games are unaffected.
+
+Loading failures show the current game’s bundled image first, then the common fallback only if that asset is unavailable. The warning explains the failure without replacing the saved selection. Older global custom backgrounds migrate into both games’ overrides using the same original file path, with an original-settings backup.
+
 | Setting | Choices | Purpose |
 | --- | --- | --- |
-| Background | Bundled, Remote, Custom | Background source; Custom supports images and local video |
+| Background | Global: Bundled, Remote; game override also offers Custom | Background source; Custom supports images and local video |
 | Current Background | Source name, file path, and thumbnail | Bundled and Remote show source names; hover for the remote URL, or see the selected custom file's path |
 | Custom background | Choose Image or Video, Choose folder, Clear | Shown for Custom backgrounds; folders select a supported file at random on refresh without scanning subfolders |
 | Wallpaper fit | Fill, Fit, Cover | How the image or video fits the window |
@@ -131,7 +157,7 @@ Theme and motion follow system preferences by default. Full motion honors your e
 
 The bundled background is the default. Image formats: .png, .jpg, .jpeg, .bmp, .webp. Video formats: .mp4, .mkv, .webm. Folder selection randomly chooses a supported file at that level only. Volume, mute, fit, and window-size changes do not choose another file.
 
-Video playback requires Windows x64 and the included runtime. Other platforms or playback failures show the bundled static fallback and a notice. Playback pauses while minimized, hidden to tray, or using reduced motion and resumes when visible and motion is allowed. Volume defaults to 0; mute defaults to off. You can adjust retained volume while muted.
+Video backgrounds are supported on Windows x64, Linux x64, and macOS Apple Silicon. Portable packages include the runtime; Linux system packages install it through the package manager. Playback failures show the bundled static fallback and a notice. If playback is paused when a video is selected, the static background remains until playback resumes and the first frame is presented. Playback pauses while minimized, hidden to tray, or using reduced motion and resumes when visible and motion is allowed. Volume defaults to 0; mute defaults to off. You can adjust retained volume while muted.
 
 Thumbnails prefer embedded MP4 cover art, otherwise the first frame, with a video marker. Colors use the original cover or frame and do not change during playback. Media stays local and is not uploaded. See About for bundled artwork attribution.
 
@@ -172,6 +198,8 @@ Release builds default to Information. Temporarily increase to Debug or Verbose 
 
 The [log viewer](/en/cafe-launcher/operations#log-viewer) filters only loaded records. [Export logs](/en/cafe-launcher/feedback#export-logs) creates a local ZIP for a selected time range without uploading. Open Data Directory identifies the actual storage location.
 
+View Log and Export Logs can open over Settings without discarding its draft. When exporting from the viewer, Esc returns to the viewer first, then to the original Settings entry. Closing Settings with changes still asks whether to discard.
+
 ### Reset settings <span id="重置设置"></span> {#reset-settings}
 
 > [!WARNING]
@@ -185,4 +213,10 @@ Shows the application version, commit, build configuration, .NET, Avalonia, and 
 
 Manual checks use the saved channel and proxy. Windows follows: read release notes → Download → verify against the same release's SHA256SUMS → Restart to Update. A separate helper applies the installer or portable package.
 
+The update dialog preserves the Settings draft underneath. Cancel or Esc returns to the check button in About. Launcher updates are global and separate from game update checks in Game Settings.
+
+Restart to Update is blocked while settings are unsaved or being saved, or while any game's file task has not finished cleanup. Resolve the draft and finish or stop the task, then retry. A paused task still counts as active.
+
 If a verifiable package, checksum, or updater is missing, the dialog explains why and offers Open Release Page. macOS and Linux always use that action for manual installation. Release notes support remote images and links; failed images do not block text or update actions.
+
+The update dialog keeps a minimum size so short notes and status messages remain readable. It shows a loading message while fetching release notes. If the text cannot be loaded, you can continue updating or choose Open Release Page to read it in your browser. Images have separate loading and failure messages; failed images leave the text and update actions available.

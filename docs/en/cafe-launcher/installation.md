@@ -59,7 +59,7 @@ The portable build has no standard uninstall entry. Settings and logs still use 
 
 ### macOS
 
-Extract `osx-arm64.zip` and move Cafe Launcher.app to Applications. This build requires Apple Silicon.
+Extract `osx-arm64.zip` and move Cafe Launcher.app to Applications. This build requires Apple Silicon. Alternatively, download `cafe-launcher.rb` from the same release and run `brew install --cask ./cafe-launcher.rb` with Homebrew installed; the cask installs its mpv dependency. The ZIP already includes the video runtime.
 
 It can install, update, and repair game files; launching the Windows game is currently unavailable.
 
@@ -67,34 +67,32 @@ It can install, update, and repair game files; launching the Windows game is cur
 
 | Package | Installation or launch |
 | --- | --- |
-| DEB / RPM | Use the corresponding distribution package manager |
+| DEB / RPM | Use the corresponding distribution package manager to install the libmpv dependency automatically |
 | Arch package | `sudo pacman -U ./Cafe.Launcher_v<version>_linux-x64.pkg.tar.zst` with the actual filename |
 | AppImage | Grant executable permission, then run |
 | tar.gz | Extract and run `Cafe.Launcher` |
 
-System packages provide the `cafe-launcher` command. If no window appears, launch from a terminal and install missing graphics, font, or other system libraries reported there.
+System packages provide the `cafe-launcher` command. The bundled portable Linux player requires glibc 2.35 and a libstdc++ providing `GLIBCXX_3.4.29`; on older systems it can fall back to a compatible system libmpv, or otherwise to the static background. If no window appears, launch from a terminal and install missing graphics, font, or other system libraries reported there.
 
-Packages do not install Wine, UMU, or Proton. Prepare a [compatibility runtime](/en/cafe-launcher/settings#compatibility-runtime-linux-only) before launching the game. Linux packages and AppImage default to `YostarGames/BlueArchive_JP` under your home directory for game files.
+Packages do not install Wine, UMU, or Proton. Prepare a [compatibility runtime](/en/cafe-launcher/settings#compatibility-runtime-linux-only) before launching the game. Linux packages and AppImage suggest `YostarGames/BlueArchive_JP` for Blue Archive or `YostarGames/StellaSora_CN` for Stella Sora under your home directory. Confirm each game's location when installing it for the first time.
 
 ## 4. Complete first-time setup <span id="_4-完成首次设置"></span> {#_4-complete-first-time-setup}
 
 | Step | What to confirm |
 | --- | --- |
-| Language | Launcher interface language |
-| Download source | Official supplies original JP resources; Cafe supplies resources from the BlueArchive.Cafe Chinese localization team |
-| Game installation path | Choose a base directory or existing installation and check the final `YostarGames/BlueArchive_JP` path |
+| Language and theme | Interface language and system, light, or dark theme |
 | Proxy | Automatic detection, direct connection, or system proxy |
 | Confirm your settings | Review and finish, or return to edit an earlier step |
 
-Chinese system languages default to Cafe; other languages default to Official. Stable builds default to the stable update channel, and prerelease builds to beta.
+The wizard has only these three steps and configures global preferences. It does not select a game directory or source. Choose Blue Archive JP or Stella Sora CN in the game navigation; the first Install Game action for each entry asks for its directory. Blue Archive defaults to Cafe on Chinese systems and Official elsewhere; Stella Sora offers Official only. Stable builds default to the stable update channel, and prerelease builds to beta.
 
 Skipping setup or pressing Esc asks for confirmation before applying defaults. Settings can be changed later.
 
 ## 5. Detect or install the game <span id="_5-识别或安装游戏"></span> {#_5-detect-or-install-the-game}
 
-For existing files, select the `BlueArchive_JP` directory. The launcher reads `manifest.json` and `game-launcher-config.json` and detects valid installations without downloading the whole game again. Incomplete files are filled in against the selected manifest.
+Select the correct game entry first. Use its Select Installed Game action or Settings → Game to choose `BlueArchive_JP` for Blue Archive or `StellaSora_CN` for Stella Sora. The launcher reads `manifest.json` and `game-launcher-config.json` and detects installations with valid identity and format without downloading the whole game again. Incomplete files are filled in against the selected manifest; another game's state is not accepted as this game's installation.
 
-For a new installation, select **Install Game** and wait for download and verification. Pause and resume are available during transfer.
+For a new installation, select **Install Game** in the chosen entry and confirm its installation directory. Cancelling the directory picker starts no task. Wait for download and verification; pause and resume are available, and you can switch entries to see the background task summary.
 
 ![Game download progress](../../assets/screenshots/download-progress.webp)
 

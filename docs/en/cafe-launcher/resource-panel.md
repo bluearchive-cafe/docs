@@ -1,6 +1,6 @@
 # Resource Panel <span id="资源面板"></span> {#resource-panel}
 
-Read and save server-side resource preferences for a localization UID. Open the panel with the clipboard icon left of the title-bar settings gear.
+Read and save server-side resource preferences for a Blue Archive JP localization UID. Select Blue Archive first, then use the clipboard icon left of the title-bar settings gear or Game Settings → Downloads and Resources. The Settings entry resolves any unsaved draft and closes editing before continuing the resource workflow. Stella Sora does not provide the Cafe source, localization UID, or this panel.
 
 ![Resource Panel](../../assets/screenshots/resource-panel.webp)
 

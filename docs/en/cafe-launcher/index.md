@@ -1,6 +1,8 @@
 # Cafe Launcher
 
-Cafe Launcher installs and maintains Blue Archive JP. Reuse a directory created by the official launcher, or download, update, repair, and launch a new installation.
+Cafe Launcher installs and maintains Blue Archive JP. The main window shows the installation, version, notices, and session state, or you can reuse an existing official installation directory.
+
+Only one install, update, repair, or uninstall can run at a time. Rejected tasks are not queued.
 
 [Download](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/releases) · [Installation and first run](/en/cafe-launcher/installation) · [Troubleshooting](/en/cafe-launcher/faq)
 
@@ -32,17 +34,17 @@ Install, incrementally update, repair, launch, and uninstall from the main windo
 
 ### Downloads and networking <span id="下载与网络"></span> {#downloads-and-networking}
 
-Choose Official or Cafe download sources, use up to 10 concurrent transfers, limit speed, pause, and resume. Normal exit preserves a recoverable download task; actively stopping discards the task record. See [network settings](/en/cafe-launcher/settings#download-and-network).
+Choose between the Official and Cafe sources. Use up to 10 concurrent transfers, limit speed, pause, and resume. Normal exit preserves a recoverable task; actively stopping discards its record. See [network settings](/en/cafe-launcher/settings#download-and-network).
 
 ### Desktop experience <span id="桌面体验"></span> {#desktop-experience}
 
-Use English, Simplified Chinese, Traditional Chinese, or Japanese; system/light/dark themes; wallpaper-derived colors; custom images; and local video backgrounds on Windows x64. Preview appearance changes, then save or discard them.
+Use English, Simplified Chinese, Traditional Chinese, or Japanese; system/light/dark themes; wallpaper-derived colors; custom images; and local video backgrounds. Preview appearance changes, then save or discard them.
 
 A system tray, local log viewer, and ZIP diagnostics export are included. Windows can download and verify launcher updates in-app; macOS and Linux use manual installation from the release page.
 
 ### Chinese localization resources <span id="汉化资源"></span> {#chinese-localization-resources}
 
-The Cafe download source provides game text, main-story Chinese voice, and image/video resources. Toggle each in the [Resource Panel](/en/cafe-launcher/resource-panel) using an eight-uppercase-letter localization UID, distinct from the numeric UID shown in the game.
+The Cafe source provides Chinese-localized text, main-story voice, and image/video resources. Toggle each in the [Resource Panel](/en/cafe-launcher/resource-panel) using an eight-uppercase-letter localization UID, distinct from the numeric in-game UID.
 
 ## Platform status <span id="平台状态"></span> {#platform-status}
 

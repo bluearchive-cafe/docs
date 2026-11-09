@@ -8,7 +8,7 @@ Windows 通常选安装程序，需要便携运行时选 win-x64.zip。Apple Sil
 
 ## 可以复用官方启动器下载的游戏吗？ <span id="can-i-reuse-files-downloaded-by-the-official-launcher"></span> {#可以复用官方启动器下载的游戏吗}
 
-可以。在首次向导或“设置 → 游戏”选择现有 BlueArchive_JP 目录。启动器读取 manifest.json 和 game-launcher-config.json。避免两个启动器同时下载、修复或修改同一目录。
+可以。通过“选择已安装游戏”或“设置 → 游戏”选择现有 `BlueArchive_JP` 目录。首次向导只设置全局语言、主题和代理。启动器读取 manifest.json 和 game-launcher-config.json 并验证游戏身份。避免两个启动器同时下载、修复或修改同一目录。
 
 ## 下载速度很慢 <span id="downloads-are-slow"></span> {#下载速度很慢}
 
@@ -24,7 +24,7 @@ Windows 通常选安装程序，需要便携运行时选 win-x64.zip。Apple Sil
 
 ## 启动器提示“游戏正在运行” <span id="the-launcher-says-the-game-is-running"></span> {#启动器提示-游戏正在运行}
 
-关闭游戏后重试。窗口消失但进程残留时，在任务管理器核对 BlueArchive.exe 或 xldr_BlueArchiveOnline_JP_loader_x64.exe。
+关闭游戏后重试。窗口消失但进程残留时，在任务管理器核对 `BlueArchive.exe` 或 `xldr_BlueArchiveOnline_JP_loader_x64.exe`。
 
 Linux 会识别启动器拥有的游戏及映射到安装目录的外部进程。扫描超时或无法确认时也会拒绝写入，请先确认游戏结束；持续误报时导出日志。
 
@@ -42,17 +42,23 @@ Linux 会识别启动器拥有的游戏及映射到安装目录的外部进程�
 
 先确认已点击“保存”。外观的即时预览不等于持久化，放弃会恢复。主窗口路径操作立即保存，设置页路径则需保存；网络请求与手动更新检查使用已保存偏好。
 
+游戏路径、下载源、运行环境与启动后行为分别保存；主题、代理和限速等是全局偏好。未保存草稿时先保存或放弃，再离开设置。
+
+## 为什么任务没有立即开始？ <span id="why-did-the-other-games-task-not-start"></span> {#为什么另一游戏的任务没有开始}
+
+安装、更新、修复与卸载共用一个任务位。暂停仍占位，点击停止也要等收尾完成。启动器不会排队补做受阻请求；请完成或停止当前任务，等收尾后再试。正在处理文件时不能启动游戏。
+
 ## 找不到动态效果或取色算法？ <span id="where-are-motion-and-color-extraction-settings"></span> {#找不到动态效果或取色算法}
 
-动态效果在“设置 → 外观 → 主题与动效”。取色算法、配色变体和中性色在默认折叠的“高级配色”；取色算法仅在主题色选择“从壁纸获取”时出现。见[外观设置](/cafe-launcher/settings#外观)。
+动态效果在“启动器设置 → 主题与配色 → 主题与动效”。取色算法、配色变体和中性色在默认折叠的“高级配色”；取色算法仅在主题色选择“从壁纸获取”时出现。见[外观设置](/cafe-launcher/settings#外观)。
 
 ## 视频背景不播放或没有声音 <span id="video-background-does-not-play-or-has-no-sound"></span> {#视频背景不播放或没有声音}
 
-1. 确认使用 Windows x64；其他平台使用静态回退。
-2. 选择“外观 → 背景 → 自定义”，使用本地 .mp4、.mkv 或 .webm。
+1. Windows x64、Linux 便携版和 macOS 便携版随包提供播放器；Linux 系统安装包由包管理器安装播放器依赖。缺少或无法加载兼容播放器时使用静态回退。
+2. 在“设置 → 外观 → 背景”选择“自定义”，使用本地 .mp4、.mkv 或 .webm。
 3. 恢复可见窗口，检查减少动态效果或系统动画偏好是否暂停了播放。
 4. 音量默认 0，调高音量并取消静音；静音期间调整只改变保留音量。
-5. 播放失败时核对提示与日志，重新选择可播放文件，并确保完整发行包的视频运行库仍在。
+5. 播放失败时核对提示与日志，重新选择可播放文件，并确保完整发行包的视频运行库仍在。Linux 播放声音还需要正常工作的系统音频服务和 ALSA 配置。
 
 取色来自封面或首帧，不逐帧变化。失败和平台不支持都会回退内置静态背景。
 
@@ -76,9 +82,17 @@ Windows 安装版和便携版可阅读发布说明后下载，按同一版本 SH
 
 进入“设置 → 高级”。“查看日志”浏览已加载记录，“导出日志”按时间范围创建 ZIP，“打开数据目录”定位原文件。导出包仍在本机，分享前核对路径、UID 等信息。步骤见[导出日志](/cafe-launcher/feedback#导出日志)。
 
+## 设置文件损坏后如何恢复？ <span id="recover-damaged-settings"></span> {#设置文件损坏后如何恢复}
+
+如果 `settings.json` 损坏到无法解析，启动器会使用默认设置。下次写入设置前会把原文件备份到[启动器数据目录](/cafe-launcher/uninstall)中的 `settings.corrupt.json`，同名备份会以数字后缀保留。若文件能解析但版本不受支持或结构无效，启动器会保留原件并拒绝覆盖。可在关闭启动器后恢复一份有效备份。
+
 ## 如何彻底卸载？ <span id="how-do-i-remove-everything"></span> {#如何彻底卸载}
 
 程序、用户数据和游戏目录分别清理。先核对范围并备份，再按[卸载与数据](/cafe-launcher/uninstall)执行；删除用户数据还会移除其中的受管兼容环境。
+
+## 启动时提示语言资源缺失怎么办？ <span id="language-resources-are-missing-at-startup"></span> {#启动时提示语言资源缺失怎么办}
+
+如果启动失败，且日志提示语言资源缺失或无法加载，请从 [Releases](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/releases) 重新下载完整发行包并重新安装或完整解压。不要只替换主程序，也不要删除发行包中的语言目录。无需删除用户数据或游戏文件；仍然失败时，按[反馈指南](/cafe-launcher/feedback)提供日志。
 
 ## v1.1.0-beta.5 启动器无法启动（启动即崩溃） <span id="v1-1-0-beta-5-crashes-at-startup"></span> {#v1-1-0-beta-5-启动器无法启动-启动即崩溃}
 

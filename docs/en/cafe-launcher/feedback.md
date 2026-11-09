@@ -18,6 +18,7 @@ Fill in the following, starting from a clear initial state:
 Title: action and observed result
 Launcher version / commit / build configuration:
 Operating system / architecture:
+Game version / background task:
 Relevant download source / proxy / runner:
 Reproduction steps:
 1.
@@ -37,6 +38,8 @@ macOS and Linux are experimental; identify your environment. macOS game launch i
 3. Logs and system information are always included. Crash reports and user data are optional and unchecked by default.
 4. Export to a local destination, creating `CafeLauncher_Logs_<timestamp>.zip`.
 5. Review it before attaching it yourself. Restore the old log level afterward.
+
+Export Logs is also available from the log viewer. Cancel or Esc returns to the original viewer or Settings entry and preserves the Settings draft. Exporting does not save that draft.
 
 ![Diagnostics export example, Chinese interface](../../assets/screenshots/log-export.webp)
 

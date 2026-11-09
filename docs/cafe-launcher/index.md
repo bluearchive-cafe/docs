@@ -1,6 +1,8 @@
 # Cafe Launcher
 
-Cafe Launcher 帮助你安装和维护 Blue Archive 日服游戏。已有官方安装时，可以直接复用同一游戏目录；没有安装时，可以从这里下载、更新、修复并启动。
+Cafe Launcher 帮助你安装和维护蔚蓝档案日服。主窗口显示安装、版本、公告和运行状态；已有官方安装时可以复用对应目录。
+
+安装、更新、修复与卸载一次只执行一项；受限操作会立即提示，不会排队。
 
 [下载发行包](https://github.com/bluearchive-cafe/Cafe.Launcher.Avalonia/releases) · [安装与首次使用](/cafe-launcher/installation) · [遇到问题](/cafe-launcher/faq)
 
@@ -32,11 +34,11 @@ Cafe Launcher 帮助你安装和维护 Blue Archive 日服游戏。已有官方�
 
 ### 下载与网络 <span id="downloads-and-networking"></span> {#下载与网络}
 
-提供官方下载源与 Cafe 下载源、最多 10 个并发传输、限速、暂停与继续。正常退出会保留可恢复的下载任务；主动停止会放弃任务记录。代理与速度选项见[下载与网络设置](/cafe-launcher/settings#下载与网络)。
+提供官方下载源与 Cafe 下载源。支持最多 10 个并发传输、限速、暂停与继续。正常退出会保留可恢复的任务；主动停止会放弃该任务记录。代理与速度选项见[下载与网络设置](/cafe-launcher/settings#下载与网络)。
 
 ### 桌面体验 <span id="desktop-experience"></span> {#桌面体验}
 
-支持 English、简体中文、繁體中文和日本語，系统/浅色/深色主题、背景取色、自定义图片，以及 Windows x64 本地视频背景。外观修改即时预览，可以保存或放弃。
+支持 English、简体中文、繁體中文和日本語，系统/浅色/深色主题、背景取色、自定义图片，以及本地视频背景。外观修改即时预览，可以保存或放弃。
 
 提供系统托盘、本地日志查看与 ZIP 导出。Windows 可在应用内下载并校验启动器更新；macOS 和 Linux 从发布页手动安装。
 

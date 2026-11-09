@@ -34,23 +34,29 @@ Linux 升级尝试迁移同一数据主目录中旧 Cafe Launcher 的内容；�
 
 | 文件或目录 | 用途 | 可否删除 |
 | --- | --- | --- |
-| `settings.json` | 语言、主题、网络、路径等设置 | 可以；下次启动恢复默认设置 |
-| `download_state.json` | 可恢复的下载任务状态 | 可以；会失去断点进度 |
+| `settings.json` | 单一版本化设置根，包含全局偏好、上次查看条目与两游戏独立设置 | 可以；会重置两游戏设置 |
+| `settings.pre-multigame.json` | 旧单游戏设置迁入新格式前的原始字节备份 | 建议在确认升级配置正常前保留 |
+| `games/blue-archive-jp/`、`games/stella-sora-cn/` | 对应游戏的 `download_state.json`、`shown_notices.json` 与运行诊断文件 | 删除会失去该游戏恢复、公告和诊断状态 |
+| 根目录旧 `download_state.json` | 升级前的 BA 恢复记录备份，不属于星塔旅人 | 确认不再需要旧恢复进度后再清理 |
 | `unified.log`、`unified_*.log` | 当前与轮转诊断日志 | 可以；会失去排障记录 |
-| `shown_notices.json` | 已显示公告记录 | 可以；部分公告可能再次显示 |
+| 根目录旧 `shown_notices.json` | BA 旧公告兼容记录，新写入位于游戏子目录 | 可以；部分旧公告可能再次显示 |
 | `image-cache/` | 远程背景、横幅及更新说明等图片缓存 | 可以；需要时重新下载 |
 | `CrashReports/` | 本地崩溃快照 | 可以；会失去崩溃诊断记录 |
 | `update/` | 启动器更新包与校验文件暂存 | 未在更新时可以；之后需重新下载 |
 | `compatibility/` | 启动器受管的 Wine / Proton Prefix | 删除会失去其中的游戏登录状态与兼容环境数据；建议使用游戏卸载中的可选清理 |
-| `runner_output.log`、`compatibility_environment.json`、`prefix_metadata.json` | 最近一次兼容运行器输出、环境预检与 Prefix 元数据 | 可以；会失去对应诊断记录 |
+| 游戏子目录内 `runner_output.log`、`compatibility_environment.json`、`prefix_metadata.json` | 该游戏最近一次运行器输出、环境预检与 Prefix 元数据；旧根同名文件可能仍保留 | 可以；会失去对应诊断记录 |
 | `log-exports/` | 已导出的日志 ZIP | 可以 |
+
+旧设置的游戏字段固定导入蔚蓝档案，不随上次查看条目改变。写入新格式前先保存 `settings.pre-multigame.json`；如果已有内容不同的备份，会保留旧备份并使用 `.1` 等数字后缀另存本次备份。不再持续双写旧格式。旧 BA 检查点只有在游戏身份、版本、清单、目录与下载源匹配时才导入游戏子目录；无法验证的旧记录保留，不交给星塔旅人。子目录中的 `download_state.migrated-v1.json` 是导入完成标记，避免主动停止后又导入旧记录，建议与旧记录一起保留或备份。
+
+两款游戏仍使用同一个全局数据根。原受管兼容前缀保留在 `compatibility/<gameId>/`，不会被搬到 `games/`；例如既有 `compatibility/blue-archive-jp/` 保持原位。
 
 > [!WARNING]
 > 删除用户数据前请先退出 Cafe Launcher。若仍需反馈问题，请先保留或导出日志。
 
 ## 游戏目录 <span id="game-directory"></span> {#游戏目录}
 
-通常为所选基础目录下的 YostarGames/BlueArchive_JP。manifest.json 记录清单，game-launcher-config.json 记录版本和启动入口，其余为游戏与资源文件。与官方启动器共享时避免同时操作，下载、修复或卸载期间不要移动目录。
+通常位于所选基础目录下：蔚蓝档案为 `YostarGames/BlueArchive_JP`，星塔旅人为 `YostarGames/StellaSora_CN`。manifest.json 记录清单，game-launcher-config.json 记录版本和启动入口，其余为游戏与资源文件。与官方启动器共享时避免同时操作，下载、修复或卸载期间不要移动目录。
 
 ## 卸载游戏 <span id="uninstall-the-game"></span> {#卸载游戏}
 
