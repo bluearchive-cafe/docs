@@ -91,12 +91,13 @@ Local manifest is the default. Both manifest modes check existence and size; use
 | --- | --- |
 | Runtime | Auto, Windows (Native), UMU / Proton (Experimental), or Wine (Experimental) |
 | Runner path | Custom `umu-run` or `wine` executable; leave blank for automatic detection |
-| Prefix path | Leave blank for separate prefixes managed by the launcher for each runner |
-| Proton path | Custom Proton build for UMU; leave blank for UMU's automatic selection |
+| Prefix path | Choose a directory in settings or type it manually; leave blank for separate prefixes managed by the launcher for each runner |
+| Proton path | Choose a directory in settings or type it manually; leave blank for UMU's automatic selection |
+| Installed Proton builds | Lists builds found in Steam and Flatpak Steam; suggestions only, never selected automatically; choosing one only fills the Proton path |
 | MangoHud | Off by default; enables the Vulkan / DXVK performance overlay for Wine / UMU launches on Linux; install MangoHud separately |
-| Runtime status | Read-only detection result, such as available, unavailable, or not found |
+| Runtime status | Detection result for the current runtime, such as available, unavailable, or not found; use Refresh to check again and retry after a failure |
 
-Runtime selection defaults to Auto. Install the compatibility layer separately. Leaving Prefix blank uses separate launcher-managed directories per runner. Before launch, the launcher checks writability, mount execution permissions, symlink support, and related conditions and offers guidance on failure.
+Runtime selection defaults to Auto. Changing the runner or runner path starts a new background detection; stale results never overwrite the latest configuration. Install the compatibility layer separately. Leaving Prefix blank uses separate launcher-managed directories per runner. Before launch, the launcher checks writability, mount execution permissions, symlink support, and related conditions and offers guidance on failure.
 
 Historical hardware testing includes Arch Linux + UMU 1.4.4 + UMU-Proton 10.0-4 with game files on NTFS3. This is one tested combination, not a guarantee for other setups or later anti-cheat versions.
 
